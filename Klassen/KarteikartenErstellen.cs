@@ -67,5 +67,41 @@ namespace VRC.Klassen
                 //TODO: Später bei der Optimierung löschen
             }
         }
+
+        private void txtBxFach_Leave(object sender, EventArgs e)
+        {
+            //TODO: String auslesen. Welches Fach
+        }
+
+        private void txtBxThema_Leave(object sender, EventArgs e)
+        {
+            //TODO: String auslesen. Welches Thema
+        }
+
+        private void comBoxKarteikartentyp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tabControl1.Controls.Clear();
+
+            switch (comBoxKarteikartentyp.SelectedIndex)
+            {
+                case 0:
+                    RecordcardText recordcardText = new RecordcardText();
+                    this.tabControl1.Controls.Add(recordcardText);
+                    break;
+                case 1:
+                    RecordcardAufzaehlung recordcardAufzaehlung = new RecordcardAufzaehlung();
+                    this.tabControl1.Controls.Add(recordcardAufzaehlung);
+                    break;
+                case 2:
+                    RecordcardMultipleChoice recordcardMultipleChoice = new RecordcardMultipleChoice();
+                    this.tabControl1.Controls.Add(recordcardMultipleChoice);
+                    break;
+                case 3:
+                    RecordcardAbbildung recordcardAbbildung = new RecordcardAbbildung();
+                    this.tabControl1.Controls.Add(recordcardAbbildung);
+                    break;
+            }
+            Refresh();
+        }
     }
 }

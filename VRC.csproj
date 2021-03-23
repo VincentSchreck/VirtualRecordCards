@@ -65,11 +65,35 @@
     <Compile Include="Klassen\KarteikartenErstellen.Designer.cs">
       <DependentUpon>KarteikartenErstellen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klassen\RecordcardMultipleChoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Klassen\RecordcardMultipleChoice.Designer.cs">
+      <DependentUpon>RecordcardMultipleChoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klassen\Pruefmodus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Klassen\Pruefmodus.Designer.cs">
       <DependentUpon>Pruefmodus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klassen\RecordcardAbbildung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Klassen\RecordcardAbbildung.Designer.cs">
+      <DependentUpon>RecordcardAbbildung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klassen\RecordcardAufzaehlung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Klassen\RecordcardAufzaehlung.Designer.cs">
+      <DependentUpon>RecordcardAufzaehlung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klassen\RecordcardText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Klassen\RecordcardText.Designer.cs">
+      <DependentUpon>RecordcardText.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ClassRecordcard.cs" />
     <Compile Include="Model\ClassRecordcardSet.cs" />
@@ -84,8 +108,20 @@
     <EmbeddedResource Include="Klassen\KarteikartenErstellen.resx">
       <DependentUpon>KarteikartenErstellen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\RecordcardMultipleChoice.resx">
+      <DependentUpon>RecordcardMultipleChoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Klassen\Pruefmodus.resx">
       <DependentUpon>Pruefmodus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\RecordcardAbbildung.resx">
+      <DependentUpon>RecordcardAbbildung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\RecordcardAufzaehlung.resx">
+      <DependentUpon>RecordcardAufzaehlung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\RecordcardText.resx">
+      <DependentUpon>RecordcardText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -29,9 +29,6 @@ namespace VRC.Klassen
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageFrage = new System.Windows.Forms.TabPage();
-            this.tabPageAntwort = new System.Windows.Forms.TabPage();
             this.btnKarteikarteLoeschen = new System.Windows.Forms.Button();
             this.btnNeueKarteikarte = new System.Windows.Forms.Button();
             this.btnSucheDatei = new System.Windows.Forms.Button();
@@ -46,39 +43,8 @@ namespace VRC.Klassen
             this.btnVerwerfen = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comBoxKarteikartentyp = new System.Windows.Forms.ComboBox();
-            this.tabControl1.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPageFrage);
-            this.tabControl1.Controls.Add(this.tabPageAntwort);
-            this.tabControl1.Location = new System.Drawing.Point(13, 101);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 256);
-            this.tabControl1.TabIndex = 3;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // tabPageFrage
-            // 
-            this.tabPageFrage.Location = new System.Drawing.Point(4, 22);
-            this.tabPageFrage.Name = "tabPageFrage";
-            this.tabPageFrage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFrage.Size = new System.Drawing.Size(767, 230);
-            this.tabPageFrage.TabIndex = 0;
-            this.tabPageFrage.Text = "Frage";
-            this.tabPageFrage.UseVisualStyleBackColor = true;
-            // 
-            // tabPageAntwort
-            // 
-            this.tabPageAntwort.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAntwort.Name = "tabPageAntwort";
-            this.tabPageAntwort.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAntwort.Size = new System.Drawing.Size(767, 230);
-            this.tabPageAntwort.TabIndex = 1;
-            this.tabPageAntwort.Text = "Antwort";
-            this.tabPageAntwort.UseVisualStyleBackColor = true;
             // 
             // btnKarteikarteLoeschen
             // 
@@ -150,6 +116,8 @@ namespace VRC.Klassen
             this.txtBxFach.Name = "txtBxFach";
             this.txtBxFach.Size = new System.Drawing.Size(150, 20);
             this.txtBxFach.TabIndex = 8;
+            this.txtBxFach.Enter += new System.EventHandler(this.txtBxFach_Leave);
+            this.txtBxFach.Leave += new System.EventHandler(this.txtBxFach_Leave);
             // 
             // txtBxThema
             // 
@@ -157,6 +125,8 @@ namespace VRC.Klassen
             this.txtBxThema.Name = "txtBxThema";
             this.txtBxThema.Size = new System.Drawing.Size(197, 20);
             this.txtBxThema.TabIndex = 10;
+            this.txtBxThema.Enter += new System.EventHandler(this.txtBxThema_Leave);
+            this.txtBxThema.Leave += new System.EventHandler(this.txtBxThema_Leave);
             // 
             // label3
             // 
@@ -198,6 +168,7 @@ namespace VRC.Klassen
             // 
             // comBoxKarteikartentyp
             // 
+            this.comBoxKarteikartentyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comBoxKarteikartentyp.FormattingEnabled = true;
             this.comBoxKarteikartentyp.Items.AddRange(new object[] {
             "Text",
@@ -208,6 +179,14 @@ namespace VRC.Klassen
             this.comBoxKarteikartentyp.Name = "comBoxKarteikartentyp";
             this.comBoxKarteikartentyp.Size = new System.Drawing.Size(195, 21);
             this.comBoxKarteikartentyp.TabIndex = 13;
+            this.comBoxKarteikartentyp.SelectedIndexChanged += new System.EventHandler(this.comBoxKarteikartentyp_SelectedIndexChanged);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Location = new System.Drawing.Point(9, 96);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Size = new System.Drawing.Size(775, 280);
+            this.tabControl1.TabIndex = 3;
             // 
             // KarteikartenErstellen
             // 
@@ -229,18 +208,16 @@ namespace VRC.Klassen
             this.Controls.Add(this.txtBxDateispeicherort);
             this.Controls.Add(this.btnSucheDatei);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "KarteikartenErstellen";
             this.Text = "KarteikartenErstellen";
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageFrage;
-        private System.Windows.Forms.TabPage tabPageAntwort;
         private System.Windows.Forms.Button btnKarteikarteLoeschen;
         private System.Windows.Forms.Button btnNeueKarteikarte;
         private System.Windows.Forms.Button btnSucheDatei;
@@ -255,5 +232,8 @@ namespace VRC.Klassen
         private System.Windows.Forms.Button btnVerwerfen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comBoxKarteikartentyp;
+        private System.Windows.Forms.Panel tabControl1;
+        //private System.Windows.Forms.TabPage tabPageAntwort;
+        //private System.Windows.Forms.TabPage tabPageFrage;
     }
 }

@@ -7,7 +7,7 @@ namespace VRC.Handler
 {
     public static class FileHandler
     {
-        public static string read(string path)
+        public static string Read(string path)
         {
             if (!File.Exists(path))
             {

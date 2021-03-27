@@ -54,6 +54,12 @@
       <DependentUpon>HauptMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Handler\XML-Handler.cs" />
+    <Compile Include="Klassen\KarteikartenBearbeiten_old.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klassen\KarteikartenBearbeiten_old.Designer.cs">
+      <DependentUpon>KarteikartenBearbeiten_old.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klassen\KarteikartenBearbeiten.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <EmbeddedResource Include="HauptMenu.resx">
       <DependentUpon>HauptMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\KarteikartenBearbeiten_old.resx">
+      <DependentUpon>KarteikartenBearbeiten_old.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Klassen\KarteikartenBearbeiten.resx">
       <DependentUpon>KarteikartenBearbeiten.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +154,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Test\Test.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,130 +29,192 @@ namespace VRC.Klassen
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnNachRechts = new System.Windows.Forms.Button();
-            this.btnNachLinks = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnSucheDatei = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.btnKarteikarteLoeschen = new System.Windows.Forms.Button();
+            this.btnNeueKarteikarte = new System.Windows.Forms.Button();
+            this.listBxKarteikarten = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBxFach = new System.Windows.Forms.TextBox();
+            this.txtBxThema = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSpeichern = new System.Windows.Forms.Button();
+            this.btnVerwerfen = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comBoxKarteikartentyp = new System.Windows.Forms.ComboBox();
+            this.tabControl1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // btnKarteikarteLoeschen
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(182, 376);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(444, 56);
-            this.listBox1.TabIndex = 13;
+            this.btnKarteikarteLoeschen.Location = new System.Drawing.Point(405, 137);
+            this.btnKarteikarteLoeschen.Name = "btnKarteikarteLoeschen";
+            this.btnKarteikarteLoeschen.Size = new System.Drawing.Size(343, 23);
+            this.btnKarteikarteLoeschen.TabIndex = 4;
+            this.btnKarteikarteLoeschen.Text = "Karteikarte löschen";
+            this.btnKarteikarteLoeschen.UseVisualStyleBackColor = true;
+            this.btnKarteikarteLoeschen.Click += new System.EventHandler(this.btnKarteikarteLoeschen_Click);
             // 
-            // btnNachRechts
+            // btnNeueKarteikarte
             // 
-            this.btnNachRechts.Location = new System.Drawing.Point(678, 392);
-            this.btnNachRechts.Name = "btnNachRechts";
-            this.btnNachRechts.Size = new System.Drawing.Size(75, 23);
-            this.btnNachRechts.TabIndex = 12;
-            this.btnNachRechts.Text = "R";
-            this.btnNachRechts.UseVisualStyleBackColor = true;
+            this.btnNeueKarteikarte.Location = new System.Drawing.Point(9, 137);
+            this.btnNeueKarteikarte.Name = "btnNeueKarteikarte";
+            this.btnNeueKarteikarte.Size = new System.Drawing.Size(340, 23);
+            this.btnNeueKarteikarte.TabIndex = 5;
+            this.btnNeueKarteikarte.Text = "Neue Karteikarte kreieren";
+            this.btnNeueKarteikarte.UseVisualStyleBackColor = true;
+            this.btnNeueKarteikarte.Click += new System.EventHandler(this.btnNeueKarteikarte_Click);
             // 
-            // btnNachLinks
+            // listBxKarteikarten
             // 
-            this.btnNachLinks.Location = new System.Drawing.Point(46, 393);
-            this.btnNachLinks.Name = "btnNachLinks";
-            this.btnNachLinks.Size = new System.Drawing.Size(75, 23);
-            this.btnNachLinks.TabIndex = 11;
-            this.btnNachLinks.Text = "L";
-            this.btnNachLinks.UseVisualStyleBackColor = true;
+            this.listBxKarteikarten.FormattingEnabled = true;
+            this.listBxKarteikarten.Location = new System.Drawing.Point(9, 64);
+            this.listBxKarteikarten.Name = "listBxKarteikarten";
+            this.listBxKarteikarten.Size = new System.Drawing.Size(739, 56);
+            this.listBxKarteikarten.TabIndex = 6;
+            this.listBxKarteikarten.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Fach:";
+            // 
+            // txtBxFach
+            // 
+            this.txtBxFach.Location = new System.Drawing.Point(49, 12);
+            this.txtBxFach.Name = "txtBxFach";
+            this.txtBxFach.Size = new System.Drawing.Size(175, 20);
+            this.txtBxFach.TabIndex = 8;
+            this.txtBxFach.Enter += new System.EventHandler(this.txtBxFach_Leave);
+            this.txtBxFach.Leave += new System.EventHandler(this.txtBxFach_Leave);
+            // 
+            // txtBxThema
+            // 
+            this.txtBxThema.Location = new System.Drawing.Point(55, 23);
+            this.txtBxThema.Name = "txtBxThema";
+            this.txtBxThema.Size = new System.Drawing.Size(294, 20);
+            this.txtBxThema.TabIndex = 10;
+            this.txtBxThema.Enter += new System.EventHandler(this.txtBxThema_Leave);
+            this.txtBxThema.Leave += new System.EventHandler(this.txtBxThema_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Thema:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // btnSpeichern
+            // 
+            this.btnSpeichern.Location = new System.Drawing.Point(408, 12);
+            this.btnSpeichern.Name = "btnSpeichern";
+            this.btnSpeichern.Size = new System.Drawing.Size(185, 26);
+            this.btnSpeichern.TabIndex = 11;
+            this.btnSpeichern.Text = "Änderungen speichern";
+            this.btnSpeichern.UseVisualStyleBackColor = true;
+            this.btnSpeichern.Click += new System.EventHandler(this.btnSpeichern_Click);
+            // 
+            // btnVerwerfen
+            // 
+            this.btnVerwerfen.Location = new System.Drawing.Point(599, 12);
+            this.btnVerwerfen.Name = "btnVerwerfen";
+            this.btnVerwerfen.Size = new System.Drawing.Size(185, 26);
+            this.btnVerwerfen.TabIndex = 11;
+            this.btnVerwerfen.Text = "Änderungen verwerfen";
+            this.btnVerwerfen.UseVisualStyleBackColor = true;
+            this.btnVerwerfen.Click += new System.EventHandler(this.btnVerwerfen_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(428, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Karteikartentyp:";
+            // 
+            // comBoxKarteikartentyp
+            // 
+            this.comBoxKarteikartentyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comBoxKarteikartentyp.FormattingEnabled = true;
+            this.comBoxKarteikartentyp.Items.AddRange(new object[] {
+            "Text",
+            "Auflistung",
+            "Multiple-Choice",
+            "Abbildung"});
+            this.comBoxKarteikartentyp.Location = new System.Drawing.Point(515, 23);
+            this.comBoxKarteikartentyp.Name = "comBoxKarteikartentyp";
+            this.comBoxKarteikartentyp.Size = new System.Drawing.Size(233, 21);
+            this.comBoxKarteikartentyp.TabIndex = 13;
+            this.comBoxKarteikartentyp.SelectedIndexChanged += new System.EventHandler(this.comBoxKarteikartentyp_SelectedIndexChanged);
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(13, 65);
+            this.tabControl1.Location = new System.Drawing.Point(12, 44);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 286);
-            this.tabControl1.TabIndex = 10;
+            this.tabControl1.Size = new System.Drawing.Size(772, 274);
+            this.tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // groupBox1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(767, 260);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(767, 260);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(213, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(460, 20);
-            this.textBox1.TabIndex = 9;
-            // 
-            // btnSucheDatei
-            // 
-            this.btnSucheDatei.Location = new System.Drawing.Point(678, 19);
-            this.btnSucheDatei.Name = "btnSucheDatei";
-            this.btnSucheDatei.Size = new System.Drawing.Size(75, 23);
-            this.btnSucheDatei.TabIndex = 8;
-            this.btnSucheDatei.Text = "Suche";
-            this.btnSucheDatei.UseVisualStyleBackColor = true;
-            this.btnSucheDatei.Click += new System.EventHandler(this.btnSucheDatei_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Dateispeicherort auswählen";
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.comBoxKarteikartentyp);
+            this.groupBox1.Controls.Add(this.txtBxThema);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnNeueKarteikarte);
+            this.groupBox1.Controls.Add(this.listBxKarteikarten);
+            this.groupBox1.Controls.Add(this.btnKarteikarteLoeschen);
+            this.groupBox1.Location = new System.Drawing.Point(20, 337);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(764, 166);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Karteikarten verwalten";
             // 
             // KarteikartenBearbeiten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.btnNachRechts);
-            this.Controls.Add(this.btnNachLinks);
+            this.ClientSize = new System.Drawing.Size(800, 518);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnVerwerfen);
+            this.Controls.Add(this.btnSpeichern);
+            this.Controls.Add(this.txtBxFach);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnSucheDatei);
-            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "KarteikartenBearbeiten";
             this.Text = "KarteikartenBearbeiten";
-            this.tabControl1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btnNachRechts;
-        private System.Windows.Forms.Button btnNachLinks;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnSucheDatei;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnKarteikarteLoeschen;
+        private System.Windows.Forms.Button btnNeueKarteikarte;
+        private System.Windows.Forms.ListBox listBxKarteikarten;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBxFach;
+        private System.Windows.Forms.TextBox txtBxThema;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSpeichern;
+        private System.Windows.Forms.Button btnVerwerfen;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comBoxKarteikartentyp;
+        private System.Windows.Forms.Panel tabControl1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        //private System.Windows.Forms.TabPage tabPageAntwort;
+        //private System.Windows.Forms.TabPage tabPageFrage;
     }
 }

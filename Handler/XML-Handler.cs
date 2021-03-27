@@ -33,8 +33,8 @@ namespace VRC.Handler
                     {
                         Recordcard recordcard = new Recordcard();
                         recordcard.Topic = recordcardsetNode.GetAttribute("topic");
-                        recordcard.Question = recordcardsetNode.GetAttribute("question");
-                        recordcard.Answer = recordcardsetNode.GetAttribute("answer");
+                        //recordcard.Question = recordcardsetNode.GetAttribute("question");
+                        //recordcard.Answer = recordcardsetNode.GetAttribute("answer");
                         recordcardSet.RecordcardList.Add(recordcard);
                     }
                 }
@@ -52,6 +52,8 @@ namespace VRC.Handler
             recordcardsetNode.Attributes.Append(subjectAttribute);
             xmlDocument.AppendChild(recordcardsetNode);
 
+            //TODO: Zeilenumbrüche werden beim Umwandeln in XML-Format nicht dargestellt, sondern nur als Leerzeichen.
+
             foreach (Recordcard recordcard in recordcardSet.RecordcardList)
             {
                 XmlNode recordcardNode = xmlDocument.CreateElement("recordcard");
@@ -60,13 +62,67 @@ namespace VRC.Handler
                 topicAttribute.Value = recordcard.Topic;
                 recordcardNode.Attributes.Append(topicAttribute);
 
-                XmlAttribute questionAttribute = xmlDocument.CreateAttribute("question");
-                questionAttribute.Value = recordcard.Question;
-                recordcardNode.Attributes.Append(questionAttribute);
+                switch (recordcard.KarteikartenTyp)
+                {
+                    case KarteikartenTyp.Text:
+                        XmlNode questionTextElement = xmlDocument.CreateElement("questionText");
+                        questionTextElement.InnerText = recordcard.QuestionText;
+                        recordcardNode.AppendChild(questionTextElement);
 
-                XmlAttribute answerAttribute = xmlDocument.CreateAttribute("answer");
-                answerAttribute.Value = recordcard.Answer;
-                recordcardNode.Attributes.Append(answerAttribute);
+                        XmlNode answerTextElement = xmlDocument.CreateElement("answerText");
+                        answerTextElement.InnerText = recordcard.AnswerText;
+                        recordcardNode.AppendChild(answerTextElement);
+
+                        //ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionText = recordcardText.getQuestion();
+                        //ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerText = recordcardText.getAnswer();
+                        break;
+                    case KarteikartenTyp.Abbildung:
+                        XmlNode questionAbbildungElement = xmlDocument.CreateElement("questionAbbildung");
+                        questionAbbildungElement.InnerText = recordcard.QuestionAbbildung;
+                        recordcardNode.AppendChild(questionAbbildungElement);
+
+                        XmlNode answerAbbildungElement = xmlDocument.CreateElement("answerAbbildung");
+                        answerAbbildungElement.InnerText = recordcard.AnswerAbbildung;
+                        recordcardNode.AppendChild(answerAbbildungElement);
+
+                        //ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionAbbildung = recordcardAbbildung.getQuestion();
+                        //ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerAbbildung = recordcardAbbildung.getAnswer();
+                        break;
+                    case KarteikartenTyp.Aufzaehlung:
+                        XmlNode questionAufzaehlungElement = xmlDocument.CreateElement("questionAufzaehlung");
+                        questionAufzaehlungElement.InnerText = recordcard.QuestionAufzaehlung;
+                        recordcardNode.AppendChild(questionAufzaehlungElement);
+
+
+                        XmlNode answerAufzaehlungElement = xmlDocument.CreateElement("answerAufzaehlung");
+                        foreach(string item in recordcard.AnswerAufzaehlung)
+                        {
+                            XmlNode itemAufzaehlungElement = xmlDocument.CreateElement("item");
+                            itemAufzaehlungElement.InnerText = item;
+                            answerAufzaehlungElement.AppendChild(itemAufzaehlungElement);
+                            //recordcardNode.AppendChild(answerAbbildungAttribute);
+                        }
+                        recordcardNode.AppendChild(answerAufzaehlungElement);
+                        break;
+                    case KarteikartenTyp.MultipleChoice:
+                        XmlNode questionMultipleChoiceElement = xmlDocument.CreateElement("questionMultipleChoice");
+                        questionMultipleChoiceElement.InnerText = recordcard.QuestionMultipleChoice;
+                        recordcardNode.AppendChild(questionMultipleChoiceElement);
+
+                        XmlNode choicesMultipleChoiceElement = xmlDocument.CreateElement("choicesMultipleChoice");
+                        foreach (string item in recordcard.ChoicesMultipleChoice)
+                        {
+                            XmlNode itemMultipleChoiceElement = xmlDocument.CreateElement("item");
+                            itemMultipleChoiceElement.InnerText = item;
+                            choicesMultipleChoiceElement.AppendChild(itemMultipleChoiceElement);
+                        }
+                        recordcardNode.AppendChild(choicesMultipleChoiceElement);
+
+                        XmlNode answerMultipleChoiceElement = xmlDocument.CreateElement("answerMultipleChoice");
+                        answerMultipleChoiceElement.InnerText = recordcard.AnswerMultipleChoice;
+                        recordcardNode.AppendChild(answerMultipleChoiceElement);
+                        break;
+                }
 
                 recordcardsetNode.AppendChild(recordcardNode);
             }

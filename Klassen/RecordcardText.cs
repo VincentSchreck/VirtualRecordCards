@@ -16,7 +16,21 @@ namespace VRC.Klassen
         {
             InitializeComponent();
         }
+        public RecordcardText(string frage, string antwort)
+        {
+            InitializeComponent();
+            txtBoxTextFrage.Text = frage;
+            txtBoxTextAntwort.Text = antwort;
+        }
 
+        public string getQuestion()
+        {
+            return txtBoxTextFrage.Text;
+        }
 
+        public string getAnswer()
+        {
+            return txtBoxTextAntwort.Text;
+        }
     }
 }

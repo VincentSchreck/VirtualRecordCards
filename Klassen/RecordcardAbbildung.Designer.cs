@@ -31,7 +31,7 @@ namespace VRC.Klassen
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageFrage = new System.Windows.Forms.TabPage();
-            this.textBoxTextFrage = new System.Windows.Forms.TextBox();
+            this.txtBoxTextFrage = new System.Windows.Forms.TextBox();
             this.tabPageAntwort = new System.Windows.Forms.TabPage();
             this.btnAbbildungSuchen = new System.Windows.Forms.Button();
             this.txtBoxGrafikSuchen = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@ namespace VRC.Klassen
             // 
             // tabPageFrage
             // 
-            this.tabPageFrage.Controls.Add(this.textBoxTextFrage);
+            this.tabPageFrage.Controls.Add(this.txtBoxTextFrage);
             this.tabPageFrage.Location = new System.Drawing.Point(4, 22);
             this.tabPageFrage.Name = "tabPageFrage";
             this.tabPageFrage.Padding = new System.Windows.Forms.Padding(3);
@@ -66,14 +66,14 @@ namespace VRC.Klassen
             this.tabPageFrage.Text = "Frage";
             this.tabPageFrage.UseVisualStyleBackColor = true;
             // 
-            // textBoxTextFrage
+            // txtBoxTextFrage
             // 
-            this.textBoxTextFrage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxTextFrage.Location = new System.Drawing.Point(3, 3);
-            this.textBoxTextFrage.Multiline = true;
-            this.textBoxTextFrage.Name = "textBoxTextFrage";
-            this.textBoxTextFrage.Size = new System.Drawing.Size(761, 248);
-            this.textBoxTextFrage.TabIndex = 0;
+            this.txtBoxTextFrage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBoxTextFrage.Location = new System.Drawing.Point(3, 3);
+            this.txtBoxTextFrage.Multiline = true;
+            this.txtBoxTextFrage.Name = "txtBoxTextFrage";
+            this.txtBoxTextFrage.Size = new System.Drawing.Size(761, 248);
+            this.txtBoxTextFrage.TabIndex = 0;
             // 
             // tabPageAntwort
             // 
@@ -145,7 +145,7 @@ namespace VRC.Klassen
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPageFrage;
-        private System.Windows.Forms.TextBox textBoxTextFrage;
+        private System.Windows.Forms.TextBox txtBoxTextFrage;
         private System.Windows.Forms.TabPage tabPageAntwort;
         private System.Windows.Forms.Button btnAbbildungSuchen;
         private System.Windows.Forms.TextBox txtBoxGrafikSuchen;

@@ -17,6 +17,28 @@ namespace VRC.Klassen
         {
             InitializeComponent();
         }
+        public RecordcardAbbildung(string frage, string antwort)
+        {
+            InitializeComponent();
+            txtBoxTextFrage.Text = frage;
+            txtBoxGrafikSuchen.Text = antwort;
+
+            if (!string.IsNullOrWhiteSpace(txtBoxGrafikSuchen.Text))
+            {
+                //TODO: testen ob das file wirklich png oder allgemein ein Bild ist
+                pictureBoxAntwort.Image = Image.FromFile(txtBoxGrafikSuchen.Text);
+            }
+        }
+
+        public string getQuestion()
+        {
+            return txtBoxTextFrage.Text;
+        }
+
+        public string getAnswer()
+        {
+            return txtBoxGrafikSuchen.Text;
+        }
 
         private void btnAbbildungSuchen_Click(object sender, EventArgs e)
         {
@@ -25,13 +47,14 @@ namespace VRC.Klassen
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 FileInfo info = new FileInfo(ofd.FileName);
-                if (info.Length > 1000000)
+                if (info.Length < 10000000)
                 {
-                   string file = ofd.FileName; //Dateiname der ausgewählten Datei
+                    txtBoxGrafikSuchen.Text = ofd.FileName; //Dateiname der ausgewählten Datei
+                    pictureBoxAntwort.Image = Image.FromFile(txtBoxGrafikSuchen.Text);
                 }
                 else
                 {
-                    MessageBox.Show("Die ausgewählte Grafik überschreitet die maximale Dateigröße. Bitte wählen Sie eine Datei unter 1MB.");
+                    MessageBox.Show("Die ausgewählte Grafik überschreitet die maximale Dateigröße. Bitte wählen Sie eine Datei unter 10MB.");
                 }
             }
         }

@@ -99,6 +99,7 @@ namespace VRC.Klassen
                 Refresh();
 
                 aktuellerKarteikartenIndex = listBxKarteikarten.SelectedIndex;
+                lblAnzVonKarten.Text = (aktuellerKarteikartenIndex + 1) + "/" + ObjRecordcardSet.RecordcardList.Count();
             }
             listBxKarteikarten.EndUpdate();
             listBxKarteikarten.SelectedIndexChanged += listBox1_SelectedIndexChanged;
@@ -174,6 +175,7 @@ namespace VRC.Klassen
                     listBxKarteikarten.Items.Add(card.getListboxName());
                 }
                 aktuellerKarteikartenIndex = listBxKarteikarten.Items.Count - 1;
+                lblAnzVonKarten.Text = (aktuellerKarteikartenIndex + 1) + "/" + ObjRecordcardSet.RecordcardList.Count();
             }
         }
 
@@ -188,7 +190,8 @@ namespace VRC.Klassen
                 //aktuellerKarteikartenIndex--;
                 txtBxThema.Text = "";
                 //listBxKarteikarten.SelectedIndex = -1;
-                aktuellerKarteikartenIndex = -1;
+                aktuellerKarteikartenIndex = - 1;
+                lblAnzVonKarten.Text = (aktuellerKarteikartenIndex + 1) + "/" + ObjRecordcardSet.RecordcardList.Count();
 
                 tabControl1.Controls.Clear();
             }

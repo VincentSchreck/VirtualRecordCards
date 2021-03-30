@@ -26,7 +26,7 @@ namespace VRC.Klassen
             if (!string.IsNullOrWhiteSpace(txtBoxGrafikSuchen.Text))
             {
                 //TODO: testen ob das file wirklich png oder allgemein ein Bild ist
-                pictureBoxAntwort.Image = Image.FromFile(txtBoxGrafikSuchen.Text);
+                //pictureBoxAntwort.Image = Image.FromFile(txtBoxGrafikSuchen.Text);
             }
         }
 

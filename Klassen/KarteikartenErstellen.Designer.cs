@@ -42,6 +42,7 @@ namespace VRC.Klassen
             this.comBoxKarteikartentyp = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAnzVonKarten = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@ namespace VRC.Klassen
             // 
             // btnSpeichern
             // 
-            this.btnSpeichern.Location = new System.Drawing.Point(408, 12);
+            this.btnSpeichern.Location = new System.Drawing.Point(408, 8);
             this.btnSpeichern.Name = "btnSpeichern";
             this.btnSpeichern.Size = new System.Drawing.Size(185, 26);
             this.btnSpeichern.TabIndex = 11;
@@ -123,7 +124,7 @@ namespace VRC.Klassen
             // 
             // btnVerwerfen
             // 
-            this.btnVerwerfen.Location = new System.Drawing.Point(599, 12);
+            this.btnVerwerfen.Location = new System.Drawing.Point(599, 8);
             this.btnVerwerfen.Name = "btnVerwerfen";
             this.btnVerwerfen.Size = new System.Drawing.Size(185, 26);
             this.btnVerwerfen.TabIndex = 11;
@@ -157,7 +158,7 @@ namespace VRC.Klassen
             // 
             // tabControl1
             // 
-            this.tabControl1.Location = new System.Drawing.Point(12, 44);
+            this.tabControl1.Location = new System.Drawing.Point(12, 40);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Size = new System.Drawing.Size(772, 274);
             this.tabControl1.TabIndex = 3;
@@ -178,11 +179,21 @@ namespace VRC.Klassen
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Karteikarten verwalten";
             // 
+            // lblAnzVonKarten
+            // 
+            this.lblAnzVonKarten.AutoSize = true;
+            this.lblAnzVonKarten.Location = new System.Drawing.Point(247, 15);
+            this.lblAnzVonKarten.Name = "lblAnzVonKarten";
+            this.lblAnzVonKarten.Size = new System.Drawing.Size(24, 13);
+            this.lblAnzVonKarten.TabIndex = 15;
+            this.lblAnzVonKarten.Text = "0/0";
+            // 
             // KarteikartenErstellen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 518);
+            this.Controls.Add(this.lblAnzVonKarten);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVerwerfen);
             this.Controls.Add(this.btnSpeichern);
@@ -214,6 +225,7 @@ namespace VRC.Klassen
         private System.Windows.Forms.ComboBox comBoxKarteikartentyp;
         private System.Windows.Forms.Panel tabControl1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblAnzVonKarten;
         //private System.Windows.Forms.TabPage tabPageAntwort;
         //private System.Windows.Forms.TabPage tabPageFrage;
     }

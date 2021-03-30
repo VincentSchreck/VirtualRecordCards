@@ -18,6 +18,7 @@ namespace VRC
             InitializeComponent();
         }
 
+        PruefEinstellungenGUI PruefEinstellungenFensteroeffner;
         Pruefmodus PruefmodusFensteroeffner;
         KarteikartenErstellen KarteikartenErstellerFensteroeffner;
         KarteikartenBearbeiten karteikartenBearbeiterFensteroeffner;
@@ -25,8 +26,13 @@ namespace VRC
 
         private void btnPruefmodus_Click(object sender, EventArgs e)
         {
-            PruefmodusFensteroeffner = new Pruefmodus();
-            PruefmodusFensteroeffner.ShowDialog(this);
+            PruefEinstellungenFensteroeffner = new PruefEinstellungenGUI();
+            PruefEinstellungenFensteroeffner.ShowDialog(this);
+            if(PruefEinstellungenFensteroeffner.DialogResult == DialogResult.OK)
+            {
+                PruefmodusFensteroeffner = new Pruefmodus(PruefEinstellungenFensteroeffner.pruefEinstellungData);
+                PruefmodusFensteroeffner.ShowDialog(this);
+            }
         }
         private void btnKarteikarteErstellen_Click(object sender, EventArgs e)
         {

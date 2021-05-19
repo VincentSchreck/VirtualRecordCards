@@ -41,6 +41,7 @@ namespace VRC.Klassen
             this.checkBoxZufallsreihenfolge = new System.Windows.Forms.CheckBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.numericUpDownGenerelleAnzahl = new System.Windows.Forms.NumericUpDown();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAnzWiederholungen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGenerelleAnzahl)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@ namespace VRC.Klassen
             // 
             this.lblWieOft.AutoSize = true;
             this.lblWieOft.Enabled = false;
-            this.lblWieOft.Location = new System.Drawing.Point(129, 111);
+            this.lblWieOft.Location = new System.Drawing.Point(122, 99);
             this.lblWieOft.Name = "lblWieOft";
             this.lblWieOft.Size = new System.Drawing.Size(44, 13);
             this.lblWieOft.TabIndex = 0;
@@ -95,7 +96,7 @@ namespace VRC.Klassen
             // numericUpDownAnzWiederholungen
             // 
             this.numericUpDownAnzWiederholungen.Enabled = false;
-            this.numericUpDownAnzWiederholungen.Location = new System.Drawing.Point(179, 109);
+            this.numericUpDownAnzWiederholungen.Location = new System.Drawing.Point(172, 97);
             this.numericUpDownAnzWiederholungen.Minimum = new decimal(new int[] {
             1,
             0,
@@ -114,7 +115,7 @@ namespace VRC.Klassen
             // 
             this.checkBoxNurFalschBeantwortete.AutoSize = true;
             this.checkBoxNurFalschBeantwortete.Enabled = false;
-            this.checkBoxNurFalschBeantwortete.Location = new System.Drawing.Point(132, 135);
+            this.checkBoxNurFalschBeantwortete.Location = new System.Drawing.Point(125, 123);
             this.checkBoxNurFalschBeantwortete.Name = "checkBoxNurFalschBeantwortete";
             this.checkBoxNurFalschBeantwortete.Size = new System.Drawing.Size(139, 17);
             this.checkBoxNurFalschBeantwortete.TabIndex = 5;
@@ -124,7 +125,7 @@ namespace VRC.Klassen
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 173);
+            this.label5.Location = new System.Drawing.Point(60, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 0;
@@ -133,7 +134,7 @@ namespace VRC.Klassen
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 215);
+            this.label7.Location = new System.Drawing.Point(9, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 0;
@@ -142,7 +143,7 @@ namespace VRC.Klassen
             // checkBoxZufallsreihenfolge
             // 
             this.checkBoxZufallsreihenfolge.AutoSize = true;
-            this.checkBoxZufallsreihenfolge.Location = new System.Drawing.Point(125, 215);
+            this.checkBoxZufallsreihenfolge.Location = new System.Drawing.Point(122, 224);
             this.checkBoxZufallsreihenfolge.Name = "checkBoxZufallsreihenfolge";
             this.checkBoxZufallsreihenfolge.Size = new System.Drawing.Size(15, 14);
             this.checkBoxZufallsreihenfolge.TabIndex = 5;
@@ -160,7 +161,8 @@ namespace VRC.Klassen
             // 
             // numericUpDownGenerelleAnzahl
             // 
-            this.numericUpDownGenerelleAnzahl.Location = new System.Drawing.Point(125, 171);
+            this.numericUpDownGenerelleAnzahl.Enabled = false;
+            this.numericUpDownGenerelleAnzahl.Location = new System.Drawing.Point(122, 181);
             this.numericUpDownGenerelleAnzahl.Minimum = new decimal(new int[] {
             1,
             0,
@@ -175,11 +177,25 @@ namespace VRC.Klassen
             0,
             0});
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(122, 161);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(43, 17);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Alle";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // PruefEinstellungenGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 278);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.checkBoxZufallsreihenfolge);
             this.Controls.Add(this.checkBoxNurFalschBeantwortete);
@@ -215,5 +231,6 @@ namespace VRC.Klassen
         private System.Windows.Forms.CheckBox checkBoxZufallsreihenfolge;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.NumericUpDown numericUpDownGenerelleAnzahl;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

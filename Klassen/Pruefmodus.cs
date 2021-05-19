@@ -14,21 +14,95 @@ namespace VRC.Klassen
 {
     public partial class Pruefmodus : Form
     {
+        private uint MaximalRunden = 1, aktuelleRunde = 1;
+        private List<Recordcard> falschBeantworteteRecordcards, aktuelleRecordcards;
+        uint generellAnzahlKarten;
+        bool nurfalschewiederholen, zufall;
+        int richtigeCount;
+
+        private RecordcardSet originalRecordcardSet;
+        private PruefEinstellungData pruefEinstellungData;
+        private int aktuellerKarteikartenIndex = 0;
+
+
         public Pruefmodus(PruefEinstellungData uebergebenePruefEinstellungData)
         {
             InitializeComponent();
             pruefEinstellungData = uebergebenePruefEinstellungData;
-            recordcardSet = XMLHandler.DeserializeFromXML(FileHandler.Read(pruefEinstellungData.speicherortKarteikartenset));
+            originalRecordcardSet = XMLHandler.DeserializeFromXML(FileHandler.Read(pruefEinstellungData.speicherortKarteikartenset));
+            falschBeantworteteRecordcards = new List<Recordcard>();
+            aktuelleRecordcards = new List<Recordcard>();
+
+            //Einstellungen übernehmen
+            if (pruefEinstellungData.wiederholungenErlauben)
+                MaximalRunden = pruefEinstellungData.anzahlWiederholungen;
+            zufall = pruefEinstellungData.zufallsreihenfolge;
+            nurfalschewiederholen = pruefEinstellungData.nurFalschBeantwortete;
+            generellAnzahlKarten = pruefEinstellungData.anzahlGenerellKarteikarten;
+
+            //--Initiale Einstellungen anwenden--
+            // Zufall
+            if (zufall)
+            {
+               originalRecordcardSet.wendeZufallsreihenfolgeAn();
+            }
+            aktuelleRecordcards = originalRecordcardSet.RecordcardList;
+            // Kartenbegrenzung
+            if(!pruefEinstellungData.alleKarteikarten)
+            {
+                uint anzahl = generellAnzahlKarten;
+                if (anzahl > originalRecordcardSet.RecordcardList.Count)
+                    anzahl = (uint)originalRecordcardSet.RecordcardList.Count;
+
+                aktuelleRecordcards = aktuelleRecordcards.GetRange(0, (int) anzahl);
+            }
+
+            // GO
             KarteikarteDarstellen();
         }
 
-        private RecordcardSet recordcardSet;
-        private PruefEinstellungData pruefEinstellungData;
-        private int aktuellerKarteikartenIndex = 0;
-
         private void KarteikarteDarstellen()
         {
-            Recordcard recordcard = recordcardSet.RecordcardList[aktuellerKarteikartenIndex];
+            if ((aktuellerKarteikartenIndex) < aktuelleRecordcards.Count)
+            {
+                //not'ing
+
+            }
+            else
+            {         
+                if (aktuelleRunde < MaximalRunden)
+                {
+                    if (nurfalschewiederholen)
+                    {
+                        if(falschBeantworteteRecordcards.Count == 0)
+                        {
+                            //Ergebnis und Ende
+                            MessageBox.Show("Richtig: " + richtigeCount + "Falsch: " + (originalRecordcardSet.RecordcardList.Count - richtigeCount));
+                            this.Close();
+                            this.Dispose();
+                            return;
+                        }
+                        
+                        aktuelleRecordcards = falschBeantworteteRecordcards;
+                    }
+
+                    //neue runde, neues glück
+                    MessageBox.Show("Neue Runde");
+                    aktuellerKarteikartenIndex = 0;
+                    aktuelleRunde++;
+                    falschBeantworteteRecordcards = new List<Recordcard>();
+                }
+                else
+                {
+                    //Ergebnis und Ende
+                    MessageBox.Show("Richtig: " + richtigeCount + "Falsch: " + (originalRecordcardSet.RecordcardList.Count - richtigeCount));
+                    this.Close();
+                    this.Dispose();
+                    return;
+                }
+            }
+
+            Recordcard recordcard = aktuelleRecordcards[aktuellerKarteikartenIndex];
             // Typ der Karteikarte, auf die gewechselt wird
             panelaReif.Controls.Clear();
             panelaAnswerson.Controls.Clear();
@@ -105,7 +179,7 @@ namespace VRC.Klassen
 
         private void btnAnwortAnzeigen_Click(object sender, EventArgs e)
         {
-            Recordcard recordcard = recordcardSet.RecordcardList[aktuellerKarteikartenIndex];
+            Recordcard recordcard = aktuelleRecordcards[aktuellerKarteikartenIndex];
             // Typ der Karteikarte, auf die gewechselt wird
             panelaAnswerson.Controls.Clear();
             switch (recordcard.KarteikartenTyp)
@@ -127,7 +201,6 @@ namespace VRC.Klassen
                     break;
                 case KarteikartenTyp.Aufzaehlung:
                     {
-                        // txtBxAntwortEingegeben
                         ListBox lstBxMusterloesung = new ListBox();
                         foreach (var item in recordcard.AnswerAufzaehlung)
                         {
@@ -141,9 +214,7 @@ namespace VRC.Klassen
                     break;
                 case KarteikartenTyp.MultipleChoice:
                     {
-                        // checkedListBoxAntwortEingegeben
                         TextBox txtBxMusterloesung = new TextBox();
-                        //txtBxAntwortEingegeben.Location = new System.Drawing.Point(12, 221);
                         txtBxMusterloesung.Multiline = true;
                         txtBxMusterloesung.Name = "txtBxAntwortEingegeben";
                         txtBxMusterloesung.Dock = DockStyle.Fill;
@@ -154,9 +225,6 @@ namespace VRC.Klassen
                     break;
                 case KarteikartenTyp.Abbildung:
                     textBoxFrage.Text = recordcard.QuestionAbbildung;
-                    // 
-                    // pictureBoxAntwortGegeben
-                    // 
                     PictureBox pictureBoxAntwortGegeben = new PictureBox();
                     try
                     {
@@ -182,59 +250,16 @@ namespace VRC.Klassen
 
         private void btnRichtig_Click(object sender, EventArgs e)
         {
-            //TODO: zu richtig beantworteten Karteikarten hinzufügen
-            if ((aktuellerKarteikartenIndex + 1) < recordcardSet.RecordcardList.Count)
-            {
-                aktuellerKarteikartenIndex++;
-                KarteikarteDarstellen();
-            }
-            else
-            {
-                MessageBox.Show("");
-            }
+            richtigeCount++;
+            aktuellerKarteikartenIndex++;
+            KarteikarteDarstellen();
         }
 
         private void btnFalsch_Click(object sender, EventArgs e)
         {
-            //TODO: zu falsch beantworteten Karteikarten hinzufügen
-            if ((aktuellerKarteikartenIndex + 1) < recordcardSet.RecordcardList.Count)
-            {
-                aktuellerKarteikartenIndex++;
-                KarteikarteDarstellen();
-            }
-            else
-            {
-                MessageBox.Show("");
-            }
+            falschBeantworteteRecordcards.Add(aktuelleRecordcards[aktuellerKarteikartenIndex]);
+            aktuellerKarteikartenIndex++;
+            KarteikarteDarstellen(); 
         }
     }
 }
-
-
-
-//// 
-//// pictureBoxAntwortGegeben
-//// 
-//this.pictureBoxAntwortGegeben.Location = new System.Drawing.Point(12, 222);
-//this.pictureBoxAntwortGegeben.Name = "pictureBoxAntwortGegeben";
-//this.pictureBoxAntwortGegeben.Size = new System.Drawing.Size(390, 187);
-//this.pictureBoxAntwortGegeben.TabIndex = 3;
-//this.pictureBoxAntwortGegeben.TabStop = false;
-
-//// 
-//// checkedListBoxAntwortEingegeben
-//// 
-//this.checkedListBoxAntwortEingegeben.FormattingEnabled = true;
-//this.checkedListBoxAntwortEingegeben.Location = new System.Drawing.Point(12, 222);
-//this.checkedListBoxAntwortEingegeben.Name = "checkedListBoxAntwortEingegeben";
-//this.checkedListBoxAntwortEingegeben.Size = new System.Drawing.Size(390, 184);
-//this.checkedListBoxAntwortEingegeben.TabIndex = 3;
-
-//// 
-//// txtBxAntwortEingegeben
-//// 
-//this.txtBxAntwortEingegeben.Location = new System.Drawing.Point(12, 221);
-//this.txtBxAntwortEingegeben.Multiline = true;
-//this.txtBxAntwortEingegeben.Name = "txtBxAntwortEingegeben";
-//this.txtBxAntwortEingegeben.Size = new System.Drawing.Size(390, 188);
-//this.txtBxAntwortEingegeben.TabIndex = 1;

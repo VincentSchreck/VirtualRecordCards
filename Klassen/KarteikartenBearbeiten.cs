@@ -15,20 +15,20 @@ namespace VRC.Klassen
 {
     public partial class KarteikartenBearbeiten : Form
     {
-        public KarteikartenBearbeiten()
+        public KarteikartenBearbeiten(string speicherort)
         {
             InitializeComponent();
 
             //GET Test.xml
-            String currentpath = System.IO.Directory.GetCurrentDirectory();
-            var directory = new DirectoryInfo(currentpath ?? Directory.GetCurrentDirectory());
-            while (directory != null && !directory.GetFiles("*.sln").Any())
-            {
-                directory = directory.Parent;
-            }
+            //String currentpath = System.IO.Directory.GetCurrentDirectory();
+            //var directory = new DirectoryInfo(currentpath ?? Directory.GetCurrentDirectory());
+            //while (directory != null && !directory.GetFiles("*.sln").Any())
+            //{
+            //    directory = directory.Parent;
+            //}
+            //FilePath = Path.Combine(directory.FullName, @"Test\Test.xml");
 
-            FilePath = Path.Combine(directory.FullName, @"Test\Test.xml");
-
+            FilePath = speicherort;
 
             ObjRecordcardSet = XMLHandler.DeserializeFromXML(FileHandler.Read(FilePath));
             txtBxFach.Text = ObjRecordcardSet.Subject;

@@ -18,32 +18,38 @@ namespace VRC
             InitializeComponent();
         }
 
-        PruefEinstellungenGUI PruefEinstellungenFensteroeffner;
-        Pruefmodus PruefmodusFensteroeffner;
-        KarteikartenErstellen KarteikartenErstellerFensteroeffner;
-        KarteikartenBearbeiten karteikartenBearbeiterFensteroeffner;
+        KarteikartenBearbeitenEinstellung KarteiKarteBearbeitenOeffner;
+        PruefEinstellungenGUI PruefEinstellungenFensterOeffner;
+        Pruefmodus PruefmodusFensterOeffner;
+        KarteikartenErstellen KarteikartenErstellerFensterOeffner;
+        KarteikartenBearbeiten karteikartenBearbeiterFensterOeffner;
         
-
         private void btnPruefmodus_Click(object sender, EventArgs e)
         {
-            PruefEinstellungenFensteroeffner = new PruefEinstellungenGUI();
-            PruefEinstellungenFensteroeffner.ShowDialog(this);
-            if(PruefEinstellungenFensteroeffner.DialogResult == DialogResult.OK)
+            PruefEinstellungenFensterOeffner = new PruefEinstellungenGUI();
+            PruefEinstellungenFensterOeffner.ShowDialog(this);
+            if(PruefEinstellungenFensterOeffner.DialogResult == DialogResult.OK)
             {
-                PruefmodusFensteroeffner = new Pruefmodus(PruefEinstellungenFensteroeffner.pruefEinstellungData);
-                PruefmodusFensteroeffner.ShowDialog(this);
+                PruefmodusFensterOeffner = new Pruefmodus(PruefEinstellungenFensterOeffner.pruefEinstellungData);
+                PruefmodusFensterOeffner.ShowDialog(this);
             }
         }
+
         private void btnKarteikarteErstellen_Click(object sender, EventArgs e)
         {
-            KarteikartenErstellerFensteroeffner = new KarteikartenErstellen();
-            KarteikartenErstellerFensteroeffner.ShowDialog(this);
+            KarteikartenErstellerFensterOeffner = new KarteikartenErstellen();
+            KarteikartenErstellerFensterOeffner.ShowDialog(this);
         }
 
         private void btnKarteikarteBearbeiten_Click(object sender, EventArgs e)
         {
-            karteikartenBearbeiterFensteroeffner = new KarteikartenBearbeiten();
-            karteikartenBearbeiterFensteroeffner.ShowDialog(this);
+            KarteiKarteBearbeitenOeffner = new KarteikartenBearbeitenEinstellung();
+            KarteiKarteBearbeitenOeffner.ShowDialog(this);
+            if (KarteiKarteBearbeitenOeffner.DialogResult == DialogResult.OK)
+            {
+                karteikartenBearbeiterFensterOeffner = new KarteikartenBearbeiten(KarteiKarteBearbeitenOeffner.speicherort);
+                karteikartenBearbeiterFensterOeffner.ShowDialog(this);
+            }
         }
     }
 }

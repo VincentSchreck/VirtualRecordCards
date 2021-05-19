@@ -41,6 +41,7 @@ namespace VRC.Klassen
                 pruefEinstellungData.wiederholungenErlauben = checkBoxWiederholungenZulassen.Checked;
                 pruefEinstellungData.anzahlWiederholungen = (uint)numericUpDownAnzWiederholungen.Value;
                 pruefEinstellungData.nurFalschBeantwortete = checkBoxNurFalschBeantwortete.Checked;
+                pruefEinstellungData.alleKarteikarten = checkBox1.Checked;
                 pruefEinstellungData.anzahlGenerellKarteikarten = (uint)numericUpDownGenerelleAnzahl.Value;
                 pruefEinstellungData.zufallsreihenfolge = checkBoxZufallsreihenfolge.Checked;
                 
@@ -59,6 +60,11 @@ namespace VRC.Klassen
             numericUpDownAnzWiederholungen.Enabled = checkBoxWiederholungenZulassen.Checked;
             checkBoxNurFalschBeantwortete.Enabled = checkBoxWiederholungenZulassen.Checked;
             lblWieOft.Enabled = checkBoxWiederholungenZulassen.Checked;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDownGenerelleAnzahl.Enabled = !checkBox1.Checked;
         }
     }
 }

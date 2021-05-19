@@ -66,6 +66,12 @@
     <Compile Include="Klassen\KarteikartenErstellen.Designer.cs">
       <DependentUpon>KarteikartenErstellen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Klassen\KarteikarteBearbeitenEinstellungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klassen\KarteikarteBearbeitenEinstellungen.Designer.cs">
+      <DependentUpon>KarteikarteBearbeitenEinstellungen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klassen\PruefEinstellungenGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <EmbeddedResource Include="Klassen\KarteikartenErstellen.resx">
       <DependentUpon>KarteikartenErstellen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\KarteikarteBearbeitenEinstellungen.resx">
+      <DependentUpon>KarteikarteBearbeitenEinstellungen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Klassen\PruefEinstellungenGUI.resx">
       <DependentUpon>PruefEinstellungenGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +152,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

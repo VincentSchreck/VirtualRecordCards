@@ -18,7 +18,7 @@ namespace VRC
             InitializeComponent();
         }
 
-        KarteikartenBearbeitenEinstellung KarteiKarteBearbeitenOeffner;
+        KarteikartenBearbeitenEinstellung KarteiKarteBearbeitenEinstellungOeffner;
         PruefEinstellungenGUI PruefEinstellungenFensterOeffner;
         Pruefmodus PruefmodusFensterOeffner;
         KarteikartenErstellen KarteikartenErstellerFensterOeffner;
@@ -43,11 +43,11 @@ namespace VRC
 
         private void btnKarteikarteBearbeiten_Click(object sender, EventArgs e)
         {
-            KarteiKarteBearbeitenOeffner = new KarteikartenBearbeitenEinstellung();
-            KarteiKarteBearbeitenOeffner.ShowDialog(this);
-            if (KarteiKarteBearbeitenOeffner.DialogResult == DialogResult.OK)
+            KarteiKarteBearbeitenEinstellungOeffner = new KarteikartenBearbeitenEinstellung();
+            KarteiKarteBearbeitenEinstellungOeffner.ShowDialog(this);
+            if (KarteiKarteBearbeitenEinstellungOeffner.DialogResult == DialogResult.OK)
             {
-                karteikartenBearbeiterFensterOeffner = new KarteikartenBearbeiten(KarteiKarteBearbeitenOeffner.speicherort);
+                karteikartenBearbeiterFensterOeffner = new KarteikartenBearbeiten(KarteiKarteBearbeitenEinstellungOeffner.speicherort);
                 karteikartenBearbeiterFensterOeffner.ShowDialog(this);
             }
         }

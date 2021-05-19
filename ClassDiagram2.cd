@@ -1,18 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="VRC.Handler.FileHandler" Collapsed="true">
+    <Position X="20.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Handler\FileHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Handler.XMLHandler" Collapsed="true">
+    <Position X="20.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Handler\XML-Handler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.HauptMenu">
+    <Position X="7.25" Y="14.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAIAACAAAAAQACCAAAACAEAACQBAAAAAAAABAAA=</HashCode>
+      <FileName>HauptMenu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="karteikartenBearbeiterFensterOeffner" />
+      <Field Name="PruefEinstellungenFensterOeffner" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VRC.Program" Collapsed="true">
+    <Position X="15.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.KarteikartenBearbeitenEinstellung" Collapsed="true">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAABAAAACAAIACAAAAIEAACAAAIAAAAAA=</HashCode>
+      <FileName>Klassen\KarteikarteBearbeitenEinstellungen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.KarteikartenBearbeiten">
+    <Position X="1" Y="5.75" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAGQAAQFAjAQgBQAABKAFAACAQBAAABAACBACAAABQQ=</HashCode>
+      <FileName>Klassen\KarteikartenBearbeiten.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.KarteikartenErstellen" Collapsed="true">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGQAAQFAjAQgBQAABKgFAACAQBAAABAACAACAAABQQ=</HashCode>
+      <FileName>Klassen\KarteikartenErstellen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.PruefEinstellungenGUI">
+    <Position X="7.75" Y="6.5" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIAQAABCAAABFAAACAAIACAAgAIEACCAAAIAEIABA=</HashCode>
+      <FileName>Klassen\PruefEinstellungenGUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pruefEinstellungData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VRC.Klassen.Pruefmodus" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EATAAAAAACAgAJqAAICAAAAKCAAACAghAAGiABIAABA=</HashCode>
+      <FileName>Klassen\Pruefmodus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardAbbildung" Collapsed="true">
+    <Position X="20.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAABAKECAAAAAAAACABAECAACAAAAAQAAAAEAABAA=</HashCode>
+      <FileName>Klassen\RecordcardAbbildung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardAufzaehlung" Collapsed="true">
+    <Position X="20.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAAAAAIACAAAAAAAACIAAECAACCAQAAwAAAAQAABAA=</HashCode>
+      <FileName>Klassen\RecordcardAufzaehlung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardMultipleChoice" Collapsed="true">
+    <Position X="20.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAIAGAAQAAQEACABAACAQCAAEAAQAAAAIAAAAg=</HashCode>
+      <FileName>Klassen\RecordcardMultipleChoice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardText" Collapsed="true">
+    <Position X="20.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAIACAAAAAAAACAAAUCAACAAAAAQAAAAAAABAA=</HashCode>
+      <FileName>Klassen\RecordcardText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Model.RecordcardSet">
+    <Position X="17" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Model\ClassRecordcardSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="RecordcardList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="VRC.Model.PruefEinstellungData">
+    <Position X="11.75" Y="4" Width="1.5" />
+    <InheritanceLine Type="System.Object" FixedToPoint="true">
+      <Path>
+        <Point X="16" Y="2.812" />
+        <Point X="16" Y="4.188" />
+        <Point X="13.25" Y="4.188" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAQAAAQACCAAAAAhAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\PruefEinstellungData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Properties.Resources" Collapsed="true">
+    <Position X="17.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Properties.Settings" Collapsed="true">
+    <Position X="20.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="15.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
   <Class Name="VRC.Model.Recordcard">
-    <Position X="0.5" Y="0.5" Width="7.75" />
+    <Position X="13.5" Y="5.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>BBAIAAAAAAAFAAAAgAAAAIAIAOBIBABACAAEACCiAAA=</HashCode>
       <FileName>Model\ClassRecordcard.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="VRC.Model.KarteikartenTyp" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACCAAA=</HashCode>
-      <FileName>Model\ClassRecordcard.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

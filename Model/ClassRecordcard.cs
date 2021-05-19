@@ -179,25 +179,5 @@ namespace VRC.Model
             }
         }
         #endregion
-
-        public string getListboxName()
-        {
-
-            string str = "";
-
-            if (Topic.Length > 8)
-                str += Topic.Substring(0, 7);
-            else
-                str += Topic;
-
-            str += "|";
-
-            //if (Question.Length > 8)
-            //    str += Question.Substring(0, 7);
-            //else
-            //    str += Question;
-
-            return str;
-        }
     }
 }

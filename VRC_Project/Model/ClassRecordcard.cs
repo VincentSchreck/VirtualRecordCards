@@ -192,10 +192,30 @@ namespace VRC.Model
 
             str += "|";
 
-            //if (Question.Length > 8)
-            //    str += Question.Substring(0, 7);
-            //else
-            //    str += Question;
+
+            String Question = "";
+
+
+            switch(KarteikartenTyp)
+            {
+                case KarteikartenTyp.Abbildung:
+                    Question = QuestionAbbildung;
+                    break;
+                case KarteikartenTyp.Aufzaehlung:
+                    Question = QuestionAufzaehlung;
+                    break;
+                case KarteikartenTyp.MultipleChoice:
+                    Question = QuestionMultipleChoice;
+                    break;
+                case KarteikartenTyp.Text:
+                    Question = QuestionText;
+                    break;
+            }
+
+            if (Question.Length > 8)
+                str += Question.Substring(0, 7);
+            else
+                str += Question;
 
             return str;
         }

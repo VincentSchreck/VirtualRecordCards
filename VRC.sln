@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRC", "VRC.csproj", "{6DE4D089-CCB4-4737-8327-34CA3D3110E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRC", "VRC_Project\VRC.csproj", "{6DE4D089-CCB4-4737-8327-34CA3D3110E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VRC_UnitTest", "VRC_UnitTest\VRC_UnitTest.csproj", "{5C04F124-10E6-4646-9138-25131F6475B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6DE4D089-CCB4-4737-8327-34CA3D3110E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE4D089-CCB4-4737-8327-34CA3D3110E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DE4D089-CCB4-4737-8327-34CA3D3110E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C04F124-10E6-4646-9138-25131F6475B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C04F124-10E6-4646-9138-25131F6475B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C04F124-10E6-4646-9138-25131F6475B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C04F124-10E6-4646-9138-25131F6475B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

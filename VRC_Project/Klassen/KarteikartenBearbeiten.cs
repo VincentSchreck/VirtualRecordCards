@@ -15,6 +15,17 @@ namespace VRC.Klassen
 {
     public partial class KarteikartenBearbeiten : Form
     {
+
+        private RecordcardSet ObjRecordcardSet;
+
+        private int aktuellerKarteikartenIndex = -1;
+
+        private RecordcardText recordcardText;
+        private RecordcardAufzaehlung recordcardAufzaehlung;
+        private RecordcardMultipleChoice recordcardMultipleChoice;
+        private RecordcardAbbildung recordcardAbbildung;
+        private String FilePath;// = @"Test\Test.xml"; //TODO FILEDIALOG..
+
         public KarteikartenBearbeiten(string speicherort)
         {
             InitializeComponent();
@@ -39,15 +50,6 @@ namespace VRC.Klassen
             }
         }
 
-        private RecordcardSet ObjRecordcardSet;
-        
-        private int aktuellerKarteikartenIndex = -1;
-
-        private RecordcardText recordcardText;
-        private RecordcardAufzaehlung recordcardAufzaehlung;
-        private RecordcardMultipleChoice recordcardMultipleChoice;
-        private RecordcardAbbildung recordcardAbbildung;
-        private String FilePath;// = @"Test\Test.xml"; //TODO FILEDIALOG..
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -9,8 +9,8 @@ namespace VRC.Model
 {
     public class RecordCardTextContent : RecordcardContent
     {
-        private string _answerText;
-        private string _questionText;
+        private string _answerText = "";
+        private string _questionText = "";
 
         public string AnswerText
         {

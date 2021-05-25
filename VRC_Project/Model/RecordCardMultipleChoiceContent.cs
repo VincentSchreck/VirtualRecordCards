@@ -11,7 +11,7 @@ namespace VRC.Model
     {
         private string _questionMultipleChoice = "";
         private List<string> _choicesMultipleChoice;
-        private string _answerMultipleChoice;
+        private string _answerMultipleChoice = "";
 
         public string QuestionMultipleChoice
         {

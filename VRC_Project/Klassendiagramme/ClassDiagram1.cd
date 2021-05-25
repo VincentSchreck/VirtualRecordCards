@@ -51,11 +51,11 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAQAAACAAABAAAACAAIACAAAAIEAACAAAIAAAAAA=</HashCode>
+      <HashCode>AQAACAAAACAEABAAAACAAIACAAAAIEAECAAAIAAAAAE=</HashCode>
       <FileName>Klassen\KarteikarteBearbeitenEinstellungen.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VRC.Klassen.KarteikartenBearbeiten">
+  <Class Name="VRC.Klassen.KarteikartenEditor">
     <Position X="7.25" Y="12.5" Width="3.75" />
     <InheritanceLine Type="System.Windows.Forms.Form" ManuallyRouted="true">
       <Path>
@@ -66,8 +66,8 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAGQAAQAACAQgBQAABKAFAACAQBAAABAACBACAAABAA=</HashCode>
-      <FileName>Klassen\KarteikartenBearbeiten.cs</FileName>
+      <HashCode>AAGYAoIAQCgQgJQBADKoFQACIQDAAABQACJACAAIBAg=</HashCode>
+      <FileName>Klassen\KarteikartenEditor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VRC.Klassen.PruefEinstellungenGUI">
@@ -87,11 +87,11 @@
         <Point X="9.25" Y="10.5" />
         <Point X="9.25" Y="9.618" />
         <Point X="4.5" Y="9.618" />
-        <Point X="4.5" Y="10.184" />
+        <Point X="4.5" Y="14.414" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>EATAAAAAACAgAJqAAICAAAAKCAAACAghAAGiABIAABA=</HashCode>
+      <HashCode>EQbAEAACMCAgAJqQBICAAAEKCABAiG5hAAGmBBIBACA=</HashCode>
       <FileName>Klassen\Pruefmodus.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,7 +102,7 @@
   <Class Name="VRC.Model.Recordcard" Collapsed="true">
     <Position X="4.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAgAAAIAAAAAACCAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAAACCAAAA=</HashCode>
       <FileName>Model\ClassRecordcard.cs</FileName>
     </TypeIdentifier>
   </Class>

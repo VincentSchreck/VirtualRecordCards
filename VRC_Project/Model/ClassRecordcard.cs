@@ -52,48 +52,31 @@ namespace VRC.Model
 
         public string getListboxName()
         {
-
-            string type = "";
+            string type = "", Question = "";
             if (content != null)
+            { 
                 type = content.getRecordCardType();
+                Question = content.getQuestion();
+            }
 
-            string result = type + "|";
-
-            if (Topic.Length > 8)
-                result += Topic.Substring(0, 7);
-            else
-                result += Topic;
-
-            result += "|";
-
-
-            String Question = "";
+            string result = type ;
+            result += "|" + LimitiereWord(Topic) + "|";
 
             if (content != null)
-                Question = content.getQuestion();
-
-            //switch (KarteikartenTyp)
-            //{
-            //    case KarteikartenTyp.Abbildung:
-            //        Question = QuestionAbbildung;
-            //        break;
-            //    case KarteikartenTyp.Aufzaehlung:
-            //        Question = QuestionAufzaehlung;
-            //        break;
-            //    case KarteikartenTyp.MultipleChoice:
-            //        Question = QuestionMultipleChoice;
-            //        break;
-            //    case KarteikartenTyp.Text:
-            //        Question = QuestionText;
-            //        break;
-            //}
-
-            if (Question.Length > 8)
-                result += Question.Substring(0, 7);
-            else
-                result += Question;
-
+            {       
+                result += LimitiereWord(Question);
+            }
             return result;
+        }
+
+        private static string LimitiereWord(string eingabe)
+        {
+            string temp = eingabe;
+            if (eingabe.Length > 8)
+                temp += eingabe.Substring(0, 7);
+            else
+                temp += eingabe;
+            return temp;
         }
     }
 }

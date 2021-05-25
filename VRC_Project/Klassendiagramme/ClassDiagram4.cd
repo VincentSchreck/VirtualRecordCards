@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="VRC.Klassen.KarteikartenEditor">
+    <Position X="7.25" Y="12.5" Width="3.75" />
+    <Members>
+      <Field Name="btnKarteikarteLoeschen" Hidden="true" />
+      <Field Name="btnNeueKarteikarte" Hidden="true" />
+      <Field Name="btnSpeichern" Hidden="true" />
+      <Field Name="btnVerwerfen" Hidden="true" />
+      <Field Name="comBoxKarteikartentyp" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="lblAnzVonKarten" Hidden="true" />
+      <Field Name="listBxKarteikarten" Hidden="true" />
+      <Field Name="tabControl1" Hidden="true" />
+      <Field Name="txtBxFach" Hidden="true" />
+      <Field Name="txtBxThema" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAGQAAAAACAQgBQAABKgFAACAQBAAABAACBACAAABAA=</HashCode>
+      <FileName>Klassen\KarteikartenEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

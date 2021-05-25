@@ -13,36 +13,61 @@ namespace VRC.Klassen
 {
     public partial class KarteikartenBearbeitenEinstellung: Form
     {
+        private string _speicherort = "";
+
+        public string Speicherort { get => _speicherort; set => _speicherort = value; }
+
         public KarteikartenBearbeitenEinstellung()
         {
             InitializeComponent();
         }
 
-        public string speicherort = "";
-
         private void btnKarteikartensetSuchen_Click(object sender, EventArgs e)
         {
-            // Speichern
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "xml Dateien (*.xml)|*.xml| Alle Dateien (*.*)|*.*"; ;
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                speicherort = ofd.FileName; //Dateiname der ausgewählten Datei
-                txtBxPfadLadeKarteikartenset.Text = speicherort;
-            }
+            SpeichereDateipfad(OeffneXMLFileDialog());
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(speicherort))
-            {            
+            PruefePfadUndBeende();
+        }
+
+
+
+        /*
+         *  Wie
+         **/
+
+        private void PruefePfadUndBeende()
+        {
+            if (!string.IsNullOrWhiteSpace(_speicherort))
+            {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+                this.Dispose();
             }
             else
-            {
                 MessageBox.Show("Bitte geben Sie einen gültigen Dateipfad an.");
-            }
         }
+
+        private void SpeichereDateipfad(string path)
+        {
+            _speicherort = path;
+            txtBxPfadLadeKarteikartenset.Text = path;
+        }
+
+        private static string OeffneXMLFileDialog()
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "xml Dateien (*.xml)|*.xml| Alle Dateien (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                return ofd.FileName;
+            }
+
+            return "";
+        }
+
+
     }
 }

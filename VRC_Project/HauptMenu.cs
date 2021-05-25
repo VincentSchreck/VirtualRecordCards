@@ -47,7 +47,7 @@ namespace VRC
             KarteiKarteBearbeitenEinstellungOeffner.ShowDialog(this);
             if (KarteiKarteBearbeitenEinstellungOeffner.DialogResult == DialogResult.OK)
             {
-                karteikartenBearbeiterFensterOeffner = new KarteikartenEditor(KarteiKarteBearbeitenEinstellungOeffner.speicherort);
+                karteikartenBearbeiterFensterOeffner = new KarteikartenEditor(KarteiKarteBearbeitenEinstellungOeffner.Speicherort);
                 karteikartenBearbeiterFensterOeffner.ShowDialog(this);
             }
         }

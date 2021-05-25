@@ -49,15 +49,15 @@
   <Class Name="VRC.Klassen.KarteikartenBearbeitenEinstellung">
     <Position X="1.25" Y="13.75" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAACAAABAAAACAAIACAAAAIEAACAAAIAAAAAA=</HashCode>
+      <HashCode>AQAACAAAACAEABAAAACAAIACAAAAIEAECAAAIAAAAAE=</HashCode>
       <FileName>Klassen\KarteikarteBearbeitenEinstellungen.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VRC.Klassen.KarteikartenBearbeiten">
+  <Class Name="VRC.Klassen.KarteikartenEditor">
     <Position X="11.75" Y="13.75" Width="5.25" />
     <TypeIdentifier>
-      <HashCode>AAGQAAQAACAQgBQAABKAFAACAQBAAABAACBACAAABAA=</HashCode>
-      <FileName>Klassen\KarteikartenBearbeiten.cs</FileName>
+      <HashCode>AAGYAoIAQCgQgJQBADKoFQACIQDAAABQACJACAAIBAg=</HashCode>
+      <FileName>Klassen\KarteikartenEditor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VRC.Klassen.PruefEinstellungenGUI">
@@ -70,7 +70,7 @@
   <Class Name="VRC.Klassen.Pruefmodus">
     <Position X="1.5" Y="5" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>EATAAAAAACAgAJqAAICAAAAKCAAACAghAAGiABIAABA=</HashCode>
+      <HashCode>EQbAEAACMCAgAJqQBICAAAEKCABAiG5hAAGmBBIBACA=</HashCode>
       <FileName>Klassen\Pruefmodus.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -152,12 +152,12 @@
     <InheritanceLine Type="System.Object" FixedToPoint="true">
       <Path>
         <Point X="27" Y="8.062" />
-        <Point X="27" Y="8.3" />
-        <Point X="26" Y="8.3" />
+        <Point X="27" Y="8.304" />
+        <Point X="26" Y="8.304" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAAACCAAAA=</HashCode>
       <FileName>Model\ClassRecordcard.cs</FileName>
     </TypeIdentifier>
   </Class>

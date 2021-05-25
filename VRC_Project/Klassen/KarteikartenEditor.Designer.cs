@@ -143,7 +143,7 @@ namespace VRC.Klassen
             this.comBoxKarteikartentyp.Items.AddRange(new object[] {
             "Text",
             "Abbildung",
-            "Aullistung",
+            "Aufzaehlung",
             "Multiple-Choice"});
             this.comBoxKarteikartentyp.Location = new System.Drawing.Point(515, 23);
             this.comBoxKarteikartentyp.Name = "comBoxKarteikartentyp";

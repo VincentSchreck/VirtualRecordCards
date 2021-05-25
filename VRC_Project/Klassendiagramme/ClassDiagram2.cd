@@ -16,6 +16,11 @@
   </Class>
   <Class Name="VRC.HauptMenu">
     <Position X="7" Y="7.25" Width="4.25" />
+    <AssociationLine Name="KarteiKarteBearbeitenEinstellungOeffner" Type="VRC.Klassen.KarteikartenBearbeitenEinstellung">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.494" Y="-0.971" />
+      </MemberNameLabel>
+    </AssociationLine>
     <AssociationLine Name="PruefEinstellungenFensterOeffner" Type="VRC.Klassen.PruefEinstellungenGUI" FixedFromPoint="true">
       <Path>
         <Point X="11.25" Y="7.312" />
@@ -25,40 +30,13 @@
         <Position X="0.054" Y="0.18" Height="0.182" Width="2.425" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="karteikartenBearbeiterFensterOeffner" Type="VRC.Klassen.KarteikartenBearbeiten">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-2.631" Y="0.597" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="KarteikartenErstellerFensterOeffner" Type="VRC.Klassen.KarteikartenErstellen">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-1.13" Y="0.579" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="KarteiKarteBearbeitenEinstellungOeffner" Type="VRC.Klassen.KarteikartenBearbeitenEinstellung">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.971" Y="0.494" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="PruefmodusFensterOeffner" Type="VRC.Klassen.Pruefmodus" FixedToPoint="true">
-      <Path>
-        <Point X="7" Y="7.312" />
-        <Point X="6" Y="7.312" />
-      </Path>
-      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="0.092" Y="0.134" Height="0.182" Width="1.86" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
       <HashCode>ACAEAAIAACAAAAAQACCAAAACAEAACQBAAAAAAAABAAA=</HashCode>
       <FileName>HauptMenu.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="PruefEinstellungenFensterOeffner" />
-      <Field Name="karteikartenBearbeiterFensterOeffner" />
-      <Field Name="KarteikartenErstellerFensterOeffner" />
       <Field Name="KarteiKarteBearbeitenEinstellungOeffner" />
-      <Field Name="PruefmodusFensterOeffner" />
+      <Field Name="PruefEinstellungenFensterOeffner" />
     </ShowAsAssociation>
   </Class>
   <Class Name="VRC.Program">
@@ -78,15 +56,8 @@
   <Class Name="VRC.Klassen.KarteikartenBearbeiten">
     <Position X="11.75" Y="13.75" Width="5.25" />
     <TypeIdentifier>
-      <HashCode>AAGQAAQFAjAQgBQAABKAFAACAQBAAABAACBACAAABQQ=</HashCode>
+      <HashCode>AAGQAAQAACAQgBQAABKAFAACAQBAAABAACBACAAABAA=</HashCode>
       <FileName>Klassen\KarteikartenBearbeiten.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="VRC.Klassen.KarteikartenErstellen">
-    <Position X="6" Y="13.75" Width="5.25" />
-    <TypeIdentifier>
-      <HashCode>AAGQAAQFAjAQgBQAABKgFAACAQBAAABAACAACAAABQQ=</HashCode>
-      <FileName>Klassen\KarteikartenErstellen.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VRC.Klassen.PruefEinstellungenGUI">
@@ -103,32 +74,32 @@
       <FileName>Klassen\Pruefmodus.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VRC.Klassen.RecordcardAbbildung">
+  <Class Name="VRC.Klassen.RecordcardAbbildungGUI">
     <Position X="43.25" Y="8.75" Width="4" />
     <TypeIdentifier>
-      <HashCode>IAAAABAKECAAAAAAAACABAECAACAAAAAQAAAAEAABAA=</HashCode>
-      <FileName>Klassen\RecordcardAbbildung.cs</FileName>
+      <HashCode>IQAAABAKECAAAAAAAACABAECAACAAAAAQAAAAEAABAA=</HashCode>
+      <FileName>Klassen\RecordcardAbbildungGUI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VRC.Klassen.RecordcardAufzaehlung">
+  <Class Name="VRC.Klassen.RecordcardAufzaehlungGUI">
     <Position X="37.75" Y="1.5" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>oAAAAAAIACAAAAAAAACIAAECAACCAQAAwAAAAQAABAA=</HashCode>
-      <FileName>Klassen\RecordcardAufzaehlung.cs</FileName>
+      <HashCode>oQAAAAAIACAAAAAAAACIAAECAACCAQAAwAAAAQAABAA=</HashCode>
+      <FileName>Klassen\RecordcardAufzaehlungGUI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VRC.Klassen.RecordcardMultipleChoice">
+  <Class Name="VRC.Klassen.RecordcardMultipleChoiceGUI">
     <Position X="37.5" Y="8.75" Width="5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAIAGAAQAAQEACABAACAQCAAEAAQAAAAIAAAAg=</HashCode>
-      <FileName>Klassen\RecordcardMultipleChoice.cs</FileName>
+      <HashCode>IQAAAAAIAGAAQAAQEACABAACAQCAAEAAQAAAAIAAAAg=</HashCode>
+      <FileName>Klassen\RecordcardMultipleChoiceGUI.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="VRC.Klassen.RecordcardText">
+  <Class Name="VRC.Klassen.RecordcardTextGUI">
     <Position X="43.75" Y="2.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAIACAAAAAAAACAAAUCAACAAAAAQAAAAAAABAA=</HashCode>
-      <FileName>Klassen\RecordcardText.cs</FileName>
+      <HashCode>IQAAAAAIACAAAAAAAACAAAUCAACAAAAAQAAAAAAABAA=</HashCode>
+      <FileName>Klassen\RecordcardTextGUI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VRC.Model.RecordcardSet">
@@ -181,12 +152,12 @@
     <InheritanceLine Type="System.Object" FixedToPoint="true">
       <Path>
         <Point X="27" Y="8.062" />
-        <Point X="27" Y="8.379" />
-        <Point X="26" Y="8.379" />
+        <Point X="27" Y="8.3" />
+        <Point X="26" Y="8.3" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>BBAIAAAAAAAFAAAAgAAAAIAIAOBIBABACAAEACCiAAA=</HashCode>
+      <HashCode>AAACAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
       <FileName>Model\ClassRecordcard.cs</FileName>
     </TypeIdentifier>
   </Class>

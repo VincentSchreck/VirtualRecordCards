@@ -23,17 +23,8 @@ namespace VRC.Klassen
         private RecordcardSet ObjRecordcardSet = new RecordcardSet();
         
         private int aktuellerKarteikartenIndex = -1;
+        private RecordCardTypeGUI contentGUI;
 
-        private RecordcardText recordcardText;
-        private RecordcardAufzaehlung recordcardAufzaehlung;
-        private RecordcardMultipleChoice recordcardMultipleChoice;
-        private RecordcardAbbildung recordcardAbbildung;
-
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,29 +36,8 @@ namespace VRC.Klassen
                 {
                     Recordcard aktuelleRecordcard = ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex];
                     aktuelleRecordcard.Topic = txtBxThema.Text;
-
-                    switch (aktuelleRecordcard.KarteikartenTyp)
-                    {
-                        case KarteikartenTyp.Text:
-                            aktuelleRecordcard.QuestionText = recordcardText.getQuestion();
-                            aktuelleRecordcard.AnswerText = recordcardText.getAnswer();
-                            break;
-                        case KarteikartenTyp.Aufzaehlung:
-                            aktuelleRecordcard.QuestionAufzaehlung = recordcardAufzaehlung.getQuestion();
-                            aktuelleRecordcard.AnswerAufzaehlung = recordcardAufzaehlung.getAnswer();
-                            break;
-                        case KarteikartenTyp.MultipleChoice:
-                            aktuelleRecordcard.QuestionMultipleChoice = recordcardMultipleChoice.getQuestion();
-                            aktuelleRecordcard.ChoicesMultipleChoice = recordcardMultipleChoice.getMultipleChoices();
-                            aktuelleRecordcard.AnswerMultipleChoice = recordcardMultipleChoice.getAnswer();
-                            break;
-                        case KarteikartenTyp.Abbildung:
-                            aktuelleRecordcard.QuestionAbbildung = recordcardAbbildung.getQuestion();
-                            aktuelleRecordcard.AnswerAbbildung = recordcardAbbildung.getAnswer();
-                            break;
-                    }
+                    ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].content = contentGUI.EntnehmeContent();
                     Refresh();
-
                     listBxKarteikarten.Items[aktuellerKarteikartenIndex] = aktuelleRecordcard.getListboxName();
 
                 }
@@ -76,26 +46,15 @@ namespace VRC.Klassen
                 txtBxThema.Text = recordcard.Topic;
 
                 tabControl1.Controls.Clear();
-                // Typ der Karteikarte, auf die gewechselt wird
-                switch (recordcard.KarteikartenTyp)
-                {
-                    case KarteikartenTyp.Text:
-                        recordcardText = new RecordcardText(recordcard.QuestionText, recordcard.AnswerText);
-                        this.tabControl1.Controls.Add(recordcardText);
-                        break;
-                    case KarteikartenTyp.Aufzaehlung:
-                        recordcardAufzaehlung = new RecordcardAufzaehlung(recordcard.QuestionAufzaehlung, recordcard.AnswerAufzaehlung);
-                        this.tabControl1.Controls.Add(recordcardAufzaehlung);
-                        break;
-                    case KarteikartenTyp.MultipleChoice:
-                        recordcardMultipleChoice = new RecordcardMultipleChoice(recordcard.QuestionMultipleChoice, recordcard.ChoicesMultipleChoice, recordcard.AnswerMultipleChoice);
-                        this.tabControl1.Controls.Add(recordcardMultipleChoice);
-                        break;
-                    case KarteikartenTyp.Abbildung:
-                        recordcardAbbildung = new RecordcardAbbildung(recordcard.QuestionAbbildung, recordcard.AnswerAbbildung);
-                        this.tabControl1.Controls.Add(recordcardAbbildung);
-                        break;
-                }
+                if(recordcard.content.GetType() == typeof(RecordCardTextContent))
+                    contentGUI = new RecordcardTextGUI((RecordCardTextContent)recordcard.content);
+                else if(recordcard.content.GetType() == typeof(RecordCardAbbildungContent))
+                    contentGUI = new RecordcardAbbildungGUI((RecordCardAbbildungContent)recordcard.content);
+                else if (recordcard.content.GetType() == typeof(RecordCardAufzaehlungContent))
+                    contentGUI = new RecordcardAufzaehlungGUI((RecordCardAufzaehlungContent)recordcard.content);
+                else if (recordcard.content.GetType() == typeof(RecordCardMultipleChoiceContent))
+                    contentGUI = new RecordcardMultipleChoiceGUI((RecordCardMultipleChoiceContent)recordcard.content);
+                this.tabControl1.Controls.Add(contentGUI);
                 Refresh();
 
                 aktuellerKarteikartenIndex = listBxKarteikarten.SelectedIndex;
@@ -110,29 +69,10 @@ namespace VRC.Klassen
             if(comBoxKarteikartentyp.SelectedIndex != -1)
             {
 
-                // Neue Karteikarte erstellen und die, die gerade bearbeitet wird speichern
+                // Neue Karteikarte erstellen und die, die gerade bearbeitet wird, speichern
                 if (aktuellerKarteikartenIndex != -1)
                 {
-                    switch (ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].KarteikartenTyp)
-                    {
-                        case KarteikartenTyp.Text:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionText = recordcardText.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerText = recordcardText.getAnswer();
-                            break;
-                        case KarteikartenTyp.Abbildung:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionAbbildung = recordcardAbbildung.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerAbbildung = recordcardAbbildung.getAnswer();
-                            break;
-                        case KarteikartenTyp.Aufzaehlung:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionAufzaehlung = recordcardAufzaehlung.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerAufzaehlung = recordcardAufzaehlung.getAnswer();
-                            break;
-                        case KarteikartenTyp.MultipleChoice:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionMultipleChoice = recordcardMultipleChoice.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].ChoicesMultipleChoice = recordcardMultipleChoice.getMultipleChoices();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerMultipleChoice = recordcardMultipleChoice.getAnswer();
-                            break;
-                    }
+                    ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].content = contentGUI.EntnehmeContent();
                 }
 
 
@@ -145,26 +85,20 @@ namespace VRC.Klassen
                 switch (comBoxKarteikartentyp.SelectedIndex)
                 {
                     case 0:
-                        recordcardText = new RecordcardText();
-                        this.tabControl1.Controls.Add(recordcardText);
-                        recordcard.KarteikartenTyp = KarteikartenTyp.Text;
+                        contentGUI = new RecordcardTextGUI();
                         break;
                     case 1:
-                        recordcardAufzaehlung = new RecordcardAufzaehlung();
-                        this.tabControl1.Controls.Add(recordcardAufzaehlung);
-                        recordcard.KarteikartenTyp = KarteikartenTyp.Aufzaehlung;
+                        contentGUI = new RecordcardAbbildungGUI();
                         break;
                     case 2:
-                        recordcardMultipleChoice = new RecordcardMultipleChoice();
-                        this.tabControl1.Controls.Add(recordcardMultipleChoice);
-                        recordcard.KarteikartenTyp = KarteikartenTyp.MultipleChoice;
+                        contentGUI = new RecordcardAufzaehlungGUI();
                         break;
                     case 3:
-                        recordcardAbbildung = new RecordcardAbbildung();
-                        this.tabControl1.Controls.Add(recordcardAbbildung);
-                        recordcard.KarteikartenTyp = KarteikartenTyp.Abbildung;
+                        contentGUI = new RecordcardMultipleChoiceGUI();
                         break;
+                        
                 }
+                this.tabControl1.Controls.Add(contentGUI);
                 Refresh();
 
                 ObjRecordcardSet.RecordcardList.Add(recordcard);
@@ -199,7 +133,7 @@ namespace VRC.Klassen
 
         private void btnSpeichern_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Wollen Sie die aktuelle Sammlung speichern und das Fenster schließen?", "Speichern und schließen?", MessageBoxButtons.YesNo);
+            var dialogResult = MessageBox.Show("Wollen Sie die aktuelle Sammlung speichern und das Fenster schließen?", "Speichern und schließen?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 if (aktuellerKarteikartenIndex != -1)
@@ -208,27 +142,7 @@ namespace VRC.Klassen
                     Recordcard aktuelleRecordcard = ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex];
                     aktuelleRecordcard.Topic = txtBxThema.Text;
                     listBxKarteikarten.Items[aktuellerKarteikartenIndex] = aktuelleRecordcard.getListboxName();
-
-                    switch (ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].KarteikartenTyp)
-                    {
-                        case KarteikartenTyp.Text:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionText = recordcardText.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerText = recordcardText.getAnswer();
-                            break;
-                        case KarteikartenTyp.Abbildung:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionAbbildung = recordcardAbbildung.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerAbbildung = recordcardAbbildung.getAnswer();
-                            break;
-                        case KarteikartenTyp.Aufzaehlung:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionAufzaehlung = recordcardAufzaehlung.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerAufzaehlung = recordcardAufzaehlung.getAnswer();
-                            break;
-                        case KarteikartenTyp.MultipleChoice:
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].QuestionMultipleChoice = recordcardMultipleChoice.getQuestion();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].ChoicesMultipleChoice = recordcardMultipleChoice.getMultipleChoices();
-                            ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].AnswerMultipleChoice = recordcardMultipleChoice.getAnswer();
-                            break;
-                    }
+                    this.ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].content = contentGUI.EntnehmeContent();
                 }
 
                 string speicherort = "";
@@ -267,45 +181,38 @@ namespace VRC.Klassen
             }
         }
 
-        private void txtBxFach_Leave(object sender, EventArgs e)
-        {
-            //TODO: String auslesen. Welches Fach
-        }
-
-        private void txtBxThema_Leave(object sender, EventArgs e)
-        {
-            //TODO: String auslesen. Welches Thema
-        }
-
         private void comBoxKarteikartentyp_SelectedIndexChanged(object sender, EventArgs e)
         {
             //tabControl1.Controls.Clear();
 
             //switch (comBoxKarteikartentyp.SelectedIndex)
             //{
+            //    case (int)KarteikartenTyp.Text:
+            //        this.tabControl1.Controls.Add(new RecordCardText().GetControls());
+            //        break;
+            //    case (int)KarteikartenTyp.Abbildung:
+            //        this.tabControl1.Controls.Add(new RecordCardAbbildung().GetControls());
+            //        break;
+
             //    case 0:
-            //        RecordcardText recordcardText = new RecordcardText();
+            //        RecordcardTextGUI recordcardText = new RecordcardTextGUI();
             //        this.tabControl1.Controls.Add(recordcardText);
             //        break;
             //    case 1:
-            //        RecordcardAufzaehlung recordcardAufzaehlung = new RecordcardAufzaehlung();
+            //        RecordcardAufzaehlungGUI recordcardAufzaehlung = new RecordcardAufzaehlungGUI();
             //        this.tabControl1.Controls.Add(recordcardAufzaehlung);
             //        break;
             //    case 2:
-            //        RecordcardMultipleChoice recordcardMultipleChoice = new RecordcardMultipleChoice();
+            //        RecordcardMultipleChoiceGUI recordcardMultipleChoice = new RecordcardMultipleChoiceGUI();
             //        this.tabControl1.Controls.Add(recordcardMultipleChoice);
             //        break;
             //    case 3:
-            //        RecordcardAbbildung recordcardAbbildung = new RecordcardAbbildung();
+            //        RecordcardAbbildungGUI recordcardAbbildung = new RecordcardAbbildungGUI();
             //        this.tabControl1.Controls.Add(recordcardAbbildung);
             //        break;
             //}
             //Refresh();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

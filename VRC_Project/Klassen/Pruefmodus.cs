@@ -109,70 +109,56 @@ namespace VRC.Klassen
             btnRichtig.Enabled = false;
             btnFalsch.Enabled = false;
             btnAnwortAnzeigen.Enabled = true;
-            switch (recordcard.KarteikartenTyp)
+
+            if (recordcard.content.GetType() == typeof(RecordCardTextContent))
             {
-                case KarteikartenTyp.Text:
-                    {
-                        textBoxFrage.Text = recordcard.QuestionText;
-                        // 
-                        // txtBxAntwortEingegeben
-                        // 
-                        TextBox txtBxAntwortEingegeben = new TextBox();
-                        //txtBxAntwortEingegeben.Location = new System.Drawing.Point(12, 221);
-                        txtBxAntwortEingegeben.Multiline = true;
-                        txtBxAntwortEingegeben.Name = "txtBxAntwortEingegeben";
-                        txtBxAntwortEingegeben.Dock = DockStyle.Fill;
-                        txtBxAntwortEingegeben.TabIndex = 1;
-                        panelaReif.Controls.Add(txtBxAntwortEingegeben);
-                    }
-                    break;
-                case KarteikartenTyp.Aufzaehlung:
-                    {
-                        textBoxFrage.Text = recordcard.QuestionAufzaehlung;
-                        // 
-                        // txtBxAntwortEingegeben
-                        // 
-                        TextBox txtBxAntwortEingegeben = new TextBox();
-                        //txtBxAntwortEingegeben.Location = new System.Drawing.Point(12, 221);
-                        txtBxAntwortEingegeben.Multiline = true;
-                        txtBxAntwortEingegeben.Name = "txtBxAntwortEingegeben";
-                        txtBxAntwortEingegeben.Dock = DockStyle.Fill;
-                        txtBxAntwortEingegeben.TabIndex = 1;
-                        panelaReif.Controls.Add(txtBxAntwortEingegeben);
-                    }
-                    break;
-                case KarteikartenTyp.MultipleChoice:
-                    // 
-                    // checkedListBoxAntwortEingegeben
-                    // 
-                    CheckedListBox checkedListBoxAntwortEingegeben = new CheckedListBox();
-                    checkedListBoxAntwortEingegeben.FormattingEnabled = true;
-                    //this.checkedListBoxAntwortEingegeben.Location = new System.Drawing.Point(12, 222);
-                    checkedListBoxAntwortEingegeben.Name = "checkedListBoxAntwortEingegeben";
-                    checkedListBoxAntwortEingegeben.Dock = DockStyle.Fill;
-                    checkedListBoxAntwortEingegeben.TabIndex = 3;
-                    textBoxFrage.Text = recordcard.QuestionMultipleChoice;
-                    panelaReif.Controls.Add(checkedListBoxAntwortEingegeben);
-                    foreach (var item in recordcard.ChoicesMultipleChoice)
-                    {
-                        checkedListBoxAntwortEingegeben.Items.Add(item);
-                    }
-                    break;
-                case KarteikartenTyp.Abbildung:
-                    textBoxFrage.Text = recordcard.QuestionAbbildung;
-                    // 
-                    // pictureBoxAntwortGegeben
-                    // 
-                    PictureBox pictureBoxAntwortGegeben = new PictureBox();
-                    //this.pictureBoxAntwortGegeben.Location = new System.Drawing.Point(12, 222);
-                    pictureBoxAntwortGegeben.Name = "pictureBoxAntwortGegeben";
-                    pictureBoxAntwortGegeben.Dock = DockStyle.Fill;
-                    pictureBoxAntwortGegeben.TabIndex = 3;
-                    pictureBoxAntwortGegeben.TabStop = false;
-                    pictureBoxAntwortGegeben.BackColor = Color.White;
-                    pictureBoxAntwortGegeben.BorderStyle = BorderStyle.FixedSingle;
-                    panelaReif.Controls.Add(pictureBoxAntwortGegeben);
-                    break;
+                textBoxFrage.Text = ((RecordCardTextContent)recordcard.content).getQuestion();
+                TextBox txtBxAntwortEingegeben = new TextBox();
+                txtBxAntwortEingegeben.Multiline = true;
+                txtBxAntwortEingegeben.Name = "txtBxAntwortEingegeben";
+                txtBxAntwortEingegeben.Dock = DockStyle.Fill;
+                txtBxAntwortEingegeben.TabIndex = 1;
+                panelaReif.Controls.Add(txtBxAntwortEingegeben);
+            }
+            else if (recordcard.content.GetType() == typeof(RecordCardAufzaehlungContent))
+            {
+                textBoxFrage.Text = ((RecordCardAufzaehlungContent)recordcard.content).getQuestion();
+                TextBox txtBxAntwortEingegeben = new TextBox();
+                txtBxAntwortEingegeben.Multiline = true;
+                txtBxAntwortEingegeben.Name = "txtBxAntwortEingegeben";
+                txtBxAntwortEingegeben.Dock = DockStyle.Fill;
+                txtBxAntwortEingegeben.TabIndex = 1;
+                panelaReif.Controls.Add(txtBxAntwortEingegeben);
+            }
+            else if (recordcard.content.GetType() == typeof(RecordCardMultipleChoiceContent))
+            {
+                CheckedListBox checkedListBoxAntwortEingegeben = new CheckedListBox();
+                checkedListBoxAntwortEingegeben.FormattingEnabled = true;
+                checkedListBoxAntwortEingegeben.Name = "checkedListBoxAntwortEingegeben";
+                checkedListBoxAntwortEingegeben.Dock = DockStyle.Fill;
+                checkedListBoxAntwortEingegeben.TabIndex = 3;
+                textBoxFrage.Text = ((RecordCardMultipleChoiceContent)recordcard.content).getQuestion();
+                panelaReif.Controls.Add(checkedListBoxAntwortEingegeben);
+                foreach (var item in ((RecordCardMultipleChoiceContent)recordcard.content).getMultipleChoiceList())
+                {
+                    checkedListBoxAntwortEingegeben.Items.Add(item);
+                }
+            }
+            else if (recordcard.content.GetType() == typeof(RecordCardAbbildungContent))
+            {
+                textBoxFrage.Text = ((RecordCardAbbildungContent)recordcard.content).getQuestion();
+                // 
+                // pictureBoxAntwortGegeben
+                // 
+                PictureBox pictureBoxAntwortGegeben = new PictureBox();
+                //this.pictureBoxAntwortGegeben.Location = new System.Drawing.Point(12, 222);
+                pictureBoxAntwortGegeben.Name = "pictureBoxAntwortGegeben";
+                pictureBoxAntwortGegeben.Dock = DockStyle.Fill;
+                pictureBoxAntwortGegeben.TabIndex = 3;
+                pictureBoxAntwortGegeben.TabStop = false;
+                pictureBoxAntwortGegeben.BackColor = Color.White;
+                pictureBoxAntwortGegeben.BorderStyle = BorderStyle.FixedSingle;
+                panelaReif.Controls.Add(pictureBoxAntwortGegeben);
             }
             Refresh();
         }
@@ -182,65 +168,57 @@ namespace VRC.Klassen
             Recordcard recordcard = aktuelleRecordcards[aktuellerKarteikartenIndex];
             // Typ der Karteikarte, auf die gewechselt wird
             panelaAnswerson.Controls.Clear();
-            switch (recordcard.KarteikartenTyp)
+
+            if (recordcard.content.GetType() == typeof(RecordCardTextContent))
             {
-                case KarteikartenTyp.Text:
-                    {
-                        // 
-                        // txtBxAntwortEingegeben
-                        // 
-                        TextBox txtBxMusterloesung = new TextBox();
-                        //txtBxAntwortEingegeben.Location = new System.Drawing.Point(12, 221);
-                        txtBxMusterloesung.Multiline = true;
-                        txtBxMusterloesung.Name = "txtBxAntwortEingegeben";
-                        txtBxMusterloesung.Dock = DockStyle.Fill;
-                        txtBxMusterloesung.TabIndex = 1;
-                        panelaAnswerson.Controls.Add(txtBxMusterloesung);
-                        txtBxMusterloesung.Text = recordcard.AnswerText;
-                    }
-                    break;
-                case KarteikartenTyp.Aufzaehlung:
-                    {
-                        ListBox lstBxMusterloesung = new ListBox();
-                        foreach (var item in recordcard.AnswerAufzaehlung)
-                        {
-                            lstBxMusterloesung.Items.Add(item);
-                        }
-                        lstBxMusterloesung.Name = "txtBxAntwortEingegeben";
-                        lstBxMusterloesung.Dock = DockStyle.Fill;
-                        lstBxMusterloesung.TabIndex = 1;
-                        panelaAnswerson.Controls.Add(lstBxMusterloesung);
-                    }
-                    break;
-                case KarteikartenTyp.MultipleChoice:
-                    {
-                        TextBox txtBxMusterloesung = new TextBox();
-                        txtBxMusterloesung.Multiline = true;
-                        txtBxMusterloesung.Name = "txtBxAntwortEingegeben";
-                        txtBxMusterloesung.Dock = DockStyle.Fill;
-                        txtBxMusterloesung.TabIndex = 1;
-                        panelaAnswerson.Controls.Add(txtBxMusterloesung);
-                        txtBxMusterloesung.Text = recordcard.AnswerMultipleChoice;
-                    }
-                    break;
-                case KarteikartenTyp.Abbildung:
-                    textBoxFrage.Text = recordcard.QuestionAbbildung;
-                    PictureBox pictureBoxAntwortGegeben = new PictureBox();
-                    try
-                    {
-                        pictureBoxAntwortGegeben.Image = Image.FromFile(recordcard.AnswerAbbildung);
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    pictureBoxAntwortGegeben.Name = "pictureBoxAntwortGegeben";
-                    pictureBoxAntwortGegeben.Dock = DockStyle.Fill;
-                    pictureBoxAntwortGegeben.TabIndex = 3;
-                    pictureBoxAntwortGegeben.TabStop = false;
-                    pictureBoxAntwortGegeben.BackColor = Color.White;
-                    panelaReif.Controls.Add(pictureBoxAntwortGegeben);
-                    break;
+                TextBox txtBxMusterloesung = new TextBox();
+                txtBxMusterloesung.Multiline = true;
+                txtBxMusterloesung.Name = "txtBxAntwortEingegeben";
+                txtBxMusterloesung.Dock = DockStyle.Fill;
+                txtBxMusterloesung.TabIndex = 1;
+                panelaAnswerson.Controls.Add(txtBxMusterloesung);
+                txtBxMusterloesung.Text = ((RecordCardTextContent)recordcard.content).AnswerText;
+            }
+            else if (recordcard.content.GetType() == typeof(RecordCardAufzaehlungContent))
+            {
+                ListBox lstBxMusterloesung = new ListBox();
+                foreach (var item in ((RecordCardAufzaehlungContent)recordcard.content).getAnswerAufzaehlung())
+                {
+                    lstBxMusterloesung.Items.Add(item);
+                }
+                lstBxMusterloesung.Name = "txtBxAntwortEingegeben";
+                lstBxMusterloesung.Dock = DockStyle.Fill;
+                lstBxMusterloesung.TabIndex = 1;
+                panelaAnswerson.Controls.Add(lstBxMusterloesung);
+            }
+            else if (recordcard.content.GetType() == typeof(RecordCardMultipleChoiceContent))
+            {
+                TextBox txtBxMusterloesung = new TextBox();
+                txtBxMusterloesung.Multiline = true;
+                txtBxMusterloesung.Name = "txtBxAntwortEingegeben";
+                txtBxMusterloesung.Dock = DockStyle.Fill;
+                txtBxMusterloesung.TabIndex = 1;
+                panelaAnswerson.Controls.Add(txtBxMusterloesung);
+                txtBxMusterloesung.Text = ((RecordCardMultipleChoiceContent)recordcard.content).AnswerMultipleChoice;
+            }
+            else if (recordcard.content.GetType() == typeof(RecordCardAbbildungContent))
+            {
+                textBoxFrage.Text = ((RecordCardAbbildungContent)recordcard.content).getQuestion();
+                PictureBox pictureBoxAntwortGegeben = new PictureBox();
+                try
+                {
+                    pictureBoxAntwortGegeben.Image = Image.FromFile(((RecordCardAbbildungContent)recordcard.content).ImagePath);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                pictureBoxAntwortGegeben.Name = "pictureBoxAntwortGegeben";
+                pictureBoxAntwortGegeben.Dock = DockStyle.Fill;
+                pictureBoxAntwortGegeben.TabIndex = 3;
+                pictureBoxAntwortGegeben.TabStop = false;
+                pictureBoxAntwortGegeben.BackColor = Color.White;
+                panelaReif.Controls.Add(pictureBoxAntwortGegeben);
             }
             Refresh();
             btnRichtig.Enabled = true;

@@ -81,39 +81,46 @@
     <Compile Include="Klassen\PruefEinstellungenGUI.Designer.cs">
       <DependentUpon>PruefEinstellungenGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardMultipleChoice.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Klassen\RecordcardMultipleChoice.Designer.cs">
-      <DependentUpon>RecordcardMultipleChoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Klassen\Pruefmodus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Klassen\Pruefmodus.Designer.cs">
       <DependentUpon>Pruefmodus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardAbbildung.cs">
+    <Compile Include="Klassen\RecordcardMultipleChoiceGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardAbbildung.Designer.cs">
-      <DependentUpon>RecordcardAbbildung.cs</DependentUpon>
+    <Compile Include="Klassen\RecordcardMultipleChoiceGUI.Designer.cs">
+      <DependentUpon>RecordcardMultipleChoiceGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardAufzaehlung.cs">
+    <Compile Include="Klassen\RecordcardAbbildungGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardAufzaehlung.Designer.cs">
-      <DependentUpon>RecordcardAufzaehlung.cs</DependentUpon>
+    <Compile Include="Klassen\RecordcardAbbildungGUI.Designer.cs">
+      <DependentUpon>RecordcardAbbildungGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardText.cs">
+    <Compile Include="Klassen\RecordcardAufzaehlungGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardText.Designer.cs">
-      <DependentUpon>RecordcardText.cs</DependentUpon>
+    <Compile Include="Klassen\RecordcardAufzaehlungGUI.Designer.cs">
+      <DependentUpon>RecordcardAufzaehlungGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klassen\RecordcardTextGUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Klassen\RecordcardTextGUI.Designer.cs">
+      <DependentUpon>RecordcardTextGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klassen\RecordCardTypeGUI.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Model\ClassRecordcard.cs" />
     <Compile Include="Model\ClassRecordcardSet.cs" />
     <Compile Include="Model\PruefEinstellungData.cs" />
+    <Compile Include="Model\RecordCardAufzaehlungContent.cs" />
+    <Compile Include="Model\RecordCardMultipleChoiceContent.cs" />
+    <Compile Include="Model\RecordCardAbbildungContent.cs" />
+    <Compile Include="Model\RecordCardTextContent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="HauptMenu.resx">
@@ -131,20 +138,20 @@
     <EmbeddedResource Include="Klassen\PruefEinstellungenGUI.resx">
       <DependentUpon>PruefEinstellungenGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardMultipleChoice.resx">
-      <DependentUpon>RecordcardMultipleChoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Klassen\Pruefmodus.resx">
       <DependentUpon>Pruefmodus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardAbbildung.resx">
-      <DependentUpon>RecordcardAbbildung.cs</DependentUpon>
+    <EmbeddedResource Include="Klassen\RecordcardMultipleChoiceGUI.resx">
+      <DependentUpon>RecordcardMultipleChoiceGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardAufzaehlung.resx">
-      <DependentUpon>RecordcardAufzaehlung.cs</DependentUpon>
+    <EmbeddedResource Include="Klassen\RecordcardAbbildungGUI.resx">
+      <DependentUpon>RecordcardAbbildungGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardText.resx">
-      <DependentUpon>RecordcardText.cs</DependentUpon>
+    <EmbeddedResource Include="Klassen\RecordcardAufzaehlungGUI.resx">
+      <DependentUpon>RecordcardAufzaehlungGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klassen\RecordcardTextGUI.resx">
+      <DependentUpon>RecordcardTextGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,8 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
+    <None Include="Klassendiagramme\ClassDiagram3.cd" />
+    <None Include="Klassendiagramme\ClassDiagram1.cd" />
+    <None Include="Klassendiagramme\ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

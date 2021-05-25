@@ -7,16 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VRC.Model;
 
 namespace VRC.Klassen
 {
-    public partial class RecordcardAufzaehlung : UserControl
+    public partial class RecordcardAufzaehlungGUI : RecordCardTypeGUI
     {
-        public RecordcardAufzaehlung()
+        public RecordcardAufzaehlungGUI()
         {
             InitializeComponent();
         }
-        public RecordcardAufzaehlung(string frage, List<String> antwort)
+
+        public RecordcardAufzaehlungGUI(RecordCardAufzaehlungContent content)
+        {
+            InitializeComponent();
+            txtBoxTextFrage.Text = content.getQuestion();
+            foreach (var item in content.getAnswerAufzaehlung())
+            {
+                listBoxAntwort.Items.Add(item);
+            }
+        }
+
+        public RecordcardAufzaehlungGUI(string frage, List<String> antwort)
         {
             InitializeComponent();
             txtBoxTextFrage.Text = frage;
@@ -58,6 +70,18 @@ namespace VRC.Klassen
                 listBoxAntwort.Items.RemoveAt(listBoxAntwort.SelectedIndex);
                 //TODO: Mehrere items gleichzeitig auswählen und löschen
             }
+        }
+
+
+        public override RecordcardContent EntnehmeContent()
+        {
+            RecordCardAufzaehlungContent content = new RecordCardAufzaehlungContent();
+            content.QuestionAufzaehlung = txtBoxTextFrage.Text;
+            foreach (var item in listBoxAntwort.Items)
+            {
+                content.addAnswerValue(item.ToString());
+            }
+            return content;
         }
     }
 }

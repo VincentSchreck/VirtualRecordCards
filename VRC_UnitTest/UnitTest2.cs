@@ -14,9 +14,9 @@ namespace VRC_UnitTest
             // arrange 
             RecordcardSet recordcardSet = new RecordcardSet();
             List<Recordcard> recordcardlist = new List<Recordcard>();
-            recordcardlist.Add(new Recordcard() { QuestionText = "Test1"});
-            recordcardlist.Add(new Recordcard() { QuestionText = "Test2" });
-            recordcardlist.Add(new Recordcard() { QuestionText = "Test3" });
+            //recordcardlist.Add(new Recordcard() { QuestionText = "Test1"});
+            //recordcardlist.Add(new Recordcard() { QuestionText = "Test2" });
+            //recordcardlist.Add(new Recordcard() { QuestionText = "Test3" });
             recordcardSet.RecordcardList = recordcardlist;
 
             // act

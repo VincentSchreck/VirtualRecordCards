@@ -7,17 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VRC.Model;
 
 namespace VRC.Klassen
 {
-    public partial class RecordcardMultipleChoice : UserControl
+    public partial class RecordcardMultipleChoiceGUI : RecordCardTypeGUI
     {
-        public RecordcardMultipleChoice()
+        public RecordcardMultipleChoiceGUI()
         {
             InitializeComponent();
         }
+        
 
-        public RecordcardMultipleChoice(string frage, List<String> choices, string answer)
+
+
+        public RecordcardMultipleChoiceGUI(RecordCardMultipleChoiceContent content)
+        {
+            InitializeComponent();
+            txtBoxMCFrage.Text = content.getQuestion();
+            foreach (var item in content.getMultipleChoiceList())
+            {
+                checkedListBoxMCFrage.Items.Add(item);
+            }
+            txtBoxMCAntwort.Text = content.AnswerMultipleChoice;
+        }
+
+        public RecordcardMultipleChoiceGUI(string frage, List<String> choices, string answer)
         {
             InitializeComponent();
             txtBoxMCFrage.Text = frage;
@@ -66,6 +81,18 @@ namespace VRC.Klassen
                 checkedListBoxMCFrage.Items.RemoveAt(checkedListBoxMCFrage.SelectedIndex);
                 //TODO: Mehrere items gleichzeitig auswählen und löschen
             }
+        }
+
+        public override RecordcardContent EntnehmeContent()
+        {
+            RecordCardMultipleChoiceContent recordCardMultipleChoiceContent = new RecordCardMultipleChoiceContent();
+            recordCardMultipleChoiceContent.QuestionMultipleChoice = txtBoxMCFrage.Text;
+            foreach (var item in checkedListBoxMCFrage.Items)
+            {
+                recordCardMultipleChoiceContent.addMultipleChoiceValue(item.ToString());
+            }
+            recordCardMultipleChoiceContent.AnswerMultipleChoice = txtBoxMCAntwort.Text;
+            return recordCardMultipleChoiceContent;
         }
     }
 }

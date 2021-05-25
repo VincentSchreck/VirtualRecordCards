@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="VRC.Model.Recordcard">
+    <Position X="6" Y="1" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
+      <FileName>Model\ClassRecordcard.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="content" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VRC.Model.RecordCardAbbildungContent">
+    <Position X="6" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAACAAAAAAAAIAIAIAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\RecordCardAbbildungContent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="VRC.Model.RecordCardAufzaehlungContent">
+    <Position X="6" Y="7" Width="5.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAKAAAAAIAAAAAAGgAAAAASAAAAAAAAAA=</HashCode>
+      <FileName>Model\RecordCardAufzaehlungContent.cs</FileName>
+      <NewMemberFileName>Model\RecordCardAbbildungContent.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VRC.Model.RecordCardMultipleChoiceContent">
+    <Position X="12.25" Y="6.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAACAAAAACAAAAAAAAIAYIABAAAAAQAAEAACAAAA=</HashCode>
+      <FileName>Model\RecordCardMultipleChoiceContent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VRC.Model.RecordCardTextContent">
+    <Position X="9.25" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAgAAAAAAAAAAABABAQAAAAAACAAA=</HashCode>
+      <FileName>Model\RecordCardTextContent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="VRC.Klassen.RecordCardTypeGUI">
+    <Position X="9" Y="10.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Klassen\RecordCardTypeGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardTextGUI" Collapsed="true">
+    <Position X="13.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAAAAIACAAAAAAAACAAAUCAACAAAAAQAAAAAAABAA=</HashCode>
+      <FileName>Klassen\RecordcardTextGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardMultipleChoiceGUI" Collapsed="true">
+    <Position X="6" Y="11.75" Width="1.5" />
+    <InheritanceLine Type="VRC.Klassen.RecordCardTypeGUI" FixedToPoint="true">
+      <Path>
+        <Point X="9" Y="11.463" />
+        <Point X="8.846" Y="11.463" />
+        <Point X="8.846" Y="11.596" />
+        <Point X="6.688" Y="11.596" />
+        <Point X="6.688" Y="11.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IQAAAAAIAGAAQAAQEACABAACAQCAAEAAQAAAAIAAAAg=</HashCode>
+      <FileName>Klassen\RecordcardMultipleChoiceGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardAufzaehlungGUI" Collapsed="true">
+    <Position X="13.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oQAAAAAIACAAAAAAAACIAAECAACCAQAAwAAAAQAABAA=</HashCode>
+      <FileName>Klassen\RecordcardAufzaehlungGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.RecordcardAbbildungGUI" Collapsed="true">
+    <Position X="6" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IQAAABAKECAAAAAAAACABAECAACAAAAAQAAAAEAABAA=</HashCode>
+      <FileName>Klassen\RecordcardAbbildungGUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VRC.Klassen.KarteikartenBearbeiten" Collapsed="true">
+    <Position X="8" Y="13" Width="2" />
+    <AssociationLine Name="contentGUI" Type="VRC.Klassen.RecordCardTypeGUI" FixedFromPoint="true">
+      <Path>
+        <Point X="9.25" Y="13" />
+        <Point X="9.25" Y="12.175" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAGQAAQAACAQgBQAABKAFAACAQBAAABAACBACAAABAA=</HashCode>
+      <FileName>Klassen\KarteikartenBearbeiten.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="contentGUI" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="VRC.Klassen.KarteikartenErstellen" Collapsed="true">
+    <Position X="11.5" Y="13" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAGQAAAAACAQgBQAABKgFAACAQBAAABAACAACAAABAA=</HashCode>
+      <FileName>Klassen\KarteikartenErstellen.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="contentGUI" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="VRC.Model.RecordcardContent">
+    <Position X="11.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\ClassRecordcard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

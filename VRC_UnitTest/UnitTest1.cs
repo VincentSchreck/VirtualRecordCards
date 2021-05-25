@@ -12,9 +12,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.Text;
+            //recordcard.KarteikartenTyp = KarteikartenTyp.Text;
             recordcard.Topic = "";
-            recordcard.QuestionText = "";
+            //recordcard.QuestionText = "";
 
             // Act
             String result = recordcard.getListboxName();
@@ -28,9 +28,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.Text;
+            //recordcard.KarteikartenTyp = KarteikartenTyp.Text;
             recordcard.Topic = "Hallo";
-            recordcard.QuestionText = "Test";
+            //recordcard.QuestionText = "Test";
 
             // Act
             String result = recordcard.getListboxName();
@@ -44,9 +44,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.Text;
+            //recordcard.KarteikartenTyp = KarteikartenTyp.Text;
             recordcard.Topic = "HalloHallo";
-            recordcard.QuestionText = "Test";
+            //recordcard.QuestionText = "Test";
 
             // Act
             String result = recordcard.getListboxName();
@@ -60,9 +60,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.Text;
+           // recordcard.KarteikartenTyp = KarteikartenTyp.Text;
             recordcard.Topic = "Hallo";
-            recordcard.QuestionText = "TestTestTest";
+            //recordcard.QuestionText = "TestTestTest";
 
             // Act
             String result = recordcard.getListboxName();
@@ -76,9 +76,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.Abbildung;
+            //recordcard.KarteikartenTyp = KarteikartenTyp.Abbildung;
             recordcard.Topic = "Hallo";
-            recordcard.QuestionAbbildung = "Test";
+            //recordcard.QuestionAbbildung = "Test";
 
             // Act
             String result = recordcard.getListboxName();
@@ -92,9 +92,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.Aufzaehlung;
+            //recordcard.KarteikartenTyp = KarteikartenTyp.Aufzaehlung;
             recordcard.Topic = "Hallo";
-            recordcard.QuestionAufzaehlung = "Test";
+           // recordcard.QuestionAufzaehlung = "Test";
 
             // Act
             String result = recordcard.getListboxName();
@@ -108,9 +108,9 @@ namespace VRC_UnitTest
         {
             // Arrange
             Recordcard recordcard = new Recordcard();
-            recordcard.KarteikartenTyp = KarteikartenTyp.MultipleChoice;
+            //recordcard.KarteikartenTyp = KarteikartenTyp.MultipleChoice;
             recordcard.Topic = "Hallo";
-            recordcard.QuestionMultipleChoice = "Test";
+           // recordcard.QuestionMultipleChoice = "Test";
 
             // Act
             String result = recordcard.getListboxName();

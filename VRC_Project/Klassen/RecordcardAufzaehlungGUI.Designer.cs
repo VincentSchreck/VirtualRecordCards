@@ -1,7 +1,7 @@
 ﻿
 namespace VRC.Klassen
 {
-    partial class RecordcardAufzaehlung
+    partial class RecordcardAufzaehlungGUI
     {
         /// <summary> 
         /// Required designer variable.

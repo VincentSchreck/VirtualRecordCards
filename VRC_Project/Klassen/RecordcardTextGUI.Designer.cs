@@ -1,7 +1,7 @@
 ﻿
 namespace VRC.Klassen
 {
-    partial class RecordcardText
+    partial class RecordcardTextGUI
     {
         /// <summary> 
         /// Required designer variable.

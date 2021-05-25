@@ -1,7 +1,7 @@
 ﻿
 namespace VRC.Klassen
 {
-    partial class RecordcardAbbildung
+    partial class RecordcardAbbildungGUI
     {
         /// <summary> 
         /// Required designer variable.
@@ -105,8 +105,6 @@ namespace VRC.Klassen
             this.txtBoxGrafikSuchen.Name = "txtBoxGrafikSuchen";
             this.txtBoxGrafikSuchen.Size = new System.Drawing.Size(578, 20);
             this.txtBoxGrafikSuchen.TabIndex = 2;
-            this.txtBoxGrafikSuchen.Enter += new System.EventHandler(this.txtBoxGrafikSuchen_Leave);
-            this.txtBoxGrafikSuchen.Leave += new System.EventHandler(this.txtBoxGrafikSuchen_Leave);
             // 
             // Label1
             // 

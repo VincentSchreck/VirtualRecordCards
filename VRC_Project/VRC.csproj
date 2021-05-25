@@ -57,17 +57,11 @@
       <DependentUpon>HauptMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Handler\XML-Handler.cs" />
-    <Compile Include="Klassen\KarteikartenBearbeiten.cs">
+    <Compile Include="Klassen\KarteikartenEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Klassen\KarteikartenBearbeiten.Designer.cs">
-      <DependentUpon>KarteikartenBearbeiten.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Klassen\KarteikartenErstellen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Klassen\KarteikartenErstellen.Designer.cs">
-      <DependentUpon>KarteikartenErstellen.cs</DependentUpon>
+    <Compile Include="Klassen\KarteikartenEditor.Designer.cs">
+      <DependentUpon>KarteikartenEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Klassen\KarteikarteBearbeitenEinstellungen.cs">
       <SubType>Form</SubType>
@@ -126,11 +120,8 @@
     <EmbeddedResource Include="HauptMenu.resx">
       <DependentUpon>HauptMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\KarteikartenBearbeiten.resx">
-      <DependentUpon>KarteikartenBearbeiten.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\KarteikartenErstellen.resx">
-      <DependentUpon>KarteikartenErstellen.cs</DependentUpon>
+    <EmbeddedResource Include="Klassen\KarteikartenEditor.resx">
+      <DependentUpon>KarteikartenEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Klassen\KarteikarteBearbeitenEinstellungen.resx">
       <DependentUpon>KarteikarteBearbeitenEinstellungen.cs</DependentUpon>

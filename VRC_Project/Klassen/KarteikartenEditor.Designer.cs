@@ -1,7 +1,7 @@
 ﻿
 namespace VRC.Klassen
 {
-    partial class KarteikartenErstellen
+    partial class KarteikartenEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -48,10 +48,9 @@ namespace VRC.Klassen
             // 
             // btnKarteikarteLoeschen
             // 
-            this.btnKarteikarteLoeschen.Location = new System.Drawing.Point(540, 169);
-            this.btnKarteikarteLoeschen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKarteikarteLoeschen.Location = new System.Drawing.Point(405, 137);
             this.btnKarteikarteLoeschen.Name = "btnKarteikarteLoeschen";
-            this.btnKarteikarteLoeschen.Size = new System.Drawing.Size(457, 28);
+            this.btnKarteikarteLoeschen.Size = new System.Drawing.Size(343, 23);
             this.btnKarteikarteLoeschen.TabIndex = 4;
             this.btnKarteikarteLoeschen.Text = "Karteikarte löschen";
             this.btnKarteikarteLoeschen.UseVisualStyleBackColor = true;
@@ -59,10 +58,9 @@ namespace VRC.Klassen
             // 
             // btnNeueKarteikarte
             // 
-            this.btnNeueKarteikarte.Location = new System.Drawing.Point(12, 169);
-            this.btnNeueKarteikarte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNeueKarteikarte.Location = new System.Drawing.Point(9, 137);
             this.btnNeueKarteikarte.Name = "btnNeueKarteikarte";
-            this.btnNeueKarteikarte.Size = new System.Drawing.Size(453, 28);
+            this.btnNeueKarteikarte.Size = new System.Drawing.Size(340, 23);
             this.btnNeueKarteikarte.TabIndex = 5;
             this.btnNeueKarteikarte.Text = "Neue Karteikarte kreieren";
             this.btnNeueKarteikarte.UseVisualStyleBackColor = true;
@@ -71,56 +69,49 @@ namespace VRC.Klassen
             // listBxKarteikarten
             // 
             this.listBxKarteikarten.FormattingEnabled = true;
-            this.listBxKarteikarten.ItemHeight = 16;
-            this.listBxKarteikarten.Location = new System.Drawing.Point(12, 79);
-            this.listBxKarteikarten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBxKarteikarten.Location = new System.Drawing.Point(9, 64);
             this.listBxKarteikarten.Name = "listBxKarteikarten";
-            this.listBxKarteikarten.Size = new System.Drawing.Size(984, 68);
+            this.listBxKarteikarten.Size = new System.Drawing.Size(739, 56);
             this.listBxKarteikarten.TabIndex = 6;
             this.listBxKarteikarten.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(9, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Fach:";
             // 
             // txtBxFach
             // 
-            this.txtBxFach.Location = new System.Drawing.Point(65, 15);
-            this.txtBxFach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBxFach.Location = new System.Drawing.Point(49, 12);
             this.txtBxFach.Name = "txtBxFach";
-            this.txtBxFach.Size = new System.Drawing.Size(232, 22);
+            this.txtBxFach.Size = new System.Drawing.Size(175, 20);
             this.txtBxFach.TabIndex = 8;
             // 
             // txtBxThema
             // 
-            this.txtBxThema.Location = new System.Drawing.Point(73, 28);
-            this.txtBxThema.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBxThema.Location = new System.Drawing.Point(55, 23);
             this.txtBxThema.Name = "txtBxThema";
-            this.txtBxThema.Size = new System.Drawing.Size(391, 22);
+            this.txtBxThema.Size = new System.Drawing.Size(294, 20);
             this.txtBxThema.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(6, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 16);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Thema:";
             // 
             // btnSpeichern
             // 
-            this.btnSpeichern.Location = new System.Drawing.Point(544, 10);
-            this.btnSpeichern.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSpeichern.Location = new System.Drawing.Point(408, 8);
             this.btnSpeichern.Name = "btnSpeichern";
-            this.btnSpeichern.Size = new System.Drawing.Size(247, 32);
+            this.btnSpeichern.Size = new System.Drawing.Size(185, 26);
             this.btnSpeichern.TabIndex = 11;
             this.btnSpeichern.Text = "Sammlung speichern";
             this.btnSpeichern.UseVisualStyleBackColor = true;
@@ -128,10 +119,9 @@ namespace VRC.Klassen
             // 
             // btnVerwerfen
             // 
-            this.btnVerwerfen.Location = new System.Drawing.Point(799, 10);
-            this.btnVerwerfen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerwerfen.Location = new System.Drawing.Point(599, 8);
             this.btnVerwerfen.Name = "btnVerwerfen";
-            this.btnVerwerfen.Size = new System.Drawing.Size(247, 32);
+            this.btnVerwerfen.Size = new System.Drawing.Size(185, 26);
             this.btnVerwerfen.TabIndex = 11;
             this.btnVerwerfen.Text = "Sammlung verwerfen";
             this.btnVerwerfen.UseVisualStyleBackColor = true;
@@ -140,10 +130,9 @@ namespace VRC.Klassen
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(571, 32);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(428, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 16);
+            this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Karteikartentyp:";
             // 
@@ -156,19 +145,17 @@ namespace VRC.Klassen
             "Abbildung",
             "Aullistung",
             "Multiple-Choice"});
-            this.comBoxKarteikartentyp.Location = new System.Drawing.Point(687, 28);
-            this.comBoxKarteikartentyp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comBoxKarteikartentyp.Location = new System.Drawing.Point(515, 23);
             this.comBoxKarteikartentyp.Name = "comBoxKarteikartentyp";
-            this.comBoxKarteikartentyp.Size = new System.Drawing.Size(309, 24);
+            this.comBoxKarteikartentyp.Size = new System.Drawing.Size(233, 21);
             this.comBoxKarteikartentyp.TabIndex = 13;
             this.comBoxKarteikartentyp.SelectedIndexChanged += new System.EventHandler(this.comBoxKarteikartentyp_SelectedIndexChanged);
             // 
             // tabControl1
             // 
-            this.tabControl1.Location = new System.Drawing.Point(16, 49);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(12, 40);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Size = new System.Drawing.Size(1029, 337);
+            this.tabControl1.Size = new System.Drawing.Size(772, 274);
             this.tabControl1.TabIndex = 3;
             // 
             // groupBox1
@@ -180,11 +167,9 @@ namespace VRC.Klassen
             this.groupBox1.Controls.Add(this.btnNeueKarteikarte);
             this.groupBox1.Controls.Add(this.listBxKarteikarten);
             this.groupBox1.Controls.Add(this.btnKarteikarteLoeschen);
-            this.groupBox1.Location = new System.Drawing.Point(27, 415);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(20, 337);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1019, 204);
+            this.groupBox1.Size = new System.Drawing.Size(764, 166);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Karteikarten verwalten";
@@ -192,18 +177,17 @@ namespace VRC.Klassen
             // lblAnzVonKarten
             // 
             this.lblAnzVonKarten.AutoSize = true;
-            this.lblAnzVonKarten.Location = new System.Drawing.Point(329, 18);
-            this.lblAnzVonKarten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnzVonKarten.Location = new System.Drawing.Point(247, 15);
             this.lblAnzVonKarten.Name = "lblAnzVonKarten";
-            this.lblAnzVonKarten.Size = new System.Drawing.Size(26, 16);
+            this.lblAnzVonKarten.Size = new System.Drawing.Size(24, 13);
             this.lblAnzVonKarten.TabIndex = 15;
             this.lblAnzVonKarten.Text = "0/0";
             // 
-            // KarteikartenErstellenNEW
+            // KarteikartenEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 638);
+            this.ClientSize = new System.Drawing.Size(800, 518);
             this.Controls.Add(this.lblAnzVonKarten);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVerwerfen);
@@ -212,10 +196,9 @@ namespace VRC.Klassen
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.Name = "KarteikartenErstellenNEW";
-            this.Text = "KarteikartenErstellen";
+            this.Name = "KarteikartenEditor";
+            this.Text = "Karteikarten-Editor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -154,8 +154,6 @@ namespace VRC.Handler
             recordcardsetNode.Attributes.Append(subjectAttribute);
             xmlDocument.AppendChild(recordcardsetNode);
 
-            //TODO: Zeilenumbrüche werden beim Umwandeln in XML-Format nicht dargestellt, sondern nur als Leerzeichen.
-
             foreach (Recordcard recordcard in recordcardSet.RecordcardList)
             {
                 XmlNode recordcardNode = xmlDocument.CreateElement("recordcard");

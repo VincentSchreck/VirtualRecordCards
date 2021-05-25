@@ -12,18 +12,39 @@ using VRC.Handler;
 
 namespace VRC.Klassen
 {
-    public partial class KarteikartenErstellen : Form
+    public partial class KarteikartenEditor : Form
     {
-        public KarteikartenErstellen()
+        private RecordcardSet ObjRecordcardSet;
+        private int aktuellerKarteikartenIndex = -1;
+        private RecordCardTypeGUI contentGUI;
+        private String FilePath;
+
+        public KarteikartenEditor()
         {
+            ObjRecordcardSet = new RecordcardSet();
             InitializeComponent();
         }
 
+        public KarteikartenEditor(string speicherort)
+        {
+            InitializeComponent();
 
-        private RecordcardSet ObjRecordcardSet = new RecordcardSet();
-        
-        private int aktuellerKarteikartenIndex = -1;
-        private RecordCardTypeGUI contentGUI;
+            FilePath = speicherort;
+
+            ObjRecordcardSet = XMLHandler.DeserializeFromXML(FileHandler.Read(FilePath));
+            txtBxFach.Text = ObjRecordcardSet.Subject;
+            listBxKarteikarten.Items.Clear();
+            foreach (Recordcard card in ObjRecordcardSet.RecordcardList)
+            {
+                listBxKarteikarten.Items.Add(card.getListboxName());
+            }
+
+
+            this.Text = "Karteikarte bearbeiten";
+            btnSpeichern.Text = "Änderung speichern";
+            btnVerwerfen.Text = "Änderung verwerfen";
+        }
+
 
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,17 +166,19 @@ namespace VRC.Klassen
                     this.ObjRecordcardSet.RecordcardList[aktuellerKarteikartenIndex].content = contentGUI.EntnehmeContent();
                 }
 
-                string speicherort = "";
                 // Speichern
-                SaveFileDialog ofd = new SaveFileDialog();
-                ofd.Filter = "xml Dateien (*.xml)|*.xml| Alle Dateien (*.*)|*.*"; ;
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    speicherort = ofd.FileName; //Dateiname der ausgewählten Datei
-                }
+                if(FilePath == null)
+                { 
+                    SaveFileDialog ofd = new SaveFileDialog();
+                    ofd.Filter = "xml Dateien (*.xml)|*.xml| Alle Dateien (*.*)|*.*"; ;
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        FilePath = ofd.FileName; //Dateiname der ausgewählten Datei
+                    }
+                }              
 
                 ObjRecordcardSet.Subject = txtBxFach.Text;
-                FileHandler.write(XMLHandler.SerializeToXML(ObjRecordcardSet).InnerXml, speicherort);
+                FileHandler.write(XMLHandler.SerializeToXML(ObjRecordcardSet).InnerXml, FilePath);
 
                 // Fenster schließen
                 this.Dispose();

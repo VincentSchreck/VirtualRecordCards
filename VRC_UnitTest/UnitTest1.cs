@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VRC.Model;
+using VRC.Domain;
 
 namespace VRC_UnitTest
 {
@@ -13,7 +13,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
             //recordcard.KarteikartenTyp = KarteikartenTyp.Text;
-            recordcard.Topic = "";
+            recordcard.Thema = "";
             //recordcard.QuestionText = "";
 
             // Act
@@ -29,7 +29,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
             //recordcard.KarteikartenTyp = KarteikartenTyp.Text;
-            recordcard.Topic = "Hallo";
+            recordcard.Thema = "Hallo";
             //recordcard.QuestionText = "Test";
 
             // Act
@@ -45,7 +45,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
             //recordcard.KarteikartenTyp = KarteikartenTyp.Text;
-            recordcard.Topic = "HalloHallo";
+            recordcard.Thema = "HalloHallo";
             //recordcard.QuestionText = "Test";
 
             // Act
@@ -61,7 +61,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
            // recordcard.KarteikartenTyp = KarteikartenTyp.Text;
-            recordcard.Topic = "Hallo";
+            recordcard.Thema = "Hallo";
             //recordcard.QuestionText = "TestTestTest";
 
             // Act
@@ -77,7 +77,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
             //recordcard.KarteikartenTyp = KarteikartenTyp.Abbildung;
-            recordcard.Topic = "Hallo";
+            recordcard.Thema = "Hallo";
             //recordcard.QuestionAbbildung = "Test";
 
             // Act
@@ -93,7 +93,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
             //recordcard.KarteikartenTyp = KarteikartenTyp.Aufzaehlung;
-            recordcard.Topic = "Hallo";
+            recordcard.Thema = "Hallo";
            // recordcard.QuestionAufzaehlung = "Test";
 
             // Act
@@ -109,7 +109,7 @@ namespace VRC_UnitTest
             // Arrange
             Recordcard recordcard = new Recordcard();
             //recordcard.KarteikartenTyp = KarteikartenTyp.MultipleChoice;
-            recordcard.Topic = "Hallo";
+            recordcard.Thema = "Hallo";
            // recordcard.QuestionMultipleChoice = "Test";
 
             // Act

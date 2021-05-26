@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using VRC.Model;
+using VRC.Domain;
 
 namespace VRC_UnitTest
 {
@@ -20,7 +20,7 @@ namespace VRC_UnitTest
             recordcardSet.RecordcardList = recordcardlist;
 
             // act
-            recordcardSet.wendeZufallsreihenfolgeAn(); // Mock einsetzen, der maximale zahl zurückgibt- => Dependency Injection
+            recordcardSet.wendeZufallsreihenfolgeAufListeAn(); // Mock einsetzen, der maximale zahl zurückgibt- => Dependency Injection
 
             // assert
 

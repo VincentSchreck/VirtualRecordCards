@@ -49,99 +49,102 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handler\FileHandler.cs" />
-    <Compile Include="HauptMenu.cs">
+    <Compile Include="Application\KarteikartenBearbeitenEinstellung.cs" />
+    <Compile Include="Application\KarteikartenEditor.cs" />
+    <Compile Include="Application\PruefEinstellungen.cs" />
+    <Compile Include="Application\Pruefmodus.cs" />
+    <Compile Include="Domain\Recordcard.cs" />
+    <Compile Include="Domain\RecordcardSet.cs" />
+    <Compile Include="HandlerPlugin\FileHandler.cs" />
+    <Compile Include="ViewPlugin\HauptMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HauptMenu.Designer.cs">
+    <Compile Include="ViewPlugin\HauptMenu.Designer.cs">
       <DependentUpon>HauptMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Handler\XML-Handler.cs" />
-    <Compile Include="Klassen\KarteikartenEditor.cs">
+    <Compile Include="HandlerPlugin\XML-Handler.cs" />
+    <Compile Include="ViewPlugin\KarteikartenEditorGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Klassen\KarteikartenEditor.Designer.cs">
-      <DependentUpon>KarteikartenEditor.cs</DependentUpon>
+    <Compile Include="ViewPlugin\KarteikartenEditorGUI.Designer.cs">
+      <DependentUpon>KarteikartenEditorGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\KarteikarteBearbeitenEinstellungen.cs">
+    <Compile Include="ViewPlugin\KarteikarteBearbeitenEinstellungGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Klassen\KarteikarteBearbeitenEinstellungen.Designer.cs">
-      <DependentUpon>KarteikarteBearbeitenEinstellungen.cs</DependentUpon>
+    <Compile Include="ViewPlugin\KarteikarteBearbeitenEinstellungGUI.Designer.cs">
+      <DependentUpon>KarteikarteBearbeitenEinstellungGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\PruefEinstellungenGUI.cs">
+    <Compile Include="ViewPlugin\PruefEinstellungenGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Klassen\PruefEinstellungenGUI.Designer.cs">
+    <Compile Include="ViewPlugin\PruefEinstellungenGUI.Designer.cs">
       <DependentUpon>PruefEinstellungenGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\Pruefmodus.cs">
+    <Compile Include="ViewPlugin\PruefmodusGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Klassen\Pruefmodus.Designer.cs">
-      <DependentUpon>Pruefmodus.cs</DependentUpon>
+    <Compile Include="ViewPlugin\PruefmodusGUI.Designer.cs">
+      <DependentUpon>PruefmodusGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardMultipleChoiceGUI.cs">
+    <Compile Include="ViewPlugin\RecordcardMultipleChoiceGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardMultipleChoiceGUI.Designer.cs">
+    <Compile Include="ViewPlugin\RecordcardMultipleChoiceGUI.Designer.cs">
       <DependentUpon>RecordcardMultipleChoiceGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardAbbildungGUI.cs">
+    <Compile Include="ViewPlugin\RecordcardAbbildungGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardAbbildungGUI.Designer.cs">
+    <Compile Include="ViewPlugin\RecordcardAbbildungGUI.Designer.cs">
       <DependentUpon>RecordcardAbbildungGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardAufzaehlungGUI.cs">
+    <Compile Include="ViewPlugin\RecordcardAufzaehlungGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardAufzaehlungGUI.Designer.cs">
+    <Compile Include="ViewPlugin\RecordcardAufzaehlungGUI.Designer.cs">
       <DependentUpon>RecordcardAufzaehlungGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordcardTextGUI.cs">
+    <Compile Include="ViewPlugin\RecordcardTextGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Klassen\RecordcardTextGUI.Designer.cs">
+    <Compile Include="ViewPlugin\RecordcardTextGUI.Designer.cs">
       <DependentUpon>RecordcardTextGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klassen\RecordCardTypeGUI.cs">
+    <Compile Include="ViewPlugin\RecordCardTypeGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Model\ClassRecordcard.cs" />
-    <Compile Include="Model\ClassRecordcardSet.cs" />
-    <Compile Include="Model\PruefEinstellungData.cs" />
-    <Compile Include="Model\RecordCardAufzaehlungContent.cs" />
-    <Compile Include="Model\RecordCardMultipleChoiceContent.cs" />
-    <Compile Include="Model\RecordCardAbbildungContent.cs" />
-    <Compile Include="Model\RecordCardTextContent.cs" />
+    <Compile Include="Domain\RecordCardAufzaehlungContent.cs" />
+    <Compile Include="Domain\RecordCardMultipleChoiceContent.cs" />
+    <Compile Include="Domain\RecordCardAbbildungContent.cs" />
+    <Compile Include="Domain\RecordCardTextContent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="HauptMenu.resx">
+    <EmbeddedResource Include="ViewPlugin\HauptMenu.resx">
       <DependentUpon>HauptMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\KarteikartenEditor.resx">
-      <DependentUpon>KarteikartenEditor.cs</DependentUpon>
+    <EmbeddedResource Include="ViewPlugin\KarteikartenEditorGUI.resx">
+      <DependentUpon>KarteikartenEditorGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\KarteikarteBearbeitenEinstellungen.resx">
-      <DependentUpon>KarteikarteBearbeitenEinstellungen.cs</DependentUpon>
+    <EmbeddedResource Include="ViewPlugin\KarteikarteBearbeitenEinstellungGUI.resx">
+      <DependentUpon>KarteikarteBearbeitenEinstellungGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\PruefEinstellungenGUI.resx">
+    <EmbeddedResource Include="ViewPlugin\PruefEinstellungenGUI.resx">
       <DependentUpon>PruefEinstellungenGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\Pruefmodus.resx">
-      <DependentUpon>Pruefmodus.cs</DependentUpon>
+    <EmbeddedResource Include="ViewPlugin\PruefmodusGUI.resx">
+      <DependentUpon>PruefmodusGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardMultipleChoiceGUI.resx">
+    <EmbeddedResource Include="ViewPlugin\RecordcardMultipleChoiceGUI.resx">
       <DependentUpon>RecordcardMultipleChoiceGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardAbbildungGUI.resx">
+    <EmbeddedResource Include="ViewPlugin\RecordcardAbbildungGUI.resx">
       <DependentUpon>RecordcardAbbildungGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardAufzaehlungGUI.resx">
+    <EmbeddedResource Include="ViewPlugin\RecordcardAufzaehlungGUI.resx">
       <DependentUpon>RecordcardAufzaehlungGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Klassen\RecordcardTextGUI.resx">
+    <EmbeddedResource Include="ViewPlugin\RecordcardTextGUI.resx">
       <DependentUpon>RecordcardTextGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -175,6 +178,7 @@
   <ItemGroup>
     <Content Include="..\Test\Test.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\OpenCover.4.7.1189\build\OpenCover.targets" Condition="Exists('..\packages\OpenCover.4.7.1189\build\OpenCover.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace VRC.Domain
 {
@@ -36,7 +35,7 @@ namespace VRC.Domain
 
         }
 
-        private static Random rng = new Random();
+        private static System.Random rng = new System.Random();
 
         //Fisher-Yates shuffle:
         public List<Recordcard> wendeZufallsreihenfolgeAufListeAn()

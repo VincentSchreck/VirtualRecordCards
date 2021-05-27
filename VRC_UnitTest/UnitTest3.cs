@@ -1,14 +1,18 @@
 ﻿using System;
+using Moq;
+using Autofac.Extras.Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using VRC.ViewPlugin;
 
 namespace VRC_UnitTest
 {
-    [TestClass]
+    //[TestClass]
     public class UnitTest3
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
+        //[Fact]
+        //public void TestOpeningAFile()
+        //{
+            
+        //}
     }
 }

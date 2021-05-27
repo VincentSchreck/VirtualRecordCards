@@ -17,7 +17,7 @@ namespace VRC_UnitTest
             //recordcardlist.Add(new Recordcard() { QuestionText = "Test1"});
             //recordcardlist.Add(new Recordcard() { QuestionText = "Test2" });
             //recordcardlist.Add(new Recordcard() { QuestionText = "Test3" });
-            recordcardSet.RecordcardList = recordcardlist;
+            //recordcardSet.RecordcardList = recordcardlist;
 
             // act
             recordcardSet.wendeZufallsreihenfolgeAufListeAn(); // Mock einsetzen, der maximale zahl zurückgibt- => Dependency Injection

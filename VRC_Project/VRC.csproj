@@ -55,7 +55,7 @@
     <Compile Include="Application\Pruefmodus.cs" />
     <Compile Include="Domain\Recordcard.cs" />
     <Compile Include="Domain\RecordcardSet.cs" />
-    <Compile Include="HandlerPlugin\FileHandler.cs" />
+    <Compile Include="HandlerPlugin\SystemFileHandler.cs" />
     <Compile Include="ViewPlugin\HauptMenu.cs">
       <SubType>Form</SubType>
     </Compile>

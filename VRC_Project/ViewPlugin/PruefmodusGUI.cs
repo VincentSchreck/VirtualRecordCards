@@ -4,13 +4,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using VRC.Application;
 using VRC.Domain;
-using VRC.Handler;
+using VRC.HandlerPlugin;
 
 namespace VRC.ViewPlugin
 {
     public partial class PruefmodusGUI : Form
     {
-        Pruefmodus pruefmodus = new Pruefmodus();
+        Pruefmodus pruefmodus = new Pruefmodus(new FisherYateShuffle());
 
         public PruefmodusGUI(PruefEinstellungen uebergebenePruefEinstellungData)
         {

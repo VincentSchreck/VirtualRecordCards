@@ -55,7 +55,9 @@
     <Compile Include="Application\Pruefmodus.cs" />
     <Compile Include="Domain\Recordcard.cs" />
     <Compile Include="Domain\RecordcardSet.cs" />
+    <Compile Include="HandlerPlugin\RandomHandler.cs" />
     <Compile Include="HandlerPlugin\SystemFileHandler.cs" />
+    <Compile Include="HandlerPlugin\XMLSerializer-Handler.cs" />
     <Compile Include="ViewPlugin\HauptMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +159,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Klassendiagramme\ClassDiagram5.cd" />
     <None Include="Klassendiagramme\ClassDiagram4.cd" />
     <None Include="Klassendiagramme\ClassDiagram3.cd" />
     <None Include="Klassendiagramme\ClassDiagram1.cd" />

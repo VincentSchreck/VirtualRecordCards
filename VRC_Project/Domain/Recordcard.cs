@@ -9,7 +9,7 @@ namespace VRC.Domain
 
     public class Recordcard
     {
-        private string _thema = "";
+        private string _thema;
         public string Thema
         {
             get

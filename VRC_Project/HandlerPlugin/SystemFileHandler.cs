@@ -2,11 +2,11 @@
 using System.IO;
 using VRC.Application;
 
-namespace VRC.Handler
+namespace VRC.HandlerPlugin
 {
     public class SystemFileHandler : FileHandler
     {
-        public override string Lade(string Pfad)
+        public string Lade(string Pfad)
         {
             if (!File.Exists(Pfad))
             {
@@ -15,7 +15,7 @@ namespace VRC.Handler
             return File.ReadAllText(Pfad);
         }
 
-        public override void Schreibe(string Inhalt, string Pfad)
+        public void Schreibe(string Inhalt, string Pfad)
         {
             File.WriteAllText(Pfad, Inhalt);
         }

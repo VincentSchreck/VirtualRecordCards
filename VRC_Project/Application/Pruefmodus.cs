@@ -3,6 +3,11 @@ using VRC.Domain;
 
 namespace VRC.Application
 {
+    public interface RecordCardListRandomizer
+    {
+        List<Recordcard> randomize(List<Recordcard> recordcardList);
+    }
+
     public class Pruefmodus
     {
         #region Eigenschaften
@@ -14,8 +19,13 @@ namespace VRC.Application
         int richtigeCount;
         private RecordcardSet originalRecordcardSet, recordcardSammlung = new RecordcardSet();
         private int aktuellerKarteikartenIndex = 0;
+        RecordCardListRandomizer randomizer;
         #endregion
 
+        public Pruefmodus(RecordCardListRandomizer randomizer)
+        {
+            this.randomizer = randomizer;
+        }
 
         public void BehandelFalschBeantworteteFallsEingestellt()
         {
@@ -127,9 +137,15 @@ namespace VRC.Application
         private void ÜbernehmeSammlungSamtZufallsEinstellungenAus(PruefEinstellungen uebergebenePruefEinstellungData)
         {
             zufall = uebergebenePruefEinstellungData.Zufallsreihenfolge;
-            aktuelleRecordcards = zufall ? originalRecordcardSet.wendeZufallsreihenfolgeAufListeAn()
+            aktuelleRecordcards = zufall ? wendeZufallsreihenfolgeAufListeAn(originalRecordcardSet.RecordcardList)
                                          : aktuelleRecordcards = originalRecordcardSet.RecordcardList;
         }
-        #endregion 
+        #endregion
+        
+        public List<Recordcard> wendeZufallsreihenfolgeAufListeAn(List<Recordcard> recordcardList)
+        {
+            return randomizer.randomize(recordcardList);
+
+        }
     }
 }

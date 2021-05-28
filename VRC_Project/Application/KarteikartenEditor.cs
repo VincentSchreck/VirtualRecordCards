@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VRC.Domain;
 
 namespace VRC.Application
 {
-    public abstract class FileHandler
+    public interface FileHandler
     {
-        public abstract string Lade(String Pfad);
+        string Lade(string Pfad);
 
-        public abstract void Schreibe(String content, String Pfad);
+        void Schreibe(string content, string Pfad);
     }
 
-    public abstract class FileFormatHandler
+    public interface FileFormatHandler
     {
-        public abstract string Serialize(RecordcardSet recordcardSet);
+        string Serialize(RecordcardSet recordcardSet);
 
-        public abstract RecordcardSet Deserialize(string content);
+        RecordcardSet Deserialize(string content);
     }
-
 
     public class KarteikartenEditor
     {
@@ -57,12 +55,12 @@ namespace VRC.Application
             return recordcardSammlung.RecordcardList;
         }
 
-        public void LadeKarteikartenSammlung(FileHandler fileHandler, FileFormatHandler fileFormatHandler, String path)
+        public void LadeKarteikartenSammlung(FileHandler fileHandler, FileFormatHandler fileFormatHandler, string path)
         {
             recordcardSammlung = fileFormatHandler.Deserialize(fileHandler.Lade(path));
         }
 
-        public void SpeichereKarteikartenSammlung(FileHandler fileHandler, FileFormatHandler fileFormatHandler, String path)
+        public void SpeichereKarteikartenSammlung(FileHandler fileHandler, FileFormatHandler fileFormatHandler, string path)
         {
             fileHandler.Schreibe(fileFormatHandler.Serialize(this.recordcardSammlung), path); 
         }
@@ -115,6 +113,7 @@ namespace VRC.Application
             aktuellerKarteikartenIndex = -1;
 
         }
+
         public void LoescheKarteikarteIndex(int index)
         {
             recordcardSammlung.EntferneRecordCardListeUeberIndex(index);

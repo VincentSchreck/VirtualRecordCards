@@ -34,23 +34,5 @@ namespace VRC.Domain
         {
 
         }
-
-        private static System.Random rng = new System.Random();
-
-        //Fisher-Yates shuffle:
-        public List<Recordcard> wendeZufallsreihenfolgeAufListeAn()
-        {
-            List<Recordcard> temp = _recordcardList;
-            int n = temp.Count;
-            while (n > 1)
-            {
-                n--;
-                int k = rng.Next(n + 1);
-                Recordcard value = temp[k];
-                temp[k] = temp[n];
-                temp[n] = value;
-            }
-            return temp;
-        }
     }
 }

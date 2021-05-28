@@ -8,6 +8,12 @@ namespace VRC.Domain
         private List<string> _choicesMultipleChoice;
         private string _answerMultipleChoice = "";
 
+        public RecordCardMultipleChoiceContent()
+        {
+            ChoicesMultipleChoice = new List<string>();
+        }
+
+
         public string QuestionMultipleChoice
         {
             get
@@ -44,10 +50,6 @@ namespace VRC.Domain
             }
         }
 
-        public RecordCardMultipleChoiceContent()
-        {
-            ChoicesMultipleChoice = new List<string>();
-        }
 
         public string getQuestion()
         {

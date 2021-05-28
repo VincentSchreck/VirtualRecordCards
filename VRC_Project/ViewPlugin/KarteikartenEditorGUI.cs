@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using VRC.Application;
 using VRC.Domain;
-using VRC.Handler;
+using VRC.HandlerPlugin;
 
 namespace VRC.ViewPlugin
 {
@@ -77,8 +76,7 @@ namespace VRC.ViewPlugin
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBxKarteikarten.SelectedIndex < 0) 
-                return;
+            if (listBxKarteikarten.SelectedIndex < 0) return;
             ErlaubeSelectedIndexChangedFunktion(false);
             listBxKarteikarten.BeginUpdate();
             SpeichereDerzeitigeKarteikarteAb();

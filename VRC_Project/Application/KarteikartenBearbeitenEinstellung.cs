@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VRC.Application
+﻿namespace VRC.Application
 {
     public class KarteikartenBearbeitenEinstellung
     {
@@ -10,7 +8,7 @@ namespace VRC.Application
 
         public bool PruefePfad()
         {
-            if (String.IsNullOrWhiteSpace(Speicherort))
+            if (string.IsNullOrWhiteSpace(Speicherort))
                 return false;
 
             return true;

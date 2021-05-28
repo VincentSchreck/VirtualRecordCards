@@ -3,11 +3,11 @@ using System.Xml;
 using VRC.Application;
 using VRC.Domain;
 
-namespace VRC.Handler
+namespace VRC.HandlerPlugin
 {
     public class XMLHandler : FileFormatHandler
     {
-        public override RecordcardSet Deserialize(string content)
+        public RecordcardSet Deserialize(string content)
         {
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.LoadXml(content);
@@ -142,7 +142,7 @@ namespace VRC.Handler
             return recordcardSet;
         }
 
-        public override string Serialize(RecordcardSet recordcardSet)
+        public string Serialize(RecordcardSet recordcardSet)
         {
             XmlDocument xmlDocument = new XmlDocument();
             XmlNode recordcardsetNode = xmlDocument.CreateElement("recordcardset");

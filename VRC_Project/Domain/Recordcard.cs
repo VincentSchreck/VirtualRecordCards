@@ -9,25 +9,12 @@ namespace VRC.Domain
 
     public class Recordcard
     {
-        private string _thema;
-        public string Thema
-        {
-            get
-            {
-                return _thema;
-            }
-            set
-            {
-                _thema = value;
-            }
-        }
+        public string Thema { get; set; }
+
 
         public RecordCardContent content;
 
-        public Recordcard()
-        {
-            Thema = "";
-        }
+        public Recordcard(){}
 
         public Recordcard(RecordCardContent recordCardContent)
         {

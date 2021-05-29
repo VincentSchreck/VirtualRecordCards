@@ -21,7 +21,7 @@ namespace VRC.ViewPlugin
         private void btnOK_Click(object sender, EventArgs e)
         {
             SetzeEinstellungenSpeicherort();
-            if (pruefEinstellungen.PruefePfad())
+            if (string.IsNullOrWhiteSpace(pruefEinstellungen.Speicherort))
             {
                 UebernehmeEinstellungAusDerGUI();
                 BeendeFenster();

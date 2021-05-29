@@ -15,7 +15,8 @@ namespace VRC.ViewPlugin
         public PruefmodusGUI(PruefEinstellungen uebergebenePruefEinstellungData)
         {
             InitializeComponent();
-            pruefmodus.Uebernehme(new XMLHandler(), new SystemFileHandler(), uebergebenePruefEinstellungData) ;
+            pruefmodus.RecordCardSammlung =  LoadSaveRecordCard.LeseKarteikartenSammlungAus(new XMLHandler(), new SystemFileHandler(), uebergebenePruefEinstellungData.Speicherort);
+            pruefmodus.Uebernehme(uebergebenePruefEinstellungData) ;
             KarteikarteDarstellen();
         }
 

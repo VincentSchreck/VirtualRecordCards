@@ -20,6 +20,7 @@ namespace VRC.Application
         private RecordcardSet originalRecordcardSet, recordcardSammlung = new RecordcardSet();
         private int aktuellerKarteikartenIndex = 0;
         RecordCardListRandomizer randomizer;
+
         #endregion
 
         public Pruefmodus(RecordCardListRandomizer randomizer)
@@ -52,7 +53,6 @@ namespace VRC.Application
             return (nurfalschewiederholen && falschBeantworteteRecordcards.Count == 0);
         }
 
-
         public bool PruefeRundenEnde()
         {
             return (aktuellerKarteikartenIndex) >= aktuelleRecordcards.Count;
@@ -63,7 +63,7 @@ namespace VRC.Application
             return richtigeCount;
         }
 
-        public RecordcardSet RecordCardSammlung { get => recordcardSammlung; private set => recordcardSammlung = value; }
+        public RecordcardSet RecordCardSammlung { get => recordcardSammlung; set => recordcardSammlung = value; }
 
         public int AktuellerKarteikartenIndex { get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value; }
 
@@ -79,9 +79,13 @@ namespace VRC.Application
             }
         }
 
-        public void Uebernehme(FileFormatHandler fileFormatHandler, FileHandler fileHandler, PruefEinstellungen uebergebenePruefEinstellungData)
+        public void Lade(FileFormatHandler fileFormatHandler, FileHandler fileHandler, string path)
         {
-            LeseKarteikartenSammlungAus(fileFormatHandler, fileHandler, uebergebenePruefEinstellungData);
+   
+        }
+
+        public void Uebernehme(PruefEinstellungen uebergebenePruefEinstellungData)
+        {
             UebernehmeEinfacheEinstellungenAus(uebergebenePruefEinstellungData);
             ÜbernehmeSammlungSamtZufallsEinstellungenAus(uebergebenePruefEinstellungData);
             BegrenzeKartenUeber(uebergebenePruefEinstellungData);
@@ -107,11 +111,6 @@ namespace VRC.Application
         }
 
         #region Einstellungen
-  
-        private void LeseKarteikartenSammlungAus(FileFormatHandler fileFormatHandler, FileHandler fileHandler, PruefEinstellungen uebergebenePruefEinstellungData)
-        {
-            originalRecordcardSet = fileFormatHandler.Deserialize(fileHandler.Lade(uebergebenePruefEinstellungData.Speicherort));
-        }
 
         private void UebernehmeEinfacheEinstellungenAus(PruefEinstellungen uebergebenePruefEinstellungData)
         {
@@ -142,7 +141,7 @@ namespace VRC.Application
         }
         #endregion
         
-        public List<Recordcard> wendeZufallsreihenfolgeAufListeAn(List<Recordcard> recordcardList)
+        private List<Recordcard> wendeZufallsreihenfolgeAufListeAn(List<Recordcard> recordcardList)
         {
             return randomizer.randomize(recordcardList);
 

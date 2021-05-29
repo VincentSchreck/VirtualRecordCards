@@ -51,11 +51,12 @@
   <ItemGroup>
     <Compile Include="Application\KarteikartenBearbeitenEinstellung.cs" />
     <Compile Include="Application\KarteikartenEditor.cs" />
+    <Compile Include="Application\LoadSaveRecordCard.cs" />
     <Compile Include="Application\PruefEinstellungen.cs" />
     <Compile Include="Application\Pruefmodus.cs" />
     <Compile Include="Domain\Recordcard.cs" />
     <Compile Include="Domain\RecordcardSet.cs" />
-    <Compile Include="HandlerPlugin\RandomHandler.cs" />
+    <Compile Include="HandlerPlugin\FisherYatesShuffle.cs" />
     <Compile Include="HandlerPlugin\SystemFileHandler.cs" />
     <Compile Include="HandlerPlugin\XMLSerializer-Handler.cs" />
     <Compile Include="ViewPlugin\HauptMenu.cs">

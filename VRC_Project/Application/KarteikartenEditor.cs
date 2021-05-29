@@ -21,9 +21,8 @@ namespace VRC.Application
     {
         private RecordcardSet recordcardSammlung = new RecordcardSet();
         private int aktuellerKarteikartenIndex = -1;
-        private string _filePath;
 
-        public RecordcardSet RecordCardSammlung { get => recordcardSammlung; private set => recordcardSammlung = value; }
+        public RecordcardSet RecordCardSammlung { get => recordcardSammlung; set => recordcardSammlung = value; }
         public int AktuellerKarteikartenIndex { get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value; }
 
         public Recordcard AktuelleKarteikarte {
@@ -32,7 +31,6 @@ namespace VRC.Application
                     return recordcardSammlung.RecordcardList[aktuellerKarteikartenIndex]; else return null;
         } }
 
-        public string FilePath { get => _filePath; set => _filePath = value; }
         public int ListCount { get => recordcardSammlung.RecordcardList.Count; }
 
         public KarteikartenEditor()
@@ -53,16 +51,6 @@ namespace VRC.Application
         public List<Recordcard> ErhalteKarteikartenSammlung()
         {
             return recordcardSammlung.RecordcardList;
-        }
-
-        public void LadeKarteikartenSammlung(FileHandler fileHandler, FileFormatHandler fileFormatHandler, string path)
-        {
-            recordcardSammlung = fileFormatHandler.Deserialize(fileHandler.Lade(path));
-        }
-
-        public void SpeichereKarteikartenSammlung(FileHandler fileHandler, FileFormatHandler fileFormatHandler, string path)
-        {
-            fileHandler.Schreibe(fileFormatHandler.Serialize(this.recordcardSammlung), path); 
         }
 
         public int NeueKarteikarte(string thema, RecordCardContent content)

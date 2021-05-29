@@ -17,14 +17,5 @@
         public bool Zufallsreihenfolge { get => zufallsreihenfolge; set => zufallsreihenfolge = value; }
         public uint AnzahlWiederholungen { get => anzahlWiederholungen; set => anzahlWiederholungen = value; }
         public uint AnzahlGenerellKarteikarten { get => anzahlGenerellKarteikarten; set => anzahlGenerellKarteikarten = value; }
-
-        public bool PruefePfad()
-        {
-            if (string.IsNullOrWhiteSpace(Speicherort))
-                return false;
-
-            return true;
-        }
-
     }
 }

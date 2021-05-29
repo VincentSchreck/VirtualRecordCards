@@ -9,6 +9,7 @@ namespace VRC.ViewPlugin
     public partial class KarteikartenEditorGUI : Form
     {
         KarteikartenEditor karteikartenEditor = new KarteikartenEditor();
+        string filepath = "";
 
         private RecordCardTypeGUI contentGUI;
 
@@ -24,7 +25,8 @@ namespace VRC.ViewPlugin
         public KarteikartenEditorGUI(string speicherort)
         {
             InitializeComponent();
-            SpeicherUndLadeDateipfad(speicherort);
+            filepath = speicherort;
+            SpeicherUndLadeDateipfad();
             StelleKarteikartensammlungDar();
             PasseButtonsnamenAufBearbeitenAn();
         }
@@ -111,10 +113,9 @@ namespace VRC.ViewPlugin
             }
         } //siehe untere Funktion
 
-        private void SpeicherUndLadeDateipfad(string speicherort)
+        private void SpeicherUndLadeDateipfad()
         {
-            karteikartenEditor.FilePath = speicherort;
-            karteikartenEditor.LadeKarteikartenSammlung(new SystemFileHandler(), new XMLHandler(), speicherort);        
+            karteikartenEditor.RecordCardSammlung = LoadSaveRecordCard.LeseKarteikartenSammlungAus(new XMLHandler(), new SystemFileHandler(), filepath);
         }
 
         private void PasseButtonsnamenAufBearbeitenAn()
@@ -199,18 +200,18 @@ namespace VRC.ViewPlugin
 
         private void SpeichereKarteikartenSammlungAb()
         {
-            karteikartenEditor.SpeichereKarteikartenSammlung( new SystemFileHandler(), new XMLHandler(), karteikartenEditor.FilePath);
+            LoadSaveRecordCard.SpeichereKarteikartenSammlung( new SystemFileHandler(), new XMLHandler(), karteikartenEditor.RecordCardSammlung, filepath);
         }
 
         private void SpeicherortAbfrageFallsNeueDatei()
         {
-            if (karteikartenEditor.FilePath == null)
+            if (filepath == null)
             {
                 SaveFileDialog ofd = new SaveFileDialog();
                 ofd.Filter = "xml Dateien (*.xml)|*.xml| Alle Dateien (*.*)|*.*"; ;
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    karteikartenEditor.FilePath = ofd.FileName; //Dateiname der ausgewählten Datei
+                    filepath = ofd.FileName; //Dateiname der ausgewählten Datei
                 }
             }
         }

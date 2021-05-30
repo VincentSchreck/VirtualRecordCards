@@ -1,68 +1,109 @@
-using System;
-using System.Reflection;
 using Xunit;
-using Moq;
-using Autofac.Extras.Moq;
+using VRC.Application;
 using VRC.Domain;
 
 namespace VRC_XUnitTest
 {
     public class UnitTest_9
     {
+        [Fact]
+        public void Test_PruefmodusIndexZuruecksetzen()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+            int vergleichswert = 5;
+            x.StarteNeueRunde();
+
+            // Act
+            int actual = x.AktuellerKarteikartenIndex;
+
+            // Assert
+            Assert.True(actual != vergleichswert);
+        }
+
+        [Fact]
+        public void Test_PruefmodusPruefeAbfrageEnde()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+
+            // Act
+            bool actual = x.PruefeAbfrageEnde();
+            
+            // Assert
+            Assert.True(actual);
+        }
+
+        [Fact]
+        public void Test_PruefmodusPruefeFalschBehandelteModus()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+
+            // Act
+            bool actual = x.PruefeFalschBehandelteModus();
+
+            // Assert
+            Assert.False(actual);
+        }
+        
+        [Fact]
+        public void Test_PruefmodusPruefeRundenEnde()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+
+            // Act
+            bool actual = x.PruefeRundenEnde();
+
+            // Assert
+            Assert.True(actual);
+        }
+
+
+        [Fact]
+        public void Test_PruefmodusErhalteAnzahlRichtiger()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+
+            // Act
+            int actual = x.ErhalteAnzahlRichtiger();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
+
+        [Fact]
+        public void Test_PruefmodusAktuelleKarteikarteNULL()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+            //Recordcard vergleich = null;
+
+            // Act
+            Recordcard actual = x.AktuelleKarteikarte;
+
+            // Assert
+            Assert.Null(actual);
+        }
+
+
         //[Fact]
-        //public void Test_MCQuestion()
+        //public void Test_PruefmodusAktuelleKarteikarteNotNULL()
         //{
         //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.QuestionMultipleChoice = "Hallo?";
+        //    Pruefmodus x = new Pruefmodus();
+        //    //Recordcard vergleich = null;
+        //    x.list
 
         //    // Act
-        //    string actual = x.getQuestion();
+        //    Recordcard actual = x.AktuelleKarteikarte;
 
         //    // Assert
-        //    Assert.Equal("Hallo?", actual);
-        //}
-
-        //[Fact]
-        //public void Test_MCRecordcardType()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-
-        //    // Act
-        //    string actual = x.getRecordCardType();
-
-        //    // Assert
-        //    Assert.Equal("Multiple Choice", actual);
-        //}
-
-
-        //[Fact]
-        //public void Test_MCQuestions()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.QuestionMultipleChoice = "Frage?";
-
-        //    // Act
-        //    string actual = x.QuestionMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Frage?", actual);
-        //}
-
-        //[Fact]
-        //public void Test_MCAnswers()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.AnswerMultipleChoice = "Antworten!";
-
-        //    // Act
-        //    string actual = x.AnswerMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Antworten!", actual);
+        //    Assert.NotNull(actual);
         //}
     }
 }
+

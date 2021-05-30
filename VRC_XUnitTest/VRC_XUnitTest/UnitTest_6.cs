@@ -1,8 +1,4 @@
-using System;
-using System.Reflection;
 using Xunit;
-using Moq;
-using Autofac.Extras.Moq;
 using VRC.Application;
 using VRC.Domain;
 
@@ -15,13 +11,12 @@ namespace VRC_XUnitTest
         {
             // Arrange
             KarteikartenEditor x = new KarteikartenEditor();
-            //x.AktuelleKarteikarte = "";
 
             // Act
-            string actual = null;
+            RecordcardSet actual = x.RecordCardSammlung;
 
             // Assert
-            Assert.Equal(null, actual);
+            Assert.NotNull(actual);
         }
 
         [Fact]
@@ -110,33 +105,5 @@ namespace VRC_XUnitTest
             // Assert
             Assert.Equal(-1, actual);
         }
-
-        //[Fact]
-        //public void Test_MCQuestions()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.QuestionMultipleChoice = "Frage?";
-
-        //    // Act
-        //    string actual = x.QuestionMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Frage?", actual);
-        //}
-
-        //[Fact]
-        //public void Test_MCAnswers()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.AnswerMultipleChoice = "Antworten!";
-
-        //    // Act
-        //    string actual = x.AnswerMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Antworten!", actual);
-        //}
     }
 }

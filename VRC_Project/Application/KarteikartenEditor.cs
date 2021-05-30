@@ -25,8 +25,15 @@ namespace VRC.Application
         private int aktuellerKarteikartenIndex = -1;
         private string _filePath;
 
-        public RecordcardSet RecordCardSammlung { get => recordcardSammlung; private set => recordcardSammlung = value; }
-        public int AktuellerKarteikartenIndex { get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value; }
+        public RecordcardSet RecordCardSammlung
+        {
+            get => recordcardSammlung; private set => recordcardSammlung = value;
+        }
+
+        public int AktuellerKarteikartenIndex
+        {
+            get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value;
+        }
 
         public Recordcard AktuelleKarteikarte {
             get{ 
@@ -52,6 +59,16 @@ namespace VRC.Application
             return recordcardSammlung.Fachbezeichnung;
         }
 
+        public void KarteikartenIndexReset()
+        {
+            aktuellerKarteikartenIndex = ListCount - 1;
+        }
+
+        public void SetzeKarteikartenIndex(int value)
+        {
+            aktuellerKarteikartenIndex = value;
+        }
+
         public List<Recordcard> ErhalteKarteikartenSammlung()
         {
             return recordcardSammlung.RecordcardList;
@@ -74,16 +91,6 @@ namespace VRC.Application
             recordcard.content = content;
             recordcardSammlung.RecordcardList.Add(recordcard); 
             return ListCount - 1;
-        }
-
-        public void KarteikartenIndexReset()
-        {
-            aktuellerKarteikartenIndex = ListCount - 1;
-        }
-
-        public void SetzeKarteikartenIndex(int value)
-        {
-            aktuellerKarteikartenIndex = value;
         }
 
         public void FuegeKarteikartehinzu(Recordcard recordcard)

@@ -7,7 +7,7 @@ using VRC.Domain;
 
 namespace VRC_XUnitTest
 {
-    public class UnitTest1
+    public class UnitTest_Mock
     {
         [Fact]
         public void Test_RecordcardGetListboxName()

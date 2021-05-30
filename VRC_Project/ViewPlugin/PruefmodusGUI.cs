@@ -10,12 +10,12 @@ namespace VRC.ViewPlugin
 {
     public partial class PruefmodusGUI : Form
     {
-        Pruefmodus pruefmodus = new Pruefmodus(new FisherYateShuffle());
+        Pruefmodus pruefmodus;
 
         public PruefmodusGUI(PruefEinstellungen uebergebenePruefEinstellungData)
         {
             InitializeComponent();
-            pruefmodus.RecordCardSammlung =  LoadSaveRecordCard.LeseKarteikartenSammlungAus(new XMLHandler(), new SystemFileHandler(), uebergebenePruefEinstellungData.Speicherort);
+            pruefmodus = new Pruefmodus(new FisherYateShuffle(), LoadSaveRecordCard.LeseKarteikartenSammlungAus(new XMLHandler(), new SystemFileHandler(), uebergebenePruefEinstellungData.Speicherort));
             pruefmodus.Uebernehme(uebergebenePruefEinstellungData) ;
             KarteikarteDarstellen();
         }

@@ -160,6 +160,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Klassendiagramme\ClassDiagramEntwurf.cd" />
     <None Include="Klassendiagramme\ClassDiagram5.cd" />
     <None Include="Klassendiagramme\ClassDiagram4.cd" />
     <None Include="Klassendiagramme\ClassDiagram3.cd" />

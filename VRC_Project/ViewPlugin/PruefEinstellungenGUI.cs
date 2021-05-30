@@ -8,7 +8,25 @@ namespace VRC.ViewPlugin
     {
         PruefEinstellungen pruefEinstellungen = new PruefEinstellungen();
 
-        public PruefEinstellungenGUI()
+        private static PruefEinstellungenGUI instance = null;
+        private static readonly object padlock = new object();
+
+        public static PruefEinstellungenGUI Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new PruefEinstellungenGUI();
+                    }
+                    return instance;
+                }
+            }
+        }
+
+    private PruefEinstellungenGUI()
         {
             InitializeComponent();
         }
@@ -21,7 +39,7 @@ namespace VRC.ViewPlugin
         private void btnOK_Click(object sender, EventArgs e)
         {
             SetzeEinstellungenSpeicherort();
-            if (string.IsNullOrWhiteSpace(pruefEinstellungen.Speicherort))
+            if (!string.IsNullOrWhiteSpace(pruefEinstellungen.Speicherort))
             {
                 UebernehmeEinstellungAusDerGUI();
                 BeendeFenster();
@@ -80,7 +98,6 @@ namespace VRC.ViewPlugin
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
-            this.Dispose();
         }
 
     }

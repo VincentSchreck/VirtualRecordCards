@@ -23,9 +23,10 @@ namespace VRC.Application
 
         #endregion
 
-        public Pruefmodus(RecordCardListRandomizer randomizer)
+        public Pruefmodus(RecordCardListRandomizer randomizer, RecordcardSet recordcardSet)
         {
             this.randomizer = randomizer;
+            originalRecordcardSet = recordcardSet;
         }
 
         public void BehandelFalschBeantworteteFallsEingestellt()
@@ -77,11 +78,6 @@ namespace VRC.Application
                     return aktuelleRecordcards[aktuellerKarteikartenIndex];
                 else return null;
             }
-        }
-
-        public void Lade(FileFormatHandler fileFormatHandler, FileHandler fileHandler, string path)
-        {
-   
         }
 
         public void Uebernehme(PruefEinstellungen uebergebenePruefEinstellungData)

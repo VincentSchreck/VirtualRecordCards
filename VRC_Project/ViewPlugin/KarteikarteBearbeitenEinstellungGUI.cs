@@ -23,7 +23,7 @@ namespace VRC.ViewPlugin
         private void btnOK_Click(object sender, EventArgs e)
         {
             SpeichereDateipfad();
-            if (string.IsNullOrEmpty(karteikartenBearbeitenEinstellung.Speicherort))
+            if (!string.IsNullOrEmpty(karteikartenBearbeitenEinstellung.Speicherort))
                 BeendeFenster();
             else
                 MessageBox.Show("Bitte geben Sie einen gültigen Dateipfad an.");

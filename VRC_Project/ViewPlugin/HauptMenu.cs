@@ -11,17 +11,15 @@ namespace VRC.ViewPlugin
         }
 
         KarteikartenBearbeitenEinstellungGUI KarteiKarteBearbeitenEinstellungOeffner;
-        PruefEinstellungenGUI PruefEinstellungenFensterOeffner;
         PruefmodusGUI PruefmodusFensterOeffner;
         KarteikartenEditorGUI KarteikartenEditorFensterOeffner;
         
         private void btnPruefmodus_Click(object sender, EventArgs e)
         {
-            PruefEinstellungenFensterOeffner = new PruefEinstellungenGUI();
-            PruefEinstellungenFensterOeffner.ShowDialog(this);
-            if(PruefEinstellungenFensterOeffner.DialogResult == DialogResult.OK)
+            PruefEinstellungenGUI.Instance.ShowDialog(this);
+            if(PruefEinstellungenGUI.Instance.DialogResult == DialogResult.OK)
             {
-                PruefmodusFensterOeffner = new PruefmodusGUI(PruefEinstellungenFensterOeffner.ErhaltePruefEinstellungen());
+                PruefmodusFensterOeffner = new PruefmodusGUI(PruefEinstellungenGUI.Instance.ErhaltePruefEinstellungen());
                 PruefmodusFensterOeffner.ShowDialog(this);
             }
         }

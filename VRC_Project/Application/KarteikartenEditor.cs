@@ -21,8 +21,10 @@ namespace VRC.Application
     {
         private RecordcardSet recordcardSammlung = new RecordcardSet();
         private int aktuellerKarteikartenIndex = -1;
+
         public RecordcardSet RecordCardSammlung { get => recordcardSammlung; set => recordcardSammlung = value; }
         public int AktuellerKarteikartenIndex { get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value; }
+
 
         public Recordcard AktuelleKarteikarte {
             get{ 
@@ -47,6 +49,16 @@ namespace VRC.Application
             return recordcardSammlung.Fachbezeichnung;
         }
 
+        public void KarteikartenIndexReset()
+        {
+            aktuellerKarteikartenIndex = ListCount - 1;
+        }
+
+        public void SetzeKarteikartenIndex(int value)
+        {
+            aktuellerKarteikartenIndex = value;
+        }
+
         public List<Recordcard> ErhalteKarteikartenSammlung()
         {
             return recordcardSammlung.RecordcardList;
@@ -61,9 +73,10 @@ namespace VRC.Application
             return ListCount - 1;
         }
 
-        public void SetzeKarteikartenIndex(int value)
+
+        public void FuegeKarteikartehinzu(Recordcard recordcard)
         {
-            aktuellerKarteikartenIndex = value;
+            recordcardSammlung.FuegeRecordCardListeHinzu(recordcard);
         }
 
         public void SpeichereAktuelleKarteikarteAb(string thema, RecordCardContent content)

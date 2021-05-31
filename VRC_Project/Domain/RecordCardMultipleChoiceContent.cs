@@ -26,18 +26,6 @@ namespace VRC.Domain
             }
         }
 
-        public List<string> ChoicesMultipleChoice
-        {
-            get
-            {
-                return _choicesMultipleChoice;
-            }
-            set
-            {
-                _choicesMultipleChoice = value;
-            }
-        }
-
         public string AnswerMultipleChoice
         {
             get
@@ -47,6 +35,18 @@ namespace VRC.Domain
             set
             {
                 _answerMultipleChoice = value;
+            }
+        }
+
+        public List<string> ChoicesMultipleChoice
+        {
+            get
+            {
+                return _choicesMultipleChoice;
+            }
+            set
+            {
+                _choicesMultipleChoice = value;
             }
         }
 

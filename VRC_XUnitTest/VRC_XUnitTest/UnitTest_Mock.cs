@@ -1,13 +1,11 @@
-using System;
-using System.Reflection;
-using Xunit;
 using Moq;
+using Xunit;
 using Autofac.Extras.Moq;
 using VRC.Domain;
 
 namespace VRC_XUnitTest
 {
-    public class UnitTest1
+    public class UnitTest_Mock
     {
         [Fact]
         public void Test_RecordcardGetListboxName()
@@ -35,8 +33,7 @@ namespace VRC_XUnitTest
                 Assert.Equal("Typ|Thema|Frage", actual);
             }
         }
-
-
+        
         [Fact]
         public void Test_RecordcardGetListboxNameLangerName()
         {

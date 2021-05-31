@@ -13,15 +13,27 @@ namespace VRC.Domain
             ChoicesMultipleChoice = new List<string>();
         }
 
+<<<<<<< Updated upstream
         public string getQuestion()
+=======
+        public string ErhalteQuestion()
+>>>>>>> Stashed changes
         {
             return _questionMultipleChoice;
         }
 
+<<<<<<< Updated upstream
         public string getRecordCardType()
         {
             return "Multiple Choice";
         }
+=======
+        public string ErhalteRecordCardType()
+        {
+            return "Multiple Choice";
+        }
+
+>>>>>>> Stashed changes
 
         public string QuestionMultipleChoice
         {
@@ -59,12 +71,15 @@ namespace VRC.Domain
             }
         }
 
+<<<<<<< Updated upstream
         public void addMultipleChoiceValue(string item)
         {
             if (_choicesMultipleChoice == null)
                 _choicesMultipleChoice = new List<string>();
             _choicesMultipleChoice.Add(item);
         }
+=======
+>>>>>>> Stashed changes
 
         public void removeMultipleChoiceValue(int index)
         {
@@ -83,6 +98,9 @@ namespace VRC.Domain
             return _choicesMultipleChoice;
         }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 }

@@ -24,8 +24,12 @@ namespace VRC.Domain
             AnswerAufzaehlung = new List<string>();
         }
 
+<<<<<<< Updated upstream
 
         public string getQuestion()
+=======
+        public string ErhalteQuestion()
+>>>>>>> Stashed changes
         {
             return QuestionAufzaehlung;
         }

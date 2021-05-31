@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\VRC_Project\VRC.csproj" />
-    <ProjectReference Include="..\..\VRC_UnitTest\VRC_UnitTest.csproj" />
   </ItemGroup>
 
 </Project>

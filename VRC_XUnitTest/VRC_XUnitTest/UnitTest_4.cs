@@ -1,68 +1,23 @@
-using System;
-using System.Reflection;
 using Xunit;
-using Moq;
-using Autofac.Extras.Moq;
-using VRC.Domain;
+using VRC.Application;
 
 namespace VRC_XUnitTest
 {
     public class UnitTest_4
     {
-        //[Fact]
-        //public void Test_MCQuestion()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.QuestionMultipleChoice = "Hallo?";
+        [Fact]
+        public void Test_KKBearbeitenSettingGetSpeicherort()
+        {
+            // Arrange
+            KarteikartenBearbeitenEinstellung x = new KarteikartenBearbeitenEinstellung();
+            x.Speicherort = "C:/Users/File.xml";
 
-        //    // Act
-        //    string actual = x.getQuestion();
+            // Act
+            string actual = x.Speicherort;
 
-        //    // Assert
-        //    Assert.Equal("Hallo?", actual);
-        //}
-
-        //[Fact]
-        //public void Test_MCRecordcardType()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-
-        //    // Act
-        //    string actual = x.getRecordCardType();
-
-        //    // Assert
-        //    Assert.Equal("Multiple Choice", actual);
-        //}
-
-
-        //[Fact]
-        //public void Test_MCQuestions()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.QuestionMultipleChoice = "Frage?";
-
-        //    // Act
-        //    string actual = x.QuestionMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Frage?", actual);
-        //}
-
-        //[Fact]
-        //public void Test_MCAnswers()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.AnswerMultipleChoice = "Antworten!";
-
-        //    // Act
-        //    string actual = x.AnswerMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Antworten!", actual);
-        //}
+            // Assert
+            Assert.Equal("C:/Users/File.xml", actual);
+        }
     }
 }
+

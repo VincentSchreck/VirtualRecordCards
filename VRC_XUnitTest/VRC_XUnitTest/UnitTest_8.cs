@@ -102,33 +102,5 @@ namespace VRC_XUnitTest
             // Assert
             Assert.True(actual);
         }
-
-        [Fact]
-        public void Test_PruefEinstellung_PruefePfadFALSE()
-        {
-            // Arrange
-            PruefEinstellungen x = new PruefEinstellungen();
-            x.Speicherort = "";
-
-            // Act
-            bool actual = x.PruefePfad();
-
-            // Assert
-            Assert.False(actual);
-        }
-
-        [Fact]
-        public void Test_PruefEinstellung_PruefePfadTRUE()
-        {
-            // Arrange
-            PruefEinstellungen x = new PruefEinstellungen();
-            x.Speicherort = "C:/User/System/Files";
-
-            // Act
-            bool actual = x.PruefePfad();
-
-            // Assert
-            Assert.True(actual);
-        }
     }
 }

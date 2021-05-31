@@ -22,7 +22,12 @@ namespace VRC_XUnitTest
 
                 var cls = mock.Create<Recordcard>();
                 cls.Thema = "Thema";
+<<<<<<< Updated upstream
                 var actual = cls.getListboxName();
+=======
+                cls.content = mock.Mock<RecordCardContent>().Object;
+                var actual = cls.ErhalteRecordcardName();
+>>>>>>> Stashed changes
 
                 mock.Mock<RecordCardContent>()
                     .Verify(x => x.getQuestion());
@@ -33,7 +38,7 @@ namespace VRC_XUnitTest
                 Assert.Equal("Typ|Thema|Frage", actual);
             }
         }
-        
+
         [Fact]
         public void Test_RecordcardGetListboxNameLangerName()
         {
@@ -49,7 +54,12 @@ namespace VRC_XUnitTest
 
                 var cls = mock.Create<Recordcard>();
                 cls.Thema = "Thema";
+<<<<<<< Updated upstream
                 var actual = cls.getListboxName();
+=======
+                cls.content = mock.Mock<RecordCardContent>().Object;
+                var actual = cls.ErhalteRecordcardName();
+>>>>>>> Stashed changes
 
                 mock.Mock<RecordCardContent>()
                     .Verify(x => x.getQuestion());

@@ -1,8 +1,4 @@
-using System;
-using System.Reflection;
 using Xunit;
-using Moq;
-using Autofac.Extras.Moq;
 using VRC.Domain;
 
 namespace VRC_XUnitTest
@@ -37,7 +33,6 @@ namespace VRC_XUnitTest
             Assert.Equal("Frage zum Bild?", actual);
         }
 
-
         [Fact]
         public void Test_AbbildungGetQuestion()
         {
@@ -46,12 +41,11 @@ namespace VRC_XUnitTest
             x.QuestionAbbildung = "Fragestellung?";
 
             // Act
-            string actual = x.getQuestion();
+            string actual = x.ErhalteQuestion();
 
             // Assert
             Assert.Equal("Fragestellung?", actual);
         }
-
 
         [Fact]
         public void Test_AbbildungGetRecordCardType()
@@ -60,7 +54,7 @@ namespace VRC_XUnitTest
             RecordCardAbbildungContent x = new RecordCardAbbildungContent();
 
             // Act
-            string actual = x.getRecordCardType();
+            string actual = x.ErhalteRecordCardType();
 
             // Assert
             Assert.Equal("Abbildung", actual);

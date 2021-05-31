@@ -33,21 +33,6 @@ namespace VRC_XUnitTest
         }
 
         [Fact]
-        public void Test_KKEditorGetFilePath()
-        {
-            // Arrange
-            KarteikartenEditor x = new KarteikartenEditor();
-            x.FilePath = "C:/Users/File.xml";
-
-            // Act
-            string actual = x.FilePath;
-
-            // Assert
-            Assert.Equal("C:/Users/File.xml", actual);
-        }
-
-
-        [Fact]
         public void Test_KKEditorGetListCount()
         {
             // Arrange
@@ -62,7 +47,6 @@ namespace VRC_XUnitTest
             Assert.Equal(0, actual);
         }
 
-
         [Fact]
         public void Test_KKEditorErhalteFachbezeichnung()
         {
@@ -76,7 +60,6 @@ namespace VRC_XUnitTest
             // Assert
             Assert.Equal("Mathematik", actual);
         }
-
 
         [Fact]
         public void Test_KKEditorSetzeFachbezeichnung()

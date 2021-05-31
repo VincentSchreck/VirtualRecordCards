@@ -5,6 +5,10 @@ namespace VRC.Application
 {
     public class Pruefmodus
     {
+        public Pruefmodus()
+        {
+
+        }
         #region Eigenschaften
         private uint MaximalRunden = 1, aktuelleRunde = 1;
         private List<Recordcard> falschBeantworteteRecordcards = new List<Recordcard>(),
@@ -16,6 +20,7 @@ namespace VRC.Application
         private int aktuellerKarteikartenIndex = 0;
         #endregion
 
+<<<<<<< Updated upstream
 
         public void BehandelFalschBeantworteteFallsEingestellt()
         {
@@ -32,6 +37,8 @@ namespace VRC.Application
             falschBeantworteteRecordcards = new List<Recordcard>();
         }
 
+=======
+>>>>>>> Stashed changes
         public bool PruefeAbfrageEnde()
         {
             return aktuelleRunde >= MaximalRunden;
@@ -71,8 +78,32 @@ namespace VRC.Application
                 else return null;
             }
         }
+        public Pruefmodus(RecordCardListRandomizer randomizer, RecordcardSet recordcardSet)
+        {
+            this.randomizer = randomizer;
+            originalRecordcardSet = recordcardSet;
+        }
 
+        public void BehandelFalschBeantworteteFallsEingestellt()
+        {
+            if (nurfalschewiederholen)
+            {
+                aktuelleRecordcards = falschBeantworteteRecordcards;
+            }
+        }
+
+<<<<<<< Updated upstream
         public void Uebernehme(FileFormatHandler fileFormatHandler, FileHandler fileHandler, PruefEinstellungen uebergebenePruefEinstellungData)
+=======
+        public void StarteNeueRunde()
+        {
+            aktuellerKarteikartenIndex = 0;
+            aktuelleRunde++;
+            falschBeantworteteRecordcards = new List<Recordcard>();
+        }
+        
+        public void Uebernehme(PruefEinstellungen uebergebenePruefEinstellungData)
+>>>>>>> Stashed changes
         {
             LeseKarteikartenSammlungAus(fileFormatHandler, fileHandler, uebergebenePruefEinstellungData);
             UebernehmeEinfacheEinstellungenAus(uebergebenePruefEinstellungData);

@@ -1,8 +1,4 @@
-using System;
-using System.Reflection;
 using Xunit;
-using Moq;
-using Autofac.Extras.Moq;
 using VRC.Domain;
 
 namespace VRC_XUnitTest

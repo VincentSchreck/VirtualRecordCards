@@ -1,7 +1,3 @@
-using System;
-using System.Reflection;
-using Moq;
-using Autofac.Extras.Moq;
 using VRC.Domain;
 using Xunit;
 using VRC.Application;
@@ -10,47 +6,70 @@ namespace VRC_XUnitTest
 {
     public class UnitTest_5
     {
-        
-
         [Fact]
-        public void Test_KKBearbeitenSettingGetSpeicherort()
+        public void Test_PruefmodusPruefeAbfrageEnde()
         {
             // Arrange
-            KarteikartenBearbeitenEinstellung x = new KarteikartenBearbeitenEinstellung();
-            x.Speicherort = "C:/Users/File.xml";
+            Pruefmodus x = new Pruefmodus();
 
             // Act
-            string actual = x.Speicherort;
+            bool actual = x.PruefeAbfrageEnde();
 
             // Assert
-            Assert.Equal("C:/Users/File.xml", actual);
+            Assert.True(actual);
         }
 
         [Fact]
-        public void Test_KKBearbeitenSettingPruefePfadFALSE()
+        public void Test_PruefmodusPruefeFalschBehandelteModus()
         {
             // Arrange
-            KarteikartenBearbeitenEinstellung x = new KarteikartenBearbeitenEinstellung();
+            Pruefmodus x = new Pruefmodus();
 
             // Act
-            bool actual = x.PruefePfad();
+            bool actual = x.PruefeFalschBehandelteModus();
 
             // Assert
-            Assert.Equal(false, actual);
+            Assert.False(actual);
         }
 
         [Fact]
-        public void Test_KKBearbeitenSettingPruefePfadTRUE()
+        public void Test_PruefmodusPruefeRundenEnde()
         {
             // Arrange
-            KarteikartenBearbeitenEinstellung x = new KarteikartenBearbeitenEinstellung();
-            x.Speicherort = "C:/Users/File.xml";
+            Pruefmodus x = new Pruefmodus();
 
             // Act
-            bool actual = x.PruefePfad();
+            bool actual = x.PruefeRundenEnde();
 
             // Assert
-            Assert.Equal(true, actual);
+            Assert.True(actual);
+        }
+
+        [Fact]
+        public void Test_PruefmodusErhalteAnzahlRichtiger()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+
+            // Act
+            int actual = x.ErhalteAnzahlRichtiger();
+
+            // Assert
+            Assert.Equal(0, actual);
+        }
+
+        [Fact]
+        public void Test_PruefmodusAktuelleKarteikarteNULL()
+        {
+            // Arrange
+            Pruefmodus x = new Pruefmodus();
+            //Recordcard vergleich = null;
+
+            // Act
+            Recordcard actual = x.AktuelleKarteikarte;
+
+            // Assert
+            Assert.Null(actual);
         }
     }
 }

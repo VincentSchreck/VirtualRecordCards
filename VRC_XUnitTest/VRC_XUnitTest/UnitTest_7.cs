@@ -1,8 +1,4 @@
-using System;
-using System.Reflection;
 using Xunit;
-using Moq;
-using Autofac.Extras.Moq;
 using VRC.Domain;
 
 namespace VRC_XUnitTest
@@ -14,57 +10,41 @@ namespace VRC_XUnitTest
         {
             // Arrange
             RecordCardAufzaehlungContent x = new RecordCardAufzaehlungContent();
-            int firstCount = x.getAnswerAufzaehlung().Count;
-            x.addAnswerValue("Neues Item");
+            int firstCount = x.ErhalteAnswerAufzaehlung().Count;
+            x.FuegeAntwortHinzu("Neues Item");
 
             // Act
-            int actual = x.getAnswerAufzaehlung().Count;
+            int actual = x.ErhalteAnswerAufzaehlung().Count;
 
             // Assert
             Assert.Equal(firstCount+1, actual);
         }
 
-        //[Fact]
-        //public void Test_MCRecordcardType()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
+        [Fact]
+        public void Test_AufzaehlungGetQuestion()
+        {
+            // Arrange
+            RecordCardAufzaehlungContent x = new RecordCardAufzaehlungContent();
+            x.QuestionAufzaehlung = "Hallo?";
 
-        //    // Act
-        //    string actual = x.getRecordCardType();
+            // Act
+            string actual = x.ErhalteQuestion();
 
-        //    // Assert
-        //    Assert.Equal("Multiple Choice", actual);
-        //}
+            // Assert
+            Assert.Equal("Hallo?", actual);
+        }
 
+        [Fact]
+        public void Test_AufzaehlungRecordcardType()
+        {
+            // Arrange
+            RecordCardAufzaehlungContent x = new RecordCardAufzaehlungContent();
 
-        //[Fact]
-        //public void Test_MCQuestions()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.QuestionMultipleChoice = "Frage?";
+            // Act
+            string actual = x.ErhalteRecordCardType();
 
-        //    // Act
-        //    string actual = x.QuestionMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Frage?", actual);
-        //}
-
-        //[Fact]
-        //public void Test_MCAnswers()
-        //{
-        //    // Arrange
-        //    RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
-        //    x.AnswerMultipleChoice = "Antworten!";
-
-        //    // Act
-        //    string actual = x.AnswerMultipleChoice;
-
-        //    // Assert
-        //    Assert.Equal("Antworten!", actual);
-        //}
-
+            // Assert
+            Assert.Equal("Aufzaehlung", actual);
+        }
     }
 }

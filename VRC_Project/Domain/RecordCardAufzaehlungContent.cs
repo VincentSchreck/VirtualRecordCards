@@ -25,12 +25,12 @@ namespace VRC.Domain
         }
 
 
-        public string getQuestion()
+        public string ErhalteQuestion()
         {
             return QuestionAufzaehlung;
         }
 
-        public List<string> getAnswerAufzaehlung()
+        public List<string> ErhalteAnswerAufzaehlung()
         {
             if (AnswerAufzaehlung == null)
                 AnswerAufzaehlung = new List<string>();
@@ -38,20 +38,14 @@ namespace VRC.Domain
             return AnswerAufzaehlung;
         }
 
-        public void addAnswerValue(string item)
+        public void FuegeAntwortHinzu(string item)
         {
             if (AnswerAufzaehlung == null)
                 AnswerAufzaehlung = new List<string>();
             AnswerAufzaehlung.Add(item);
         }
-        public void removeAnswerValue(int index)
-        {
 
-            if (AnswerAufzaehlung.Count > index)
-                AnswerAufzaehlung.RemoveAt(index);
-        }
-
-        public string getRecordCardType()
+        public string ErhalteRecordCardType()
         {
             return "Aufzaehlung";
         }

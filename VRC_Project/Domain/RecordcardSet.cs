@@ -20,19 +20,10 @@ namespace VRC.Domain
             _recordcardList.Add(recordcard);
         }
 
-        public void EntferneRecordCardListe(Recordcard recordcard)
+        public void EntferneRecordCardAusListe(Recordcard recordcard)
         {
             _recordcardList.Remove(recordcard);
         }
 
-        public void EntferneRecordCardListeUeberIndex(int index)
-        {
-            _recordcardList.RemoveAt(index);
-        }
-
-        public void SetzeRecordCardListe()
-        {
-
-        }
     }
 }

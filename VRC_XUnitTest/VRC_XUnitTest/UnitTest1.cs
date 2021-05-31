@@ -15,22 +15,22 @@ namespace VRC_XUnitTest
             using (var mock = AutoMock.GetStrict())
             {
                 mock.Mock<RecordCardContent>()
-                    .Setup(x => x.getQuestion())
+                    .Setup(x => x.ErhalteQuestion())
                     .Returns("Frage");
 
                 mock.Mock<RecordCardContent>()
-                    .Setup(x => x.getRecordCardType())
+                    .Setup(x => x.ErhalteRecordCardType())
                     .Returns("Typ");
 
                 var cls = mock.Create<Recordcard>();
                 cls.Thema = "Thema";
-                var actual = cls.getListboxName();
+                var actual = cls.ErhalteRecordcardName();
 
                 mock.Mock<RecordCardContent>()
-                    .Verify(x => x.getQuestion());
+                    .Verify(x => x.ErhalteQuestion());
 
                 mock.Mock<RecordCardContent>()
-                    .Verify(x => x.getRecordCardType());
+                    .Verify(x => x.ErhalteRecordCardType());
 
                 Assert.Equal("Typ|Thema|Frage", actual);
             }
@@ -43,22 +43,22 @@ namespace VRC_XUnitTest
             using (var mock = AutoMock.GetStrict())
             {
                 mock.Mock<RecordCardContent>()
-                    .Setup(x => x.getQuestion())
+                    .Setup(x => x.ErhalteQuestion())
                     .Returns("FrageFrage");
 
                 mock.Mock<RecordCardContent>()
-                    .Setup(x => x.getRecordCardType())
+                    .Setup(x => x.ErhalteRecordCardType())
                     .Returns("Typ");
 
                 var cls = mock.Create<Recordcard>();
                 cls.Thema = "Thema";
-                var actual = cls.getListboxName();
+                var actual = cls.ErhalteRecordcardName();
 
                 mock.Mock<RecordCardContent>()
-                    .Verify(x => x.getQuestion());
+                    .Verify(x => x.ErhalteQuestion());
 
                 mock.Mock<RecordCardContent>()
-                    .Verify(x => x.getRecordCardType());
+                    .Verify(x => x.ErhalteRecordCardType());
 
                 Assert.Equal("Typ|Thema|FrageFr", actual);
             }

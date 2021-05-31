@@ -64,10 +64,6 @@ namespace VRC.Application
             return richtigeCount;
         }
 
-        public RecordcardSet RecordCardSammlung { get => recordcardSammlung; set => recordcardSammlung = value; }
-
-        public int AktuellerKarteikartenIndex { get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value; }
-
         public int ListCount { get => aktuelleRecordcards.Count; }
 
         public Recordcard AktuelleKarteikarte

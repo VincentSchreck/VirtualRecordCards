@@ -17,7 +17,7 @@ namespace VRC_XUnitTest
             x.QuestionMultipleChoice = "Hallo?";
 
             // Act
-            string actual = x.getQuestion();
+            string actual = x.ErhalteQuestion();
 
             // Assert
             Assert.Equal("Hallo?", actual);
@@ -30,7 +30,7 @@ namespace VRC_XUnitTest
             RecordCardMultipleChoiceContent x = new RecordCardMultipleChoiceContent();
 
             // Act
-            string actual = x.getRecordCardType();
+            string actual = x.ErhalteRecordCardType();
 
             // Assert
             Assert.Equal("Multiple Choice", actual);

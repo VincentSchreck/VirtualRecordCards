@@ -21,7 +21,6 @@ namespace VRC.Application
     {
         private RecordcardSet recordcardSammlung = new RecordcardSet();
         private int aktuellerKarteikartenIndex = -1;
-
         public RecordcardSet RecordCardSammlung { get => recordcardSammlung; set => recordcardSammlung = value; }
         public int AktuellerKarteikartenIndex { get => aktuellerKarteikartenIndex; private set => aktuellerKarteikartenIndex = value; }
 
@@ -58,23 +57,13 @@ namespace VRC.Application
             Recordcard recordcard = new Recordcard();
             recordcard.Thema = thema;
             recordcard.content = content;
-            recordcardSammlung.RecordcardList.Add(recordcard); 
+            recordcardSammlung.FuegeRecordCardListeHinzu(recordcard);
             return ListCount - 1;
-        }
-
-        public void KarteikartenIndexReset()
-        {
-            aktuellerKarteikartenIndex = ListCount - 1;
         }
 
         public void SetzeKarteikartenIndex(int value)
         {
             aktuellerKarteikartenIndex = value;
-        }
-
-        public void FuegeKarteikartehinzu(Recordcard recordcard)
-        {
-            recordcardSammlung.FuegeRecordCardListeHinzu(recordcard);
         }
 
         public void SpeichereAktuelleKarteikarteAb(string thema, RecordCardContent content)
@@ -86,25 +75,9 @@ namespace VRC.Application
             }
         }
 
-        public void SpeichereKarteikarteAb(int index, string thema, RecordCardContent content)
-        {
-            if (index < ListCount)
-            {
-                recordcardSammlung.RecordcardList[index].Thema = thema;
-                recordcardSammlung.RecordcardList[index].content = content;
-            }
-        }
-
         public void LoescheKarteikarte(Recordcard recordcard)
         {
-            recordcardSammlung.EntferneRecordCardListe(recordcard);
-            aktuellerKarteikartenIndex = -1;
-
-        }
-
-        public void LoescheKarteikarteIndex(int index)
-        {
-            recordcardSammlung.EntferneRecordCardListeUeberIndex(index);
+            recordcardSammlung.EntferneRecordCardAusListe(recordcard);
             aktuellerKarteikartenIndex = -1;
         }
     }

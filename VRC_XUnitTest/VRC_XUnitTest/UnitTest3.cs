@@ -46,7 +46,7 @@ namespace VRC_XUnitTest
             x.QuestionText = "Hallo?";
 
             // Act
-            string actual = x.getQuestion();
+            string actual = x.ErhalteQuestion();
 
             // Assert
             Assert.Equal("Hallo?", actual);
@@ -61,7 +61,7 @@ namespace VRC_XUnitTest
             RecordCardTextContent x = new RecordCardTextContent();
 
             // Act
-            string actual = x.getRecordCardType();
+            string actual = x.ErhalteRecordCardType();
 
             // Assert
             Assert.Equal("Text", actual);

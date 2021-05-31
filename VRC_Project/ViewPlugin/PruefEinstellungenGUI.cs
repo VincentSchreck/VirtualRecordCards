@@ -8,25 +8,25 @@ namespace VRC.ViewPlugin
     {
         PruefEinstellungen pruefEinstellungen = new PruefEinstellungen();
 
-        private static PruefEinstellungenGUI instance = null;
+        private static PruefEinstellungenGUI instanz = null;
         private static readonly object padlock = new object();
 
-        public static PruefEinstellungenGUI Instance
+        public static PruefEinstellungenGUI Instanz
         {
             get
             {
                 lock (padlock)
                 {
-                    if (instance == null)
+                    if (instanz == null)
                     {
-                        instance = new PruefEinstellungenGUI();
+                        instanz = new PruefEinstellungenGUI();
                     }
-                    return instance;
+                    return instanz;
                 }
             }
         }
 
-    private PruefEinstellungenGUI()
+        private PruefEinstellungenGUI()
         {
             InitializeComponent();
         }

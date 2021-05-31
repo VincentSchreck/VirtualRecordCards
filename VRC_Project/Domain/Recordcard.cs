@@ -3,31 +3,25 @@ namespace VRC.Domain
 {
     public interface RecordCardContent
     {
-        string getQuestion();
-        string getRecordCardType();
+        string ErhalteQuestion();
+        string ErhalteRecordCardType();
     }
 
     public class Recordcard
     {
         public string Thema { get; set; }
 
-
         public RecordCardContent content;
 
         public Recordcard(){}
 
-        public Recordcard(RecordCardContent recordCardContent)
-        {
-            this.content = recordCardContent;
-        }
-
-        public string getListboxName()
+        public string ErhalteRecordcardName()
         {
             string type = "", Question = "";
             if (content != null)
             { 
-                type = content.getRecordCardType();
-                Question = content.getQuestion();
+                type = content.ErhalteRecordCardType();
+                Question = content.ErhalteQuestion();
             }
 
             string result = type ;

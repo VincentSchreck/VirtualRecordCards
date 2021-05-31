@@ -10,7 +10,7 @@ namespace VRC.HandlerPlugin
         {
             if (!File.Exists(Pfad))
             {
-                throw new Exception(); //TODO Create Own Exception
+                throw new Exception();
             }
             return File.ReadAllText(Pfad);
         }

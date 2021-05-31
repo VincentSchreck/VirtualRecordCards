@@ -28,13 +28,12 @@
             }
         }
 
-
-        public string getQuestion()
+        public string ErhalteQuestion()
         {
             return QuestionAbbildung;
         }
 
-        public string getRecordCardType()
+        public string ErhalteRecordCardType()
         {
             return "Abbildung";
         }

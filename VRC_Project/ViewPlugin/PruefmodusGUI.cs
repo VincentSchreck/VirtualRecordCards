@@ -96,20 +96,20 @@ namespace VRC.ViewPlugin
             Recordcard recordcard = pruefmodus.AktuelleKarteikarte;
             if (recordcard.content.GetType() == typeof(RecordCardTextContent))
             {
-                ZeigeTextFrage(((RecordCardTextContent)recordcard.content).getQuestion());
+                ZeigeTextFrage(((RecordCardTextContent)recordcard.content).ErhalteQuestion());
             }
             else if (recordcard.content.GetType() == typeof(RecordCardAbbildungContent))
             {
-                ZeigeAbbildungFrage(((RecordCardAbbildungContent)recordcard.content).getQuestion());
+                ZeigeAbbildungFrage(((RecordCardAbbildungContent)recordcard.content).ErhalteQuestion());
             }
             else if (recordcard.content.GetType() == typeof(RecordCardAufzaehlungContent))
             {
-                ZeigeAufzaehlungFrage(((RecordCardAufzaehlungContent)recordcard.content).getQuestion());
+                ZeigeAufzaehlungFrage(((RecordCardAufzaehlungContent)recordcard.content).ErhalteQuestion());
             }
             else if (recordcard.content.GetType() == typeof(RecordCardMultipleChoiceContent))
             {
-                ZeigeMultipleChoiceFrage(((RecordCardMultipleChoiceContent)recordcard.content).getQuestion(),
-                                         ((RecordCardMultipleChoiceContent)recordcard.content).getMultipleChoiceList());
+                ZeigeMultipleChoiceFrage(((RecordCardMultipleChoiceContent)recordcard.content).ErhalteQuestion(),
+                                         ((RecordCardMultipleChoiceContent)recordcard.content).ErhalteMultipleChoiceListe());
             }
 
             Refresh();
@@ -183,7 +183,7 @@ namespace VRC.ViewPlugin
             }
             else if (recordcard.content.GetType() == typeof(RecordCardAufzaehlungContent))
             {
-                ZeigeAufzaehlungAntwort(((RecordCardAufzaehlungContent)recordcard.content).getAnswerAufzaehlung());
+                ZeigeAufzaehlungAntwort(((RecordCardAufzaehlungContent)recordcard.content).ErhalteAnswerAufzaehlung());
             }
             else if (recordcard.content.GetType() == typeof(RecordCardMultipleChoiceContent))
             {

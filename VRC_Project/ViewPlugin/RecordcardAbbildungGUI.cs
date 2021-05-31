@@ -8,15 +8,10 @@ namespace VRC.ViewPlugin
 {
     public partial class RecordcardAbbildungGUI : RecordCardTypeGUI
     {
-        public RecordcardAbbildungGUI()
-        {
-            InitializeComponent();
-        }
-
         public RecordcardAbbildungGUI(RecordCardAbbildungContent content)
         {
             InitializeComponent();
-            txtBoxTextFrage.Text = content.getQuestion();
+            txtBoxTextFrage.Text = content.ErhalteQuestion();
             txtBoxGrafikSuchen.Text = content.ImagePath;
 
             if (!string.IsNullOrWhiteSpace(txtBoxGrafikSuchen.Text))
@@ -24,29 +19,6 @@ namespace VRC.ViewPlugin
                 //TODO: testen ob das file wirklich png oder allgemein ein Bild ist
                 //pictureBoxAntwort.Image = Image.FromFile(txtBoxGrafikSuchen.Text);
             }
-        }
-
-        public RecordcardAbbildungGUI(string frage, string antwort)
-        {
-            InitializeComponent();
-            txtBoxTextFrage.Text = frage;
-            txtBoxGrafikSuchen.Text = antwort;
-
-            if (!string.IsNullOrWhiteSpace(txtBoxGrafikSuchen.Text))
-            {
-                //TODO: testen ob das file wirklich png oder allgemein ein Bild ist
-                //pictureBoxAntwort.Image = Image.FromFile(txtBoxGrafikSuchen.Text);
-            }
-        }
-
-        public string getQuestion()
-        {
-            return txtBoxTextFrage.Text;
-        }
-
-        public string getAnswer()
-        {
-            return txtBoxGrafikSuchen.Text;
         }
 
         private void btnAbbildungSuchen_Click(object sender, EventArgs e)

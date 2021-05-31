@@ -59,7 +59,6 @@ namespace VRC.ViewPlugin
             AktualisiereAnzeige();
         }
 
-
         private void btnSpeichern_Click(object sender, EventArgs e)
         {
             if (!MessageFrageObSicher("Wollen Sie die aktuelle Sammlung speichern und das Fenster schließen?", "Speichern und schließen?")) return;
@@ -109,7 +108,7 @@ namespace VRC.ViewPlugin
             listBxKarteikarten.Items.Clear();
             foreach (Recordcard card in karteikartenEditor.ErhalteKarteikartenSammlung())
             {
-                listBxKarteikarten.Items.Add(card.getListboxName());
+                listBxKarteikarten.Items.Add(card.ErhalteRecordcardName());
             }
         } //siehe untere Funktion
 
@@ -205,7 +204,7 @@ namespace VRC.ViewPlugin
 
         private void SpeicherortAbfrageFallsNeueDatei()
         {
-            if (filepath == null)
+            if (string.IsNullOrWhiteSpace(filepath))
             {
                 SaveFileDialog ofd = new SaveFileDialog();
                 ofd.Filter = "xml Dateien (*.xml)|*.xml| Alle Dateien (*.*)|*.*"; ;

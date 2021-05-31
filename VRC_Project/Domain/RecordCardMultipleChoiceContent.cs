@@ -50,29 +50,19 @@ namespace VRC.Domain
             }
         }
 
-
-        public string getQuestion()
+        public string ErhalteQuestion()
         {
             return _questionMultipleChoice;
         }
 
-        public void addMultipleChoiceValue(string item)
+        public void FuegeMultipleChoiceWertHinzu(string item)
         {
             if (_choicesMultipleChoice == null)
                 _choicesMultipleChoice = new List<string>();
             _choicesMultipleChoice.Add(item);
         }
 
-        public void removeMultipleChoiceValue(int index)
-        {
-            if (_choicesMultipleChoice == null)
-                _choicesMultipleChoice = new List<string>();
-
-            if(_choicesMultipleChoice.Count > index)
-            _choicesMultipleChoice.RemoveAt(index);
-        }
-
-        public List<string> getMultipleChoiceList()
+        public List<string> ErhalteMultipleChoiceListe()
         {
             if (_choicesMultipleChoice == null)
                 _choicesMultipleChoice = new List<string>();
@@ -80,7 +70,7 @@ namespace VRC.Domain
             return _choicesMultipleChoice;
         }
 
-        public string getRecordCardType()
+        public string ErhalteRecordCardType()
         {
             return "Multiple Choice";
         }

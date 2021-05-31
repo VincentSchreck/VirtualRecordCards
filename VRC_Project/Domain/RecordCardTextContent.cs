@@ -30,14 +30,12 @@
             }
         }
 
-
-        public string getQuestion()
+        public string ErhalteQuestion()
         {
             return QuestionText;
         }
 
-
-        public string getRecordCardType()
+        public string ErhalteRecordCardType()
         {
             return "Text";
         }
